@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Gaeggum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WRP-Zn-S90">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiZ-ha-PoO" userLabel="homeView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <segue destination="M0S-Ou-Bpt" kind="embed" identifier="HomeSegue" id="UGU-MZ-4Eo"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFL-jw-TjR" userLabel="findCareerView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <segue destination="cwG-GR-TCL" kind="embed" identifier="FindCareerSegue" id="bwy-Yc-No1"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y71-Fn-flb" userLabel="myStackView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <segue destination="XYj-t7-aLk" kind="embed" identifier="MyStackSegue" id="qBi-4p-1D4"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3l-f2-t3z" userLabel="ShadowView">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-OS-nXo">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="37"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <tabBar clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bau-eE-nxN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="rnY-jP-VFo"/>
+                                        </constraints>
+                                        <items>
+                                            <tabBarItem title="" image="house" catalog="system" selectedImage="house" id="81I-NP-Ocv" userLabel="Home Tab Bar Item">
+                                                <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                            </tabBarItem>
+                                            <tabBarItem tag="1" title="" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="hHC-Xj-uEe">
+                                                <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                            </tabBarItem>
+                                            <tabBarItem tag="2" title="" image="square.stack.3d.up" catalog="system" selectedImage="square.stack.3d.up" id="PLm-ER-8pk">
+                                                <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                            </tabBarItem>
+                                        </items>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tabBar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aab-Iq-xFm" userLabel="BottomCoverView">
+                                        <rect key="frame" x="0.0" y="49" width="414" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="h2M-OS-nXo" secondAttribute="trailing" id="0je-69-HqK"/>
+                                    <constraint firstAttribute="bottom" secondItem="h2M-OS-nXo" secondAttribute="bottom" id="Ctg-ZQ-5Ie"/>
+                                    <constraint firstAttribute="trailing" secondItem="aab-Iq-xFm" secondAttribute="trailing" id="Lzy-bO-o9N"/>
+                                    <constraint firstItem="bau-eE-nxN" firstAttribute="top" secondItem="r3l-f2-t3z" secondAttribute="top" id="O6E-Qf-neN"/>
+                                    <constraint firstItem="aab-Iq-xFm" firstAttribute="top" secondItem="bau-eE-nxN" secondAttribute="bottom" id="Uze-yF-fFe"/>
+                                    <constraint firstItem="h2M-OS-nXo" firstAttribute="top" secondItem="r3l-f2-t3z" secondAttribute="top" id="aIl-x7-krp"/>
+                                    <constraint firstItem="bau-eE-nxN" firstAttribute="leading" secondItem="r3l-f2-t3z" secondAttribute="leading" id="cS1-rr-Ywg"/>
+                                    <constraint firstItem="h2M-OS-nXo" firstAttribute="leading" secondItem="r3l-f2-t3z" secondAttribute="leading" id="eP7-JA-pG6"/>
+                                    <constraint firstAttribute="trailing" secondItem="bau-eE-nxN" secondAttribute="trailing" id="jwL-DA-DiQ"/>
+                                    <constraint firstItem="aab-Iq-xFm" firstAttribute="leading" secondItem="r3l-f2-t3z" secondAttribute="leading" id="o8d-ME-PAt"/>
+                                    <constraint firstAttribute="bottom" secondItem="aab-Iq-xFm" secondAttribute="bottom" id="vNW-IB-1GW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yyv-hO-JRw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MiZ-ha-PoO" firstAttribute="leading" secondItem="Yyv-hO-JRw" secondAttribute="leading" id="7Js-Ra-CgS"/>
+                            <constraint firstAttribute="top" secondItem="GFL-jw-TjR" secondAttribute="top" id="7Vm-7r-nva"/>
+                            <constraint firstItem="Yyv-hO-JRw" firstAttribute="leading" secondItem="r3l-f2-t3z" secondAttribute="leading" id="JiT-3P-kP0"/>
+                            <constraint firstItem="bau-eE-nxN" firstAttribute="bottom" secondItem="Yyv-hO-JRw" secondAttribute="bottom" id="JnK-Lv-igI"/>
+                            <constraint firstItem="r3l-f2-t3z" firstAttribute="trailing" secondItem="Yyv-hO-JRw" secondAttribute="trailing" id="K4b-qO-o0I"/>
+                            <constraint firstItem="r3l-f2-t3z" firstAttribute="bottom" secondItem="WRP-Zn-S90" secondAttribute="bottom" id="MYS-y0-42j"/>
+                            <constraint firstAttribute="bottom" secondItem="MiZ-ha-PoO" secondAttribute="bottom" id="R7s-4h-tpW"/>
+                            <constraint firstItem="Yyv-hO-JRw" firstAttribute="trailing" secondItem="y71-Fn-flb" secondAttribute="trailing" id="ZcI-5r-3Hf"/>
+                            <constraint firstAttribute="top" secondItem="y71-Fn-flb" secondAttribute="top" id="aL3-Qx-mJx"/>
+                            <constraint firstItem="GFL-jw-TjR" firstAttribute="leading" secondItem="Yyv-hO-JRw" secondAttribute="leading" id="dYe-ho-gDk"/>
+                            <constraint firstItem="Yyv-hO-JRw" firstAttribute="trailing" secondItem="GFL-jw-TjR" secondAttribute="trailing" id="glg-G7-0Y2"/>
+                            <constraint firstAttribute="bottom" secondItem="GFL-jw-TjR" secondAttribute="bottom" id="hbx-KW-kea"/>
+                            <constraint firstItem="y71-Fn-flb" firstAttribute="leading" secondItem="Yyv-hO-JRw" secondAttribute="leading" id="j7I-h6-rqf"/>
+                            <constraint firstAttribute="bottom" secondItem="y71-Fn-flb" secondAttribute="bottom" id="pn9-pR-OZA"/>
+                            <constraint firstAttribute="top" secondItem="MiZ-ha-PoO" secondAttribute="top" id="yny-7f-axO"/>
+                            <constraint firstItem="Yyv-hO-JRw" firstAttribute="trailing" secondItem="MiZ-ha-PoO" secondAttribute="trailing" id="zgM-pQ-yqd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="findCareerView" destination="GFL-jw-TjR" id="PRS-lV-yY5"/>
+                        <outlet property="homeTabBarItem" destination="81I-NP-Ocv" id="iJA-nP-1XA"/>
+                        <outlet property="homeView" destination="MiZ-ha-PoO" id="yRs-hF-MPT"/>
+                        <outlet property="myStackView" destination="y71-Fn-flb" id="h8u-qr-3bX"/>
+                        <outlet property="shadowView" destination="r3l-f2-t3z" id="oJc-Z5-Xnv"/>
+                        <outlet property="tabBar" destination="bau-eE-nxN" id="WYY-87-72C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45" y="84"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Tat-oY-vYK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="M0S-Ou-Bpt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7N-XY-2d0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="119"/>
+        </scene>
+        <!--FindCareer-->
+        <scene sceneID="yzc-VH-WHx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FindCareer" id="cwG-GR-TCL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="var-1c-ihB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="49"/>
+        </scene>
+        <!--MyStack-->
+        <scene sceneID="9NO-rJ-zik">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyStack" id="XYj-t7-aLk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJQ-Mb-G1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="84"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="square.stack.3d.up" catalog="system" width="128" height="124"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
