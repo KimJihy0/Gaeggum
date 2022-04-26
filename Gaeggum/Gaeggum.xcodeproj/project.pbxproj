@@ -21,6 +21,10 @@
 		32C6B4162811C8E00090AA9D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B4152811C8E00090AA9D /* UIViewController+Extension.swift */; };
 		32C6B41D2811D5200090AA9D /* FindCareer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B41C2811D5200090AA9D /* FindCareer.storyboard */; };
 		32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */; };
+		F86094302816BF1C001D95D3 /* GrassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860942D2816BF1C001D95D3 /* GrassView.swift */; };
+		F86094312816BF1C001D95D3 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860942E2816BF1C001D95D3 /* GitHub.swift */; };
+		F86094322816BF1C001D95D3 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860942F2816BF1C001D95D3 /* Interface.swift */; };
+		F8684EBD2816ABBC00A1F3F3 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F8684EBC2816ABBC00A1F3F3 /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,9 @@
 		32C6B4152811C8E00090AA9D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		32C6B41C2811D5200090AA9D /* FindCareer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindCareer.storyboard; sourceTree = "<group>"; };
 		32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCareerViewController.swift; sourceTree = "<group>"; };
+		F860942D2816BF1C001D95D3 /* GrassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrassView.swift; sourceTree = "<group>"; };
+		F860942E2816BF1C001D95D3 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		F860942F2816BF1C001D95D3 /* Interface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8684EBD2816ABBC00A1F3F3 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +140,7 @@
 		32C6B3FA2811A5DE0090AA9D /* MyStack */ = {
 			isa = PBXGroup;
 			children = (
+				F860942C2816BF1C001D95D3 /* Grass */,
 				32C6B4042811AA110090AA9D /* ViewController */,
 				32C6B4032811AA0A0090AA9D /* Storyboard */,
 			);
@@ -227,6 +236,16 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		F860942C2816BF1C001D95D3 /* Grass */ = {
+			isa = PBXGroup;
+			children = (
+				F860942D2816BF1C001D95D3 /* GrassView.swift */,
+				F860942E2816BF1C001D95D3 /* GitHub.swift */,
+				F860942F2816BF1C001D95D3 /* Interface.swift */,
+			);
+			path = Grass;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +262,9 @@
 			dependencies = (
 			);
 			name = Gaeggum;
+			packageProductDependencies = (
+				F8684EBC2816ABBC00A1F3F3 /* SwiftSoup */,
+			);
 			productName = Gaeggum;
 			productReference = 32C6B3DD2811A1CC0090AA9D /* Gaeggum.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +293,9 @@
 				Base,
 			);
 			mainGroup = 32C6B3D42811A1CB0090AA9D;
+			packageReferences = (
+				F8684EBB2816ABBC00A1F3F3 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = 32C6B3DE2811A1CC0090AA9D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,12 +326,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86094312816BF1C001D95D3 /* GitHub.swift in Sources */,
 				32C6B4162811C8E00090AA9D /* UIViewController+Extension.swift in Sources */,
 				32C6B4122811C7400090AA9D /* MyStackViewController.swift in Sources */,
 				32C6B40E2811C6280090AA9D /* HomeViewController.swift in Sources */,
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
 				32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */,
+				F86094302816BF1C001D95D3 /* GrassView.swift in Sources */,
 				32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */,
+				F86094322816BF1C001D95D3 /* Interface.swift in Sources */,
 				32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */,
 				32C6B3E32811A1CC0090AA9D /* SceneDelegate.swift in Sources */,
 			);
@@ -524,6 +552,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8684EBB2816ABBC00A1F3F3 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8684EBC2816ABBC00A1F3F3 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8684EBB2816ABBC00A1F3F3 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 32C6B3D52811A1CB0090AA9D /* Project object */;
 }
