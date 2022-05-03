@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3236DF82281FC453006792AC /* PaddingLabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF81281FC453006792AC /* PaddingLabel+Extension.swift */; };
+		3236DF89281FC463006792AC /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF84281FC463006792AC /* UserInfo.swift */; };
+		3236DF8A281FC463006792AC /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF85281FC463006792AC /* Ability.swift */; };
+		3236DF8B281FC463006792AC /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF86281FC463006792AC /* Career.swift */; };
+		3236DF8C281FC463006792AC /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF87281FC463006792AC /* Education.swift */; };
+		3236DF8D281FC463006792AC /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF88281FC463006792AC /* Stat.swift */; };
 		32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */; };
 		32C6B3E32811A1CC0090AA9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */; };
 		32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E42811A1CC0090AA9D /* MainViewController.swift */; };
@@ -28,6 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3236DF81281FC453006792AC /* PaddingLabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaddingLabel+Extension.swift"; sourceTree = "<group>"; };
+		3236DF84281FC463006792AC /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3236DF85281FC463006792AC /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
+		3236DF86281FC463006792AC /* Career.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
+		3236DF87281FC463006792AC /* Education.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
+		3236DF88281FC463006792AC /* Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		32C6B3DD2811A1CC0090AA9D /* Gaeggum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaeggum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +73,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3236DF83281FC463006792AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3236DF84281FC463006792AC /* UserInfo.swift */,
+				3236DF85281FC463006792AC /* Ability.swift */,
+				3236DF86281FC463006792AC /* Career.swift */,
+				3236DF87281FC463006792AC /* Education.swift */,
+				3236DF88281FC463006792AC /* Stat.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		32C6B3D42811A1CB0090AA9D = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +104,7 @@
 		32C6B3DF2811A1CC0090AA9D /* Gaeggum */ = {
 			isa = PBXGroup;
 			children = (
+				3236DF83281FC463006792AC /* Models */,
 				32C6B4132811C8AF0090AA9D /* Utils */,
 				32C6B3F62811A20E0090AA9D /* Resources */,
 				32C6B3F52811A1F90090AA9D /* Sources */,
@@ -207,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				32C6B4152811C8E00090AA9D /* UIViewController+Extension.swift */,
+				3236DF81281FC453006792AC /* PaddingLabel+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -330,12 +356,18 @@
 				32C6B4162811C8E00090AA9D /* UIViewController+Extension.swift in Sources */,
 				32C6B4122811C7400090AA9D /* MyStackViewController.swift in Sources */,
 				32C6B40E2811C6280090AA9D /* HomeViewController.swift in Sources */,
+				3236DF8B281FC463006792AC /* Career.swift in Sources */,
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
+				3236DF8C281FC463006792AC /* Education.swift in Sources */,
 				32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */,
 				F86094302816BF1C001D95D3 /* GrassView.swift in Sources */,
 				32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */,
+				3236DF8D281FC463006792AC /* Stat.swift in Sources */,
+				3236DF89281FC463006792AC /* UserInfo.swift in Sources */,
 				F86094322816BF1C001D95D3 /* Interface.swift in Sources */,
+				3236DF8A281FC463006792AC /* Ability.swift in Sources */,
 				32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */,
+				3236DF82281FC453006792AC /* PaddingLabel+Extension.swift in Sources */,
 				32C6B3E32811A1CC0090AA9D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
