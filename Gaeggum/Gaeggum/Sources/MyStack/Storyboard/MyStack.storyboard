@@ -228,7 +228,7 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dreamin BlockChain 해커톤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPU-QE-wkr">
-                                                                                <rect key="frame" x="55" y="15" width="202" height="20.5"/>
+                                                                                <rect key="frame" x="55" y="15" width="309" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -239,6 +239,7 @@
                                                                             <constraint firstItem="dPU-QE-wkr" firstAttribute="leading" secondItem="ygn-hC-aid" secondAttribute="trailing" constant="8" symbolic="YES" id="086-m6-vSi"/>
                                                                             <constraint firstItem="ygn-hC-aid" firstAttribute="top" secondItem="lKG-Gq-luq" secondAttribute="bottom" constant="-2" id="1sf-qR-FVh"/>
                                                                             <constraint firstItem="lKG-Gq-luq" firstAttribute="top" secondItem="0vL-xA-YLM" secondAttribute="top" id="8vr-H7-2JC"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="dPU-QE-wkr" secondAttribute="trailing" constant="10" id="C1E-G7-OS7"/>
                                                                             <constraint firstAttribute="bottom" secondItem="lKG-Gq-luq" secondAttribute="bottom" constant="29" id="DHe-74-vq3"/>
                                                                             <constraint firstItem="lKG-Gq-luq" firstAttribute="leading" secondItem="0vL-xA-YLM" secondAttribute="leading" id="fce-yS-WdA"/>
                                                                             <constraint firstAttribute="bottom" secondItem="ygn-hC-aid" secondAttribute="bottom" id="qsf-qK-6Id"/>
@@ -287,7 +288,7 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오 i Open Builder Rest API 개발" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2Z-3G-78l">
-                                                                                <rect key="frame" x="55" y="15" width="257.5" height="20.5"/>
+                                                                                <rect key="frame" x="55" y="15" width="309" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -302,6 +303,7 @@
                                                                             <constraint firstItem="w2Z-3G-78l" firstAttribute="leading" secondItem="g3I-s7-ZXg" secondAttribute="trailing" constant="8" symbolic="YES" id="YbN-Em-q0n"/>
                                                                             <constraint firstItem="U25-PW-ggp" firstAttribute="top" secondItem="tWm-cH-KOQ" secondAttribute="top" id="d9M-4u-pqb"/>
                                                                             <constraint firstItem="w2Z-3G-78l" firstAttribute="centerY" secondItem="tWm-cH-KOQ" secondAttribute="centerY" id="iMd-jC-69S"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="w2Z-3G-78l" secondAttribute="trailing" constant="10" id="jSo-uf-3am"/>
                                                                             <constraint firstAttribute="bottom" secondItem="g3I-s7-ZXg" secondAttribute="bottom" id="zV4-ij-euU"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
@@ -343,7 +345,7 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="피플펀드 Fintech Engineering Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arb-KJ-CHf">
-                                                                                <rect key="frame" x="55" y="15" width="265.5" height="20.5"/>
+                                                                                <rect key="frame" x="55" y="15" width="309" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -351,6 +353,7 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="arb-KJ-CHf" secondAttribute="trailing" constant="10" id="1qG-Sz-M5j"/>
                                                                             <constraint firstItem="arb-KJ-CHf" firstAttribute="leading" secondItem="ISt-0V-chE" secondAttribute="trailing" constant="8" symbolic="YES" id="Lfs-fj-avb"/>
                                                                             <constraint firstItem="TQ1-CL-qtB" firstAttribute="leading" secondItem="uie-YW-yOc" secondAttribute="leading" id="OSR-Zc-8b1"/>
                                                                             <constraint firstAttribute="bottom" secondItem="TQ1-CL-qtB" secondAttribute="bottom" constant="29" id="SCC-Ot-Gf1"/>
@@ -399,7 +402,7 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몰입캠프 참가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uc-rg-2Ys">
-                                                                                <rect key="frame" x="55" y="15" width="93" height="20.5"/>
+                                                                                <rect key="frame" x="55" y="15" width="309" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -408,6 +411,7 @@
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <constraints>
                                                                             <constraint firstItem="t8l-7m-nR1" firstAttribute="leading" secondItem="UVc-IL-bJW" secondAttribute="leading" id="18f-M5-OkS"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="1Uc-rg-2Ys" secondAttribute="trailing" constant="10" id="BQn-jc-SDy"/>
                                                                             <constraint firstItem="t8l-7m-nR1" firstAttribute="top" secondItem="e7P-VT-XjY" secondAttribute="bottom" constant="-2" id="O8O-Zo-H9I"/>
                                                                             <constraint firstItem="1Uc-rg-2Ys" firstAttribute="leading" secondItem="t8l-7m-nR1" secondAttribute="trailing" constant="8" symbolic="YES" id="OHj-o2-ofg"/>
                                                                             <constraint firstItem="1Uc-rg-2Ys" firstAttribute="centerY" secondItem="UVc-IL-bJW" secondAttribute="centerY" id="QUI-Gw-CzK"/>
@@ -433,7 +437,9 @@
                                                             </view>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="o1s-pa-qkD" firstAttribute="leading" secondItem="evp-JR-Z8U" secondAttribute="leading" id="18R-Z4-27L"/>
                                                             <constraint firstAttribute="trailing" secondItem="Xrd-nv-WAy" secondAttribute="trailing" id="b1t-YW-WhZ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="o1s-pa-qkD" secondAttribute="trailing" id="nLA-Os-wpI"/>
                                                             <constraint firstItem="Xrd-nv-WAy" firstAttribute="leading" secondItem="evp-JR-Z8U" secondAttribute="leading" id="pQb-vr-DqA"/>
                                                         </constraints>
                                                     </stackView>
