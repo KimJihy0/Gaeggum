@@ -9,6 +9,17 @@ import UIKit
 import SwiftUI
 import WebKit
 
+struct Project {
+    var startDate: Date
+    var endDate: Date?
+    var content: String
+}
+
+let projects: [Project] = [
+    Project(startDate: Date(), endDate: Date(), content: "test content"),
+    Project(startDate: Date(), endDate: Date(), content: "s\ne\n\n\n\n\nc\no\nnd test and very very very long text test more more more more more long text"),
+]
+
 class MyStackViewController : UIViewController {
     
     @IBOutlet weak var algorithmBarView: UIView!
@@ -16,6 +27,7 @@ class MyStackViewController : UIViewController {
     @IBOutlet weak var csStudyBarView: UIView!
     
     @IBOutlet weak var bojView: WKWebView!
+    @IBOutlet weak var projectStackView: UIStackView!
     @IBOutlet weak var grassView: UIView!
     
     override func viewDidLoad() {
@@ -25,6 +37,7 @@ class MyStackViewController : UIViewController {
         setGraph(40, 50, 10)
         setBoj(of: "hyo0508")
         setGrass(of: "san9w9n")
+        setProjects()
     }
     
     func setGraph(_ algorithmPercent: Int, _ projectPercent: Int, _ csStudyPercent: Int) {
@@ -54,6 +67,60 @@ class MyStackViewController : UIViewController {
         """
         bojView.scrollView.isScrollEnabled = false
         bojView.loadHTMLString(html, baseURL: nil)
+    }
+    
+    func setProjects() {
+        let _ = projects.map {
+                self.projectStackView.addArrangedSubview(toView($0))
+            }
+    }
+    
+    func toView(_ project: Project) -> UIView {
+        
+        let superView = UIView()
+        
+        let line = UIView()
+        line.backgroundColor = .darkGray
+        superView.addSubview(line)
+        line.anchor(top: superView.topAnchor, left: superView.leftAnchor, bottom: superView.bottomAnchor, paddingLeft: 10, width: 2)
+        
+        let circle = UIView()
+        circle.backgroundColor = .white // junk
+        circle.borderWidth = 1
+        circle.borderColor = .darkGray
+        circle.cornerRadius = 3
+        superView.addSubview(circle)
+        circle.anchor(width: 7, height: 14)
+        circle.centerXAnchor.constraint(equalTo: line.centerXAnchor).isActive = true
+        circle.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
+        
+        let termLabel = UILabel()
+        termLabel.text = toTerm(project.startDate, project.endDate)
+        termLabel.textColor = .darkGray
+        termLabel.numberOfLines = 2
+        superView.addSubview(termLabel)
+        termLabel.anchor(top: superView.topAnchor, left: line.rightAnchor, bottom: superView.bottomAnchor, paddingTop: 5, paddingLeft: 15, width: 90)
+        
+        let contentLabel = UILabel()
+        contentLabel.text = project.content
+        print(project.content)
+        contentLabel.numberOfLines = 0
+        superView.addSubview(contentLabel)
+        contentLabel.anchor(top: superView.topAnchor, left: termLabel.rightAnchor, bottom: superView.bottomAnchor, right: superView.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 5)
+        
+        return superView
+    }
+    func toTerm(_ startDate: Date, _ endDate: Date?) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM"
+        
+        var term : String
+        term = formatter.string(from: startDate) + " ~"
+        if let endDate = endDate {
+            term = term + "\n" + formatter.string(from: endDate)
+        }
+        
+        return term
     }
     
     func setGrass(of username: String) {
