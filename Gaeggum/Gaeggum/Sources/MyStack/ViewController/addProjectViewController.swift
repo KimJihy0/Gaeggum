@@ -38,6 +38,10 @@ class AddProjectViewController: UIViewController {
         }
     }
     
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        self.index = -self.index!
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -56,11 +60,11 @@ class AddProjectViewController: UIViewController {
 extension AddProjectViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return isToModify ? 3 : 2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [2, 1][section]
+        return [2, 1, 1][section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,11 +82,14 @@ extension AddProjectViewController: UITableViewDataSource, UITableViewDelegate {
                 }
             }
             return cell
-        } else {
+        } else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath) as! ContentCell
             if let content = self.content {
                 cell.contentTextField.text = content
             }
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DeleteCell", for: indexPath) as! DeleteCell
             return cell
         }
     }

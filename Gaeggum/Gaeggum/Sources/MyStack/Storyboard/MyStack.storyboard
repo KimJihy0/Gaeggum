@@ -376,6 +376,37 @@
                                             <outlet property="contentTextField" destination="Wf4-iE-jFt" id="5oN-Y5-NKD"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeleteCell" id="4YC-oG-wJt" customClass="DeleteCell" customModule="Gaeggum" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="135.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4YC-oG-wJt" id="shm-rE-jfE">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6E-o1-p39">
+                                                    <rect key="frame" x="20" y="5" width="334" height="33.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="프로젝트 삭제">
+                                                        <color key="titleColor" systemColor="systemRedColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteButtonTapped:" destination="QTU-XJ-Pue" eventType="touchUpInside" id="EXC-8b-L5t"/>
+                                                        <segue destination="v2S-yQ-Dsl" kind="unwind" unwindAction="saveProject:" id="cVD-AZ-La2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="T6E-o1-p39" secondAttribute="trailing" constant="20" id="2eQ-Vl-n0H"/>
+                                                <constraint firstItem="T6E-o1-p39" firstAttribute="leading" secondItem="shm-rE-jfE" secondAttribute="leading" constant="20" id="HOb-ql-YDc"/>
+                                                <constraint firstItem="T6E-o1-p39" firstAttribute="top" secondItem="shm-rE-jfE" secondAttribute="top" constant="5" id="R4z-KA-ZMQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="T6E-o1-p39" secondAttribute="bottom" constant="5" id="bdz-gm-LV6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="T6E-o1-p39" id="701-eN-uOS"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="QTU-XJ-Pue" id="dqr-0W-Fae"/>
@@ -438,6 +469,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

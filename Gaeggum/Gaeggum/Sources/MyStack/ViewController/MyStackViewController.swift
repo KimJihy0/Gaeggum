@@ -126,7 +126,11 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBAction func saveProject(_ sender: UIStoryboardSegue) {
         if let from = sender.source as? AddProjectViewController {
             if let index = from.index {
+                if index > 0 {
                 projects[index] = Project(startDate: from.startDate!, endDate: from.endDate!, content: from.content!)
+                } else {
+                    projects.remove(at: -index)
+                }
                 updateProjects(projects)
             } else {
                 projects.append(Project(startDate: from.startDate!, endDate: from.endDate!, content: from.content!))
