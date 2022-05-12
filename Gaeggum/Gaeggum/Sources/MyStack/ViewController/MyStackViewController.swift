@@ -15,12 +15,10 @@ struct Project {
     var content: String
 }
 
-
-var bojUserName: String = "hyo0508"
-var gitHubUserNmae: String = "san9w9n"
-
 class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     
+    var bojUserName: String = "hyo0508"
+    var gitHubUserNmae: String = "san9w9n"
     var projects: [Project] = [
         Project(startDate: Date(), endDate: Date(), content: "test content"),
         Project(startDate: Date(), endDate: Date(), content: "s\ne\n\n\n\n\nc\no\nnd test and very very very long text test more more more more more long text"),
@@ -100,16 +98,16 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let src = segue.source as! MyStackViewController
+        let dest = segue.destination as! AddProjectViewController
+        
         if segue.identifier == "ModifySegue" {
-            let src = segue.source as! MyStackViewController
-            let dest = segue.destination as! AddProjectViewController
             dest.isToModify = true
             dest.startDate = src.projects[self.index!].startDate
             dest.endDate = src.projects[self.index!].endDate
             dest.content = src.projects[self.index!].content
             dest.index = src.index
         } else {
-            let dest = segue.destination as! AddProjectViewController
             dest.isToModify = false
             dest.startDate = nil
             dest.endDate = nil
@@ -124,18 +122,18 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func saveProject(_ sender: UIStoryboardSegue) {
-        if let from = sender.source as? AddProjectViewController {
-            if let index = from.index {
-                if index > 0 {
-                projects[index] = Project(startDate: from.startDate!, endDate: from.endDate!, content: from.content!)
-                } else {
-                    projects.remove(at: -index)
-                }
-                updateProjects(projects)
-            } else {
-                projects.append(Project(startDate: from.startDate!, endDate: from.endDate!, content: from.content!))
-                updateProjects(projects)
-            }
+        guard let from = sender.source as? AddProjectViewController else {
+            return
         }
+        if let index = from.index {
+            if index >= 0 {
+            projects[index] = Project(startDate: from.startDate!, endDate: from.endDate!, content: from.content!)
+            } else {
+                projects.remove(at: ~index)
+            }
+        } else {
+            projects.append(Project(startDate: from.startDate!, endDate: from.endDate!, content: from.content!))
+        }
+        updateProjects(projects)
     }
 }

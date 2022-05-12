@@ -25,6 +25,8 @@ class AddProjectViewController: UIViewController {
         
         if isToModify {
             navigationTitle.title = "프로젝트 편집"
+        } else {
+            navigationTitle.title = "새로운 프로젝트"
         }
         self.tableView.backgroundColor = .systemGray6
     }
@@ -39,7 +41,7 @@ class AddProjectViewController: UIViewController {
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        self.index = -self.index!
+        self.index = ~self.index!
     }
     
     // MARK: - Navigation
