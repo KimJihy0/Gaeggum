@@ -2,28 +2,21 @@
 //  MyStackViewController.swift
 //  Gaeggum
 //
-//  Created by zeroStone ⠀ on 2022/04/22.
+//  Created by zeroStone on 2022/04/22.
 //
 
 import UIKit
 import SwiftUI
 import WebKit
 
-struct Project {
-    var startDate: Date
-    var endDate: Date?
-    var content: String
-}
-
 class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     
     var bojUserName: String = "hyo0508"
-    var gitHubUserNmae: String = "san9w9n"
+    var gitHubUserNmae: String = "hyo0508"
     var projects: [Project] = [
         Project(startDate: Date(), endDate: Date(), content: "test content"),
         Project(startDate: Date(), endDate: Date(), content: "s\ne\n\n\n\n\nc\no\nnd test and very very very long text test more more more more more long text"),
     ]
-    var index: Int? = nil
     
     @IBOutlet weak var algorithmBarView: UIView!
     @IBOutlet weak var projectBarView: UIView!
@@ -37,28 +30,23 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         print("My Stack")
 
-        updateGraph(40, 50, 10)
+        updateGraph(90, 80, 70)
         updateBoj(of: bojUserName)
         updateGrass(of: gitHubUserNmae)
         updateProjects(projects)
     }
     
-    func updateGraph(_ algorithmPercent: Int, _ projectPercent: Int, _ csStudyPercent: Int) {
-        let cornerRadius = 5.0
-        algorithmBarView.layer.cornerRadius = cornerRadius
-        projectBarView.layer.cornerRadius = cornerRadius
-        csStudyBarView.layer.cornerRadius = cornerRadius
-        
-        algorithmBarView.heightAnchor.constraint(equalToConstant: CGFloat(algorithmPercent * 2)).isActive = true
-        projectBarView.heightAnchor.constraint(equalToConstant: CGFloat(projectPercent * 2)).isActive = true
-        csStudyBarView.heightAnchor.constraint(equalToConstant: CGFloat(csStudyPercent * 2)).isActive = true
+    func updateGraph(_ algorithmPercent: CGFloat, _ projectPercent: CGFloat, _ csStudyPercent: CGFloat) {
+        algorithmBarView.anchor(height: algorithmPercent * 2)
+        projectBarView.anchor(height: projectPercent * 2)
+        csStudyBarView.anchor(height: csStudyPercent * 2)
     }
     
     func updateBoj(of handle: String) {
         let width = self.view.frame.width - 40
-        let scale = width * 0.00135897
+        let scale = width * 0.00136
         bojView.scrollView.isScrollEnabled = false
-        bojView.loadHTMLString(toHtml(scale, handle), baseURL: nil)
+        bojView.loadHTMLString(bojStatHtml(scale, handle), baseURL: nil)
     }
     
     func updateProjects(_ projects: [Project]) {
@@ -66,22 +54,12 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
             projectStackView.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
-        let projectViews = projects.map {
-            toView($0)
+        projects.enumerated().forEach { (index, project) in
+            let projectView = project.view
+            projectView.tag = index
+            projectView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(didLongPressView(_:))))
+            self.projectStackView.addArrangedSubview(projectView)
         }
-        
-        for (index, element) in projectViews.enumerated() {
-            let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(didTapView(_:)))
-            element.tag = index
-            self.projectStackView.addArrangedSubview(element)
-            element.addGestureRecognizer(longPressGestureRecognizer)
-        }
-        
-    }
-    
-    @objc func didTapView(_ sender: UILongPressGestureRecognizer) {
-        self.index = sender.view!.tag
-        performSegue(withIdentifier: "ModifySegue", sender: nil)
     }
     
     func updateGrass(of username: String) {
@@ -90,29 +68,40 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         grassView.addSubview(controller.view)
         controller.didMove(toParent: self)
-
         NSLayoutConstraint.activate([
             controller.view.heightAnchor.constraint(equalTo: grassView.heightAnchor),
             controller.view.widthAnchor.constraint(equalTo: grassView.widthAnchor),
         ])
     }
     
+}
+
+extension MyStackViewController {
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let src = segue.source as! MyStackViewController
-        let dest = segue.destination as! AddProjectViewController
-        
-        if segue.identifier == "ModifySegue" {
+        let dest = segue.destination as! ProjectViewController
+        switch segue.identifier {
+        case "ModifySegue":
+            let index = sender as! Int
             dest.isToModify = true
-            dest.startDate = src.projects[self.index!].startDate
-            dest.endDate = src.projects[self.index!].endDate
-            dest.content = src.projects[self.index!].content
-            dest.index = src.index
-        } else {
+            dest.startDate = src.projects[index].startDate
+            dest.endDate = src.projects[index].endDate
+            dest.content = src.projects[index].content
+            dest.index = index
+        case "AddSegue":
             dest.isToModify = false
             dest.startDate = nil
             dest.endDate = nil
             dest.content = nil
             dest.index = nil
+        default: break
+        }
+    }
+    
+    @objc func didLongPressView(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            performSegue(withIdentifier: "ModifySegue", sender: sender.view!.tag)
         }
     }
     
@@ -121,19 +110,22 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         // Use data from the view controller which initiated the unwind segue
     }
     
-    @IBAction func saveProject(_ sender: UIStoryboardSegue) {
-        guard let from = sender.source as? AddProjectViewController else {
-            return
-        }
-        if let index = from.index {
-            if index >= 0 {
-            projects[index] = Project(startDate: from.startDate!, endDate: from.endDate!, content: from.content!)
-            } else {
-                projects.remove(at: ~index)
-            }
-        } else {
-            projects.append(Project(startDate: from.startDate!, endDate: from.endDate!, content: from.content!))
+    @IBAction func deleteProject(_ unwindSegue: UIStoryboardSegue) {
+        let src = unwindSegue.source as! ProjectViewController
+        if let index = src.index {
+            projects.remove(at: index)
         }
         updateProjects(projects)
     }
+    
+    @IBAction func saveProject(_ unwindSegue: UIStoryboardSegue) {
+        let src = unwindSegue.source as! ProjectViewController
+        if let index = src.index {
+            projects[index] = Project(startDate: src.startDate!, endDate: src.endDate!, content: src.content!)
+        } else {
+            projects.append(Project(startDate: src.startDate!, endDate: src.endDate!, content: src.content!))
+        }
+        updateProjects(projects)
+    }
+    
 }

@@ -32,12 +32,17 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bgR-NT-rcO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="230"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCt-Kw-Ibq">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCt-Kw-Ibq" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="0.0" width="20" height="200"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eat-hN-LWO">
+                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eat-hN-LWO" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="60" width="20" height="140"/>
                                                                                 <color key="backgroundColor" name="GreenLevel2"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="5"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                         </subviews>
                                                                         <color key="backgroundColor" name="GreenLevel1"/>
@@ -49,8 +54,8 @@
                                                                             <constraint firstAttribute="trailing" secondItem="Eat-hN-LWO" secondAttribute="trailing" id="lt8-QZ-HvF"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                <integer key="value" value="5"/>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="5"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
@@ -73,12 +78,17 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="95t-gz-bHK">
                                                                 <rect key="frame" x="80" y="0.0" width="60" height="230"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDP-ls-Wo3">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDP-ls-Wo3" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="0.0" width="20" height="200"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9k1-F4-yW9">
+                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9k1-F4-yW9" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="60" width="20" height="140"/>
                                                                                 <color key="backgroundColor" name="GreenLevel2"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="5"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                         </subviews>
                                                                         <color key="backgroundColor" name="GreenLevel1"/>
@@ -90,8 +100,8 @@
                                                                             <constraint firstAttribute="width" constant="20" id="y7J-dz-iMO"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                <integer key="value" value="5"/>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="5"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
@@ -114,12 +124,17 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UYc-ib-jo8">
                                                                 <rect key="frame" x="160" y="0.0" width="60" height="230"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9Y-dN-9JT">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9Y-dN-9JT" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="0.0" width="20" height="200"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tz3-2j-ApF">
+                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tz3-2j-ApF" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="60" width="20" height="140"/>
                                                                                 <color key="backgroundColor" name="GreenLevel2"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="5"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                         </subviews>
                                                                         <color key="backgroundColor" name="GreenLevel1"/>
@@ -131,8 +146,8 @@
                                                                             <constraint firstAttribute="width" constant="20" id="hzC-Cs-c4Q"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                <integer key="value" value="5"/>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="5"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
@@ -200,7 +215,7 @@
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                                                         <connections>
-                                                                            <segue destination="QTU-XJ-Pue" kind="presentation" id="0ls-Hj-Y3F"/>
+                                                                            <segue destination="QTU-XJ-Pue" kind="presentation" identifier="AddSegue" id="0ls-Hj-Y3F"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -288,21 +303,22 @@
             </objects>
             <point key="canvasLocation" x="955.07246376811599" y="83.705357142857139"/>
         </scene>
-        <!--Add Project View Controller-->
+        <!--Project View Controller-->
         <scene sceneID="pgK-Xn-Wip">
             <objects>
-                <viewController id="QTU-XJ-Pue" customClass="AddProjectViewController" customModule="Gaeggum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QTU-XJ-Pue" customClass="ProjectViewController" customModule="Gaeggum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wa6-si-qa6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFk-8B-ysI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <items>
-                                    <navigationItem title="새로운 프로젝트" id="xJT-1U-aN1">
+                                    <navigationItem title="Title" id="xJT-1U-aN1">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZqV-37-cyS">
                                             <connections>
-                                                <segue destination="v2S-yQ-Dsl" kind="unwind" unwindAction="unwindToMyStack:" id="8uH-UT-He9"/>
+                                                <segue destination="v2S-yQ-Dsl" kind="unwind" identifier="unwindToMyStack" unwindAction="unwindToMyStack:" id="8uH-UT-He9"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="xZ1-sF-qSq">
@@ -320,30 +336,29 @@
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateCell" id="ih8-8U-XIw" customClass="DateCell" customModule="Gaeggum" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="49.5" width="374" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ih8-8U-XIw" id="Y6C-jN-BmK">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aq8-wB-fpp">
-                                                    <rect key="frame" x="20" y="11.5" width="33" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="33" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Fac-8I-t8D">
-                                                    <rect key="frame" x="214" y="6.5" width="140" height="31"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="140" id="Fip-2N-Vdz"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="53" y="6" width="301" height="31"/>
                                                     <locale key="locale" localeIdentifier="ko_KR"/>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Fac-8I-t8D" firstAttribute="centerY" secondItem="Y6C-jN-BmK" secondAttribute="centerY" id="TfK-fh-opx"/>
-                                                <constraint firstItem="aq8-wB-fpp" firstAttribute="centerY" secondItem="Y6C-jN-BmK" secondAttribute="centerY" id="gED-fv-dr9"/>
+                                                <constraint firstItem="aq8-wB-fpp" firstAttribute="top" secondItem="Y6C-jN-BmK" secondAttribute="topMargin" id="7YF-Km-eOJ"/>
+                                                <constraint firstItem="Fac-8I-t8D" firstAttribute="centerY" secondItem="Y6C-jN-BmK" secondAttribute="centerY" id="GQr-Wm-8mM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="aq8-wB-fpp" secondAttribute="bottom" id="GcN-Sd-kU6"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Fac-8I-t8D" secondAttribute="trailing" id="jfE-7C-1tD"/>
+                                                <constraint firstItem="Fac-8I-t8D" firstAttribute="leading" secondItem="aq8-wB-fpp" secondAttribute="trailing" id="qRa-02-m5d"/>
                                                 <constraint firstItem="aq8-wB-fpp" firstAttribute="leading" secondItem="Y6C-jN-BmK" secondAttribute="leadingMargin" id="zqK-Xw-ggj"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -353,14 +368,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentCell" id="tkM-GN-Wq4" customClass="ContentCell" customModule="Gaeggum" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="93" width="374" height="42.5"/>
+                                        <rect key="frame" x="20" y="92.5" width="374" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tkM-GN-Wq4" id="X18-4u-6QM">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="42.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Wf4-iE-jFt">
-                                                    <rect key="frame" x="20" y="10" width="334" height="22.5"/>
+                                                    <rect key="frame" x="20" y="11" width="334" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -370,9 +385,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Wf4-iE-jFt" firstAttribute="leading" secondItem="X18-4u-6QM" secondAttribute="leadingMargin" id="Ezw-mq-Ud1"/>
-                                                <constraint firstItem="Wf4-iE-jFt" firstAttribute="top" secondItem="X18-4u-6QM" secondAttribute="top" constant="10" id="FUc-rh-ejV"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Wf4-iE-jFt" secondAttribute="trailing" id="GFS-dI-V2I"/>
-                                                <constraint firstAttribute="bottom" secondItem="Wf4-iE-jFt" secondAttribute="bottom" constant="10" id="vWS-UJ-mfQ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Wf4-iE-jFt" secondAttribute="bottom" id="OEy-yB-dlY"/>
+                                                <constraint firstItem="Wf4-iE-jFt" firstAttribute="top" secondItem="X18-4u-6QM" secondAttribute="topMargin" id="ehd-mM-tKd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -380,34 +395,28 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeleteCell" id="4YC-oG-wJt" customClass="DeleteCell" customModule="Gaeggum" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="135.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="137" width="374" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4YC-oG-wJt" id="shm-rE-jfE">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6E-o1-p39">
-                                                    <rect key="frame" x="20" y="5" width="334" height="33.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로젝트 삭제" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ0-Xm-8uw">
+                                                    <rect key="frame" x="20" y="11" width="334" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="프로젝트 삭제">
-                                                        <color key="titleColor" systemColor="systemRedColor"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="deleteButtonTapped:" destination="QTU-XJ-Pue" eventType="touchUpInside" id="EXC-8b-L5t"/>
-                                                        <segue destination="v2S-yQ-Dsl" kind="unwind" unwindAction="saveProject:" id="cVD-AZ-La2"/>
-                                                    </connections>
-                                                </button>
+                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="T6E-o1-p39" secondAttribute="trailing" constant="20" id="2eQ-Vl-n0H"/>
-                                                <constraint firstItem="T6E-o1-p39" firstAttribute="leading" secondItem="shm-rE-jfE" secondAttribute="leading" constant="20" id="HOb-ql-YDc"/>
-                                                <constraint firstItem="T6E-o1-p39" firstAttribute="top" secondItem="shm-rE-jfE" secondAttribute="top" constant="5" id="R4z-KA-ZMQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="T6E-o1-p39" secondAttribute="bottom" constant="5" id="bdz-gm-LV6"/>
+                                                <constraint firstItem="rZ0-Xm-8uw" firstAttribute="top" secondItem="shm-rE-jfE" secondAttribute="topMargin" id="Duz-CI-9wj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rZ0-Xm-8uw" secondAttribute="trailing" id="Sav-Po-UaO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rZ0-Xm-8uw" secondAttribute="bottom" id="dh4-40-Wcc"/>
+                                                <constraint firstItem="rZ0-Xm-8uw" firstAttribute="leading" secondItem="shm-rE-jfE" secondAttribute="leadingMargin" id="w4Q-eM-hTL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="deleteButton" destination="T6E-o1-p39" id="701-eN-uOS"/>
+                                            <segue destination="v2S-yQ-Dsl" kind="unwind" unwindAction="deleteProject:" id="PHz-in-h5Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -472,6 +481,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
