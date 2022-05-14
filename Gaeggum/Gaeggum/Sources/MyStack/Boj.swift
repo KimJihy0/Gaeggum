@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-func toHtml(_ scale: CGFloat, _ handle: String) -> String{
+func bojStatHtml(_ scale: CGFloat, _ handle: String) -> String {
     return """
             <html>
                 <head>
