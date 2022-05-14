@@ -15,14 +15,6 @@ struct Project {
     var content: String
 }
 
-<<<<<<< HEAD
-let projects: [Project] = [
-    Project(startDate: Date(), endDate: Date(), content: "test content"),
-    Project(startDate: Date(), endDate: Date(), content: "s\ne\n\n\n\n\nc\no\nnd test and very very very long text test more more more more more long text"),
-]
-
-class MyStackViewController : UIViewController {
-=======
 class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     
     var bojUserName: String = "hyo0508"
@@ -32,7 +24,6 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         Project(startDate: Date(), endDate: Date(), content: "s\ne\n\n\n\n\nc\no\nnd test and very very very long text test more more more more more long text"),
     ]
     var index: Int? = nil
->>>>>>> 9127234fd2ac5c76cae35f945a1e38bef7c8f5ee
     
     @IBOutlet weak var algorithmBarView: UIView!
     @IBOutlet weak var projectBarView: UIView!
@@ -46,17 +37,10 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         print("My Stack")
 
-<<<<<<< HEAD
-        setGraph(40, 50, 10)
-        setBoj(of: "hyo0508")
-        setGrass(of: "san9w9n")
-        setProjects()
-=======
         updateGraph(40, 50, 10)
         updateBoj(of: bojUserName)
         updateGrass(of: gitHubUserNmae)
         updateProjects(projects)
->>>>>>> 9127234fd2ac5c76cae35f945a1e38bef7c8f5ee
     }
     
     func updateGraph(_ algorithmPercent: Int, _ projectPercent: Int, _ csStudyPercent: Int) {
@@ -95,70 +79,12 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-<<<<<<< HEAD
-    func setProjects() {
-        let _ = projects.map {
-                self.projectStackView.addArrangedSubview(toView($0))
-            }
-    }
-    
-    func toView(_ project: Project) -> UIView {
-        
-        let superView = UIView()
-        
-        let line = UIView()
-        line.backgroundColor = .darkGray
-        superView.addSubview(line)
-        line.anchor(top: superView.topAnchor, left: superView.leftAnchor, bottom: superView.bottomAnchor, paddingLeft: 10, width: 2)
-        
-        let circle = UIView()
-        circle.backgroundColor = .white // junk
-        circle.borderWidth = 1
-        circle.borderColor = .darkGray
-        circle.cornerRadius = 3
-        superView.addSubview(circle)
-        circle.anchor(width: 7, height: 14)
-        circle.centerXAnchor.constraint(equalTo: line.centerXAnchor).isActive = true
-        circle.centerYAnchor.constraint(equalTo: superView.centerYAnchor).isActive = true
-        
-        let termLabel = UILabel()
-        termLabel.text = toTerm(project.startDate, project.endDate)
-        termLabel.textColor = .darkGray
-        termLabel.numberOfLines = 2
-        superView.addSubview(termLabel)
-        termLabel.anchor(top: superView.topAnchor, left: line.rightAnchor, bottom: superView.bottomAnchor, paddingTop: 5, paddingLeft: 15, width: 90)
-        
-        let contentLabel = UILabel()
-        contentLabel.text = project.content
-        print(project.content)
-        contentLabel.numberOfLines = 0
-        superView.addSubview(contentLabel)
-        contentLabel.anchor(top: superView.topAnchor, left: termLabel.rightAnchor, bottom: superView.bottomAnchor, right: superView.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 5)
-        
-        return superView
-    }
-    func toTerm(_ startDate: Date, _ endDate: Date?) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM"
-        
-        var term : String
-        term = formatter.string(from: startDate) + " ~"
-        if let endDate = endDate {
-            term = term + "\n" + formatter.string(from: endDate)
-        }
-        
-        return term
-    }
-    
-    func setGrass(of username: String) {
-=======
     @objc func didTapView(_ sender: UILongPressGestureRecognizer) {
         self.index = sender.view!.tag
         performSegue(withIdentifier: "ModifySegue", sender: nil)
     }
     
     func updateGrass(of username: String) {
->>>>>>> 9127234fd2ac5c76cae35f945a1e38bef7c8f5ee
         let controller = UIHostingController(rootView: GrassView(username: username))
         addChild(controller)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
