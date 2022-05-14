@@ -29,7 +29,7 @@ struct Project {
         line.backgroundColor = .darkGray
         line.anchor(top: projectView.topAnchor, left: projectView.leftAnchor, bottom: projectView.bottomAnchor, paddingLeft: 10, width: 2)
         
-        let circle = UIView()
+        let circle = RoundView()
         projectView.addSubview(circle)
         circle.backgroundColor = .white
         circle.borderWidth = 1

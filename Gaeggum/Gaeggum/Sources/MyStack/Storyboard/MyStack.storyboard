@@ -32,10 +32,10 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bgR-NT-rcO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="230"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCt-Kw-Ibq">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCt-Kw-Ibq" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="0.0" width="20" height="200"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eat-hN-LWO">
+                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eat-hN-LWO" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="60" width="20" height="140"/>
                                                                                 <color key="backgroundColor" name="GreenLevel2"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -78,10 +78,10 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="95t-gz-bHK">
                                                                 <rect key="frame" x="80" y="0.0" width="60" height="230"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDP-ls-Wo3">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDP-ls-Wo3" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="0.0" width="20" height="200"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9k1-F4-yW9">
+                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9k1-F4-yW9" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="60" width="20" height="140"/>
                                                                                 <color key="backgroundColor" name="GreenLevel2"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -124,10 +124,10 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UYc-ib-jo8">
                                                                 <rect key="frame" x="160" y="0.0" width="60" height="230"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9Y-dN-9JT">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9Y-dN-9JT" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="0.0" width="20" height="200"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tz3-2j-ApF">
+                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tz3-2j-ApF" customClass="RoundView" customModule="Gaeggum" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="60" width="20" height="140"/>
                                                                                 <color key="backgroundColor" name="GreenLevel2"/>
                                                                                 <userDefinedRuntimeAttributes>
