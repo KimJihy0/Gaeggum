@@ -20,3 +20,23 @@ func bojStatHtml(_ scale: CGFloat, _ handle: String) -> String {
             </html>
             """
 }
+
+func isValid(handle: String) -> Bool {
+    guard let url = URL(string: "https://solved.ac/api/v3/user/show?handle=\(handle)") else {
+        return false
+    }
+    let html = try? String(contentsOf: url, encoding: .utf8)
+    return html != nil
+}
+
+func isValid(gitUsername: String) -> Bool {
+    guard let url = URL(string: "https://api.github.com/users/\(gitUsername)") else {
+        return false
+    }
+    let html = try? String(contentsOf: url, encoding: .utf8)
+    return html != nil
+}
+
+
+
+

@@ -11,8 +11,8 @@ import WebKit
 
 class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     
-    var bojUserName: String = "hyo0508"
-    var gitHubUserNmae: String = "hyo0508"
+    var bojUsername: String? = nil
+    var gitHubUsername: String? = nil
     var projects: [Project] = [
         Project(startDate: Date(), endDate: Date(), content: "test content"),
         Project(startDate: Date(), endDate: Date(), content: "s\ne\n\n\n\n\nc\no\nnd test and very very very long text test more more more more more long text"),
@@ -31,9 +31,9 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         print("My Stack")
 
         updateGraph(90, 80, 70)
-        updateBoj(of: bojUserName)
-        updateGrass(of: gitHubUserNmae)
-        updateProjects(projects)
+        updateBoj()
+        updateGrass()
+        updateProjects()
     }
     
     func updateGraph(_ algorithmPercent: CGFloat, _ projectPercent: CGFloat, _ csStudyPercent: CGFloat) {
@@ -42,19 +42,24 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         csStudyBarView.anchor(height: csStudyPercent * 2)
     }
     
-    func updateBoj(of handle: String) {
+    func updateBoj() {
+        guard let handle = self.bojUsername else {
+            bojView.isHidden = true
+            return
+        }
         let width = self.view.frame.width - 40
         let scale = width * 0.00136
+        bojView.isHidden = false
         bojView.scrollView.isScrollEnabled = false
         bojView.loadHTMLString(bojStatHtml(scale, handle), baseURL: nil)
     }
     
-    func updateProjects(_ projects: [Project]) {
+    func updateProjects() {
         projectStackView.arrangedSubviews.forEach { (view) in
             projectStackView.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
-        projects.enumerated().forEach { (index, project) in
+        self.projects.enumerated().forEach { (index, project) in
             let projectView = project.view
             projectView.tag = index
             projectView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(didLongPressView(_:))))
@@ -62,7 +67,10 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    func updateGrass(of username: String) {
+    func updateGrass() {
+        guard let username = self.gitHubUsername else {
+            return
+        }
         let controller = UIHostingController(rootView: GrassView(username: username))
         addChild(controller)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
@@ -74,6 +82,53 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         ])
     }
     
+    @IBAction func createBoj(_ sender: Any) {
+        let alert = UIAlertController(title: "solved.ac 계정 추가", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "백준 아이디를 입력하세요"
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Add", style: .default) {_ in
+            self.bojUsername = alert.textFields?[0].text
+            
+            if isValid(handle: self.bojUsername!) {
+                self.updateBoj()
+            } else {
+                self.bojUsername = nil
+                let invalidAlert = UIAlertController(title: "오류", message: "solved.ac에 등록되지 않은 아이디입니다.", preferredStyle: .alert)
+                invalidAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(invalidAlert, animated: false)
+            }
+            
+        })
+        
+        present(alert, animated: false)
+    }
+    
+    @IBAction func createGrass(_ sender: Any) {
+        let alert = UIAlertController(title: "GitHub 계정 추가", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "GitHub 아이디를 입력하세요"
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Add", style: .default) {_ in
+            self.gitHubUsername = alert.textFields?[0].text
+            
+            if isValid(gitUsername: self.gitHubUsername!) {
+                self.updateGrass()
+            } else {
+                self.gitHubUsername = nil
+                let invalidAlert = UIAlertController(title: "오류", message: "GitHub에 등록되지 않은 아이디입니다.", preferredStyle: .alert)
+                invalidAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(invalidAlert, animated: false)
+            }
+            
+        })
+        
+        present(alert, animated: false)
+    }
 }
 
 extension MyStackViewController {
@@ -115,7 +170,7 @@ extension MyStackViewController {
         if let index = src.index {
             projects.remove(at: index)
         }
-        updateProjects(projects)
+        updateProjects()
     }
     
     @IBAction func saveProject(_ unwindSegue: UIStoryboardSegue) {
@@ -125,7 +180,7 @@ extension MyStackViewController {
         } else {
             projects.append(Project(startDate: src.startDate!, endDate: src.endDate!, content: src.content!))
         }
-        updateProjects(projects)
+        updateProjects()
     }
     
 }
