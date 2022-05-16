@@ -170,11 +170,13 @@ extension MyStackViewController {
             guard let project = sourceViewController.project else { return }
             projects.append(project)
             updateProjects()
+            Project.saveProjects(projects)
             
         case "DeleteProjectUnwind":
             guard let index = selectedIndex else { return }
             projects.remove(at: index)
             updateProjects()
+            Project.saveProjects(projects)
             
         default: break
         }
@@ -195,6 +197,7 @@ extension MyStackViewController: ProjectDelegate {
         guard let index = selectedIndex else { return }
         projects[index] = project
         updateProjects()
+        Project.saveProjects(projects)
     }
     
 }

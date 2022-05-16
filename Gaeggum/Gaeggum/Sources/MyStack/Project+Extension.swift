@@ -39,7 +39,6 @@ extension Project: CustomStringConvertible, Comparable {
         let contentLabel = UILabel()
         projectView.addSubview(contentLabel)
         contentLabel.text = self.title
-        contentLabel.font = UIFont.systemFont(ofSize: 20)
         contentLabel.numberOfLines = 0
         contentLabel.anchor(top: projectView.topAnchor, left: termLabel.rightAnchor, bottom: projectView.bottomAnchor, right: projectView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10)
 
@@ -56,7 +55,11 @@ extension Project: CustomStringConvertible, Comparable {
     }
     
     static func == (lhs: Project, rhs: Project) -> Bool {
-        return lhs.startDate == rhs.startDate && lhs.endDate == rhs.endDate
+        return lhs.title == rhs.title &&
+        lhs.startDate == rhs.startDate &&
+        lhs.endDate == rhs.endDate &&
+        lhs.isOnGoing == rhs.isOnGoing &&
+        lhs.content == rhs.content
     }
     
     static func < (lhs: Project, rhs: Project) -> Bool {
