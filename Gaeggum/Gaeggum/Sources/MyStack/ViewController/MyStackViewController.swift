@@ -11,12 +11,11 @@ import WebKit
 
 class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     
-    var bojUsername: String? = nil
-    var gitHubUsername: String? = nil
-    var projects: [Project] = [
-        Project(startDate: Date(), endDate: Date(), content: "test content"),
-        Project(startDate: Date(), endDate: Date(), content: "s\ne\n\n\n\n\nc\no\nnd test and very very very long text test more more more more more long text"),
-    ]
+    var bojUsername: String?
+    var gitHubUsername: String?
+    var projects = [Project]()
+    
+    var selectedIndex: Int?
     
     @IBOutlet weak var algorithmBarView: UIView!
     @IBOutlet weak var projectBarView: UIView!
@@ -29,6 +28,12 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("My Stack")
+        
+        if let savedProjects = Project.loadProjects() {
+            projects = savedProjects
+        } else {
+            projects = Project.loadSampleProjects()
+        }
 
         updateGraph(90, 80, 70)
         updateBoj()
@@ -43,18 +48,19 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     func updateBoj() {
-        guard let handle = self.bojUsername else {
+        if let handle = self.bojUsername {
+            let width = self.view.frame.width - 40
+            let scale = width * 0.00136
+            bojView.isHidden = false
+            bojView.scrollView.isScrollEnabled = false
+            bojView.loadHTMLString(bojStatHtml(scale, handle), baseURL: nil)
+        } else {
             bojView.isHidden = true
-            return
         }
-        let width = self.view.frame.width - 40
-        let scale = width * 0.00136
-        bojView.isHidden = false
-        bojView.scrollView.isScrollEnabled = false
-        bojView.loadHTMLString(bojStatHtml(scale, handle), baseURL: nil)
     }
     
     func updateProjects() {
+        projects.sort(by: <)
         projectStackView.arrangedSubviews.forEach { (view) in
             projectStackView.removeArrangedSubview(view)
             view.removeFromSuperview()
@@ -62,7 +68,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         self.projects.enumerated().forEach { (index, project) in
             let projectView = project.view
             projectView.tag = index
-            projectView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(didLongPressView(_:))))
+            projectView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapView(_:))))
             self.projectStackView.addArrangedSubview(projectView)
         }
     }
@@ -129,57 +135,65 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         
         present(alert, animated: false)
     }
+    
+    @objc func didTapView(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "ShowProjectSegue", sender: sender.view!.tag)
+    }
 }
+
+// MARK: - Navigation
 
 extension MyStackViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let src = segue.source as! MyStackViewController
-        let dest = segue.destination as! ProjectViewController
+        
         switch segue.identifier {
-        case "ModifySegue":
-            let index = sender as! Int
-            dest.isToModify = true
-            dest.startDate = src.projects[index].startDate
-            dest.endDate = src.projects[index].endDate
-            dest.content = src.projects[index].content
-            dest.index = index
-        case "AddSegue":
-            dest.isToModify = false
-            dest.startDate = nil
-            dest.endDate = nil
-            dest.content = nil
-            dest.index = nil
+        case "ShowProjectSegue":
+            let destViewController = segue.destination as! DetailProjectViewController
+            destViewController.projectDelegate = self
+            
+            guard let index = sender as? Int else { return }
+            self.selectedIndex = index
+            destViewController.project = projects[index]
+            
         default: break
         }
-    }
-    
-    @objc func didLongPressView(_ sender: UILongPressGestureRecognizer) {
-        if sender.state == .began {
-            performSegue(withIdentifier: "ModifySegue", sender: sender.view!.tag)
-        }
+        
     }
     
     @IBAction func unwindToMyStack(_ unwindSegue: UIStoryboardSegue) {
-//        let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
-    }
-    
-    @IBAction func deleteProject(_ unwindSegue: UIStoryboardSegue) {
-        let src = unwindSegue.source as! ProjectViewController
-        if let index = src.index {
+        
+        switch unwindSegue.identifier {
+        case "CreateProjectUnwind":
+            let sourceViewController = unwindSegue.source as! AddModifyProjectViewController
+            
+            guard let project = sourceViewController.project else { return }
+            projects.append(project)
+            updateProjects()
+            
+        case "DeleteProjectUnwind":
+            guard let index = selectedIndex else { return }
             projects.remove(at: index)
+            updateProjects()
+            
+        default: break
         }
-        updateProjects()
+        
     }
     
-    @IBAction func saveProject(_ unwindSegue: UIStoryboardSegue) {
-        let src = unwindSegue.source as! ProjectViewController
-        if let index = src.index {
-            projects[index] = Project(startDate: src.startDate!, endDate: src.endDate!, content: src.content!)
-        } else {
-            projects.append(Project(startDate: src.startDate!, endDate: src.endDate!, content: src.content!))
-        }
+}
+
+// MARK: - Delegation
+
+protocol ProjectDelegate {
+    func projectUpdated(project: Project)
+}
+
+extension MyStackViewController: ProjectDelegate {
+    
+    func projectUpdated(project: Project) {
+        guard let index = selectedIndex else { return }
+        projects[index] = project
         updateProjects()
     }
     

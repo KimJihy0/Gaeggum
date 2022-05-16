@@ -17,7 +17,6 @@
 		32C6B3E32811A1CC0090AA9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */; };
 		32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E42811A1CC0090AA9D /* MainViewController.swift */; };
 		32C6B3E82811A1CC0090AA9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B3E62811A1CC0090AA9D /* Main.storyboard */; };
-		32C6B3EA2811A1CD0090AA9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B3E92811A1CD0090AA9D /* Assets.xcassets */; };
 		32C6B3ED2811A1CD0090AA9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B3EB2811A1CD0090AA9D /* LaunchScreen.storyboard */; };
 		32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3FD2811A8610090AA9D /* MainTab.swift */; };
 		32C6B4062811AAF40090AA9D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B4052811AAF40090AA9D /* Home.storyboard */; };
@@ -25,15 +24,17 @@
 		32C6B4162811C8E00090AA9D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B4152811C8E00090AA9D /* UIViewController+Extension.swift */; };
 		32C6B41D2811D5200090AA9D /* FindCareer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B41C2811D5200090AA9D /* FindCareer.storyboard */; };
 		32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */; };
-		F820570D282D1347004FFD5F /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820570C282D1347004FFD5F /* Project.swift */; };
-		F8684EBD2816ABBC00A1F3F3 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F8684EBC2816ABBC00A1F3F3 /* SwiftSoup */; };
+		F8160A6428310E1B008D0B4A /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8160A6328310E1B008D0B4A /* Project.swift */; };
+		F8160A6C2831227B008D0B4A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F8160A6B2831227B008D0B4A /* SwiftSoup */; };
+		F820570D282D1347004FFD5F /* ProjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820570C282D1347004FFD5F /* ProjectExtension.swift */; };
 		F86D54A6282CDB1600D49B63 /* Boj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5499282CDB1600D49B63 /* Boj.swift */; };
 		F86D54A8282CDB1600D49B63 /* Grass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D549D282CDB1600D49B63 /* Grass.swift */; };
 		F86D54AA282CDB1600D49B63 /* RoundView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D549F282CDB1600D49B63 /* RoundView+Extension.swift */; };
-		F86D54AD282CDB1600D49B63 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D54A2282CDB1600D49B63 /* CustomCell.swift */; };
-		F86D54AF282CDB1600D49B63 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D54A5282CDB1600D49B63 /* ProjectViewController.swift */; };
 		F86D54B1282CDBC600D49B63 /* MyStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D54B0282CDBC600D49B63 /* MyStackViewController.swift */; };
 		F86D54B4282CDCE400D49B63 /* MyStack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F86D54B3282CDCE400D49B63 /* MyStack.storyboard */; };
+		F86EB60F2831458A00ED9668 /* AddModifyProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB60E2831458A00ED9668 /* AddModifyProjectViewController.swift */; };
+		F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */; };
+		F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB612283173DC00ED9668 /* UILabel+Extension.swift */; };
 		F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DD472282FAA8C002F78BA /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,14 +59,16 @@
 		32C6B4152811C8E00090AA9D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		32C6B41C2811D5200090AA9D /* FindCareer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindCareer.storyboard; sourceTree = "<group>"; };
 		32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCareerViewController.swift; sourceTree = "<group>"; };
-		F820570C282D1347004FFD5F /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		F8160A6328310E1B008D0B4A /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		F820570C282D1347004FFD5F /* ProjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectExtension.swift; sourceTree = "<group>"; };
 		F86D5499282CDB1600D49B63 /* Boj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boj.swift; sourceTree = "<group>"; };
 		F86D549D282CDB1600D49B63 /* Grass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grass.swift; sourceTree = "<group>"; };
 		F86D549F282CDB1600D49B63 /* RoundView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RoundView+Extension.swift"; sourceTree = "<group>"; };
-		F86D54A2282CDB1600D49B63 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		F86D54A5282CDB1600D49B63 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		F86D54B0282CDBC600D49B63 /* MyStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStackViewController.swift; sourceTree = "<group>"; };
 		F86D54B3282CDCE400D49B63 /* MyStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyStack.storyboard; sourceTree = "<group>"; };
+		F86EB60E2831458A00ED9668 /* AddModifyProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModifyProjectViewController.swift; sourceTree = "<group>"; };
+		F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectViewController.swift; sourceTree = "<group>"; };
+		F86EB612283173DC00ED9668 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F87DD472282FAA8C002F78BA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8684EBD2816ABBC00A1F3F3 /* SwiftSoup in Frameworks */,
+				F8160A6C2831227B008D0B4A /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +90,7 @@
 				3236DF84281FC463006792AC /* UserInfo.swift */,
 				3236DF85281FC463006792AC /* Ability.swift */,
 				3236DF86281FC463006792AC /* Career.swift */,
+				F8160A6328310E1B008D0B4A /* Project.swift */,
 				3236DF87281FC463006792AC /* Education.swift */,
 				3236DF88281FC463006792AC /* Stat.swift */,
 			);
@@ -98,6 +102,7 @@
 			children = (
 				32C6B3DF2811A1CC0090AA9D /* Gaeggum */,
 				32C6B3DE2811A1CC0090AA9D /* Products */,
+				F8160A682831219B008D0B4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,10 +249,17 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		F8160A682831219B008D0B4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F820570B282D131C004FFD5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F820570C282D1347004FFD5F /* Project.swift */,
+				F820570C282D1347004FFD5F /* ProjectExtension.swift */,
 				F86D549D282CDB1600D49B63 /* Grass.swift */,
 			);
 			path = Models;
@@ -258,6 +270,7 @@
 			children = (
 				F86D5499282CDB1600D49B63 /* Boj.swift */,
 				F86D549F282CDB1600D49B63 /* RoundView+Extension.swift */,
+				F86EB612283173DC00ED9668 /* UILabel+Extension.swift */,
 				F87DD472282FAA8C002F78BA /* UIView+Extension.swift */,
 				F820570B282D131C004FFD5F /* Models */,
 				F86D54A4282CDB1600D49B63 /* ViewController */,
@@ -269,9 +282,9 @@
 		F86D54A4282CDB1600D49B63 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F86D54A2282CDB1600D49B63 /* CustomCell.swift */,
 				F86D54B0282CDBC600D49B63 /* MyStackViewController.swift */,
-				F86D54A5282CDB1600D49B63 /* ProjectViewController.swift */,
+				F86EB60E2831458A00ED9668 /* AddModifyProjectViewController.swift */,
+				F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -301,7 +314,7 @@
 			);
 			name = Gaeggum;
 			packageProductDependencies = (
-				F8684EBC2816ABBC00A1F3F3 /* SwiftSoup */,
+				F8160A6B2831227B008D0B4A /* SwiftSoup */,
 			);
 			productName = Gaeggum;
 			productReference = 32C6B3DD2811A1CC0090AA9D /* Gaeggum.app */;
@@ -333,6 +346,7 @@
 			mainGroup = 32C6B3D42811A1CB0090AA9D;
 			packageReferences = (
 				F8684EBB2816ABBC00A1F3F3 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				F8160A65283120B6008D0B4A /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 32C6B3DE2811A1CC0090AA9D /* Products */;
 			projectDirPath = "";
@@ -350,7 +364,6 @@
 			files = (
 				32C6B3ED2811A1CD0090AA9D /* LaunchScreen.storyboard in Resources */,
 				32C6B41D2811D5200090AA9D /* FindCareer.storyboard in Resources */,
-				32C6B3EA2811A1CD0090AA9D /* Assets.xcassets in Resources */,
 				F86D54B4282CDCE400D49B63 /* MyStack.storyboard in Resources */,
 				32C6B3E82811A1CC0090AA9D /* Main.storyboard in Resources */,
 				32C6B4062811AAF40090AA9D /* Home.storyboard in Resources */,
@@ -366,19 +379,21 @@
 			files = (
 				F86D54AA282CDB1600D49B63 /* RoundView+Extension.swift in Sources */,
 				F86D54B1282CDBC600D49B63 /* MyStackViewController.swift in Sources */,
-				F86D54AF282CDB1600D49B63 /* ProjectViewController.swift in Sources */,
+				F86EB60F2831458A00ED9668 /* AddModifyProjectViewController.swift in Sources */,
+				F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */,
+				F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */,
 				32C6B4162811C8E00090AA9D /* UIViewController+Extension.swift in Sources */,
 				F86D54A6282CDB1600D49B63 /* Boj.swift in Sources */,
 				32C6B40E2811C6280090AA9D /* HomeViewController.swift in Sources */,
 				3236DF8B281FC463006792AC /* Career.swift in Sources */,
+				F8160A6428310E1B008D0B4A /* Project.swift in Sources */,
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
 				3236DF8C281FC463006792AC /* Education.swift in Sources */,
 				32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */,
 				32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */,
-				F820570D282D1347004FFD5F /* Project.swift in Sources */,
+				F820570D282D1347004FFD5F /* ProjectExtension.swift in Sources */,
 				3236DF8D281FC463006792AC /* Stat.swift in Sources */,
 				F86D54A8282CDB1600D49B63 /* Grass.swift in Sources */,
-				F86D54AD282CDB1600D49B63 /* CustomCell.swift in Sources */,
 				F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */,
 				3236DF89281FC463006792AC /* UserInfo.swift in Sources */,
 				3236DF8A281FC463006792AC /* Ability.swift in Sources */,
@@ -602,6 +617,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F8160A65283120B6008D0B4A /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		F8684EBB2816ABBC00A1F3F3 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -613,9 +636,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F8684EBC2816ABBC00A1F3F3 /* SwiftSoup */ = {
+		F8160A6B2831227B008D0B4A /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F8684EBB2816ABBC00A1F3F3 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			package = F8160A65283120B6008D0B4A /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */
