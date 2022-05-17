@@ -36,6 +36,7 @@
 		F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */; };
 		F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB612283173DC00ED9668 /* UILabel+Extension.swift */; };
 		F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DD472282FAA8C002F78BA /* UIView+Extension.swift */; };
+		F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B169812832AD7E00339CA4 /* YearMonth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectViewController.swift; sourceTree = "<group>"; };
 		F86EB612283173DC00ED9668 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F87DD472282FAA8C002F78BA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F8B169812832AD7E00339CA4 /* YearMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,8 +261,8 @@
 		F820570B282D131C004FFD5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F820570C282D1347004FFD5F /* Project+Extension.swift */,
 				F86D549D282CDB1600D49B63 /* Grass.swift */,
+				F8B169812832AD7E00339CA4 /* YearMonth.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +274,7 @@
 				F86D549F282CDB1600D49B63 /* RoundView+Extension.swift */,
 				F86EB612283173DC00ED9668 /* UILabel+Extension.swift */,
 				F87DD472282FAA8C002F78BA /* UIView+Extension.swift */,
+				F820570C282D1347004FFD5F /* Project+Extension.swift */,
 				F820570B282D131C004FFD5F /* Models */,
 				F86D54A4282CDB1600D49B63 /* ViewController */,
 				F86D54B2282CDC8200D49B63 /* Storyboard */,
@@ -283,8 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				F86D54B0282CDBC600D49B63 /* MyStackViewController.swift */,
-				F86EB60E2831458A00ED9668 /* AddModifyProjectViewController.swift */,
 				F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */,
+				F86EB60E2831458A00ED9668 /* AddModifyProjectViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				F86D54A6282CDB1600D49B63 /* Boj.swift in Sources */,
 				32C6B40E2811C6280090AA9D /* HomeViewController.swift in Sources */,
 				3236DF8B281FC463006792AC /* Career.swift in Sources */,
+				F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */,
 				F8160A6428310E1B008D0B4A /* Project.swift in Sources */,
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
 				3236DF8C281FC463006792AC /* Education.swift in Sources */,
@@ -546,6 +550,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9U55MT2UV7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaeggum/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -573,6 +578,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9U55MT2UV7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaeggum/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

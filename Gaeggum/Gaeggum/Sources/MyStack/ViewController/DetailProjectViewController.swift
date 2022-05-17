@@ -11,12 +11,12 @@ class DetailProjectViewController: UITableViewController {
 
     var project: Project?
     
+    var projectDelegate: ProjectDelegate?
+    
     let maxContentLine: Int = 8
     
     let contentIndexPath = IndexPath(row: 1, section: 0)
     let fullContentIndexPath = IndexPath(row: 2, section: 0)
-    
-    var projectDelegate: ProjectDelegate?
     
     @IBOutlet weak var projectNavigationItem: UINavigationItem!
     @IBOutlet weak var termLabel: UILabel!
@@ -34,13 +34,7 @@ class DetailProjectViewController: UITableViewController {
         guard let project = project else { return }
         
         projectNavigationItem.title = project.title
-        if (project.isOnGoing) {
-            termLabel.text = "\(project.startDate.year)년 \(project.startDate.month)월부터\n진행 중"
-        } else if project.startDate == project.endDate {
-            termLabel.text = "\(project.startDate.year)년 \(project.startDate.month)월"
-        } else {
-            termLabel.text = "\(project.startDate.year)년 \(project.startDate.month)월부터\n\(project.endDate!.year)년 \(project.endDate!.month)월까지"
-        }
+        termLabel.text = project.detailTerm
         contentLabel.text = project.content
         
         if contentLabel.text == "" {
@@ -70,32 +64,30 @@ class DetailProjectViewController: UITableViewController {
 // MARK: - Navigation
 
 extension DetailProjectViewController {
-    
-    @IBAction func unwindToDetailProject(_ unwindSegue: UIStoryboardSegue) {
-        switch unwindSegue.identifier {
-            
-        case "UpdateProjectUnwind":
-            let sourceViewController = unwindSegue.source as! AddModifyProjectViewController
-            
-            self.project = sourceViewController.project
-            updateProject()
-            
-            if let delgate = projectDelegate, let project = self.project {
-                delgate.projectUpdated(project: project)
-            }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+        case "EditProjectSegue":
+            let destViewController = segue.destination as! AddModifyProjectViewController
+            destViewController.project = self.project
             
         default:
             break
         }
         
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
+    
+    @IBAction func unwindToDetailProject(_ unwindSegue: UIStoryboardSegue) {
+        
+        switch unwindSegue.identifier {
+        case "UpdateProjectUnwind":
+            let sourceViewController = unwindSegue.source as! AddModifyProjectViewController
+            guard let project = sourceViewController.project else { return }
             
-        case "EditProjectSegue":
-            let destViewController = segue.destination as! AddModifyProjectViewController
-            destViewController.project = self.project
+            projectDelegate?.projectUpdated(project: project)
+            self.project = project
+            updateProject()
             
         default:
             break

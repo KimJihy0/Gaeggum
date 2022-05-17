@@ -16,8 +16,8 @@ class AddModifyProjectViewController: UITableViewController {
     }
     var task: Task = .create
 
-    let years = Array(1...10000)
-    let months = Array(repeating: Array(1...12), count: 10000/12).flatMap { $0 } + Array(1...4)
+    let years = Array(0...9999).map { $0 + 1 }
+    let months = Array(0...9999).map { $0 % 12 + 1 }
     
     var selectedStartDate: YearMonth = YearMonth()
     var selectedEndDate: YearMonth = YearMonth()
@@ -73,8 +73,6 @@ class AddModifyProjectViewController: UITableViewController {
             task = .update
             projectNavigationItem.title = "프로젝트 수정"
             
-            projectNavigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveButtonTapped(_:)))
-            
             titleTextField.text = project.title
             selectedStartDate = project.startDate
             selectedEndDate = project.endDate ?? YearMonth()
@@ -83,10 +81,6 @@ class AddModifyProjectViewController: UITableViewController {
         } else {
             task = .create
             projectNavigationItem.title = "새로운 프로젝트"
-            
-            projectNavigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped(_:)))
-            
-            deleteLabel.isHidden = true
         }
         
         updateSaveButton()
@@ -110,9 +104,9 @@ class AddModifyProjectViewController: UITableViewController {
     
     func updateDatePicker() {
         startDatePicker.selectRow(selectedStartDate.year - 1, inComponent: 0, animated: true)
-        startDatePicker.selectRow(selectedStartDate.month + 5003, inComponent: 1, animated: true)
+        startDatePicker.selectRow(selectedStartDate.month - 1 + 5000/12*12, inComponent: 1, animated: true)
         endDatePicker.selectRow(selectedEndDate.year - 1, inComponent: 0, animated: true)
-        endDatePicker.selectRow(selectedEndDate.month + 5003, inComponent: 1, animated: true)
+        endDatePicker.selectRow(selectedEndDate.month - 1 + 5000/12*12, inComponent: 1, animated: true)
     }
     
     func updateTableView() {
@@ -125,8 +119,8 @@ class AddModifyProjectViewController: UITableViewController {
         
         isValidTerm = selectedStartDate <= selectedEndDate || onGoingSwitch.isOn
         
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
     @IBAction func onGoingSwitchValueChanged(_ sender: Any) {
@@ -141,11 +135,11 @@ class AddModifyProjectViewController: UITableViewController {
         titleTextField.resignFirstResponder()
     }
     
-    @objc func saveButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         guard isValidTerm else {
             let alert = UIAlertController(title: "프로젝트를 저장할 수 없음", message: "시작 날짜는 종료 날짜 이전이어야 합니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel))
-            present(alert, animated: false)
+            present(alert, animated: true)
             return
         }
         
@@ -156,7 +150,29 @@ class AddModifyProjectViewController: UITableViewController {
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        
+        switch task {
+        case .update:
+            let title = titleTextField.text ?? ""
+            let startDate = selectedStartDate
+            let endDate = onGoingSwitch.isOn ? nil : selectedEndDate
+            let isOnGoing = onGoingSwitch.isOn
+            let content = contentTextView.text ?? ""
+            let inputProject = Project(title: title, startDate: startDate, endDate: endDate, isOnGoing: isOnGoing, content: content)
+            
+            if inputProject == project! {
+                dismiss(animated: true)
+            } else {
+                let alert = UIAlertController(title: nil, message: "이 변경 사항을 폐기하겠습니까?", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "변경 사항 폐기", style: .destructive) { _ in
+                    self.dismiss(animated: true)
+                })
+                alert.addAction(UIAlertAction(title: "계속 편집하기", style: .cancel))
+                present(alert, animated: true)
+            }
+        case .create:
+            dismiss(animated: true)
+        }
     }
 }
 
@@ -173,7 +189,6 @@ extension AddModifyProjectViewController {
             let endDate = onGoingSwitch.isOn ? nil : selectedEndDate
             let isOnGoing = onGoingSwitch.isOn
             let content = contentTextView.text ?? ""
-            
             self.project = Project(title: title, startDate: startDate, endDate: endDate, isOnGoing: isOnGoing, content: content)
             
         default:
@@ -240,6 +255,14 @@ extension AddModifyProjectViewController {
             tableView.beginUpdates()
             tableView.endUpdates()
             
+        case deleteCellIndexPath:
+            let alert = UIAlertController(title: nil, message: "이 프로젝트를 삭제하겠습니까?", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "프로젝트 삭제", style: .destructive) { _ in
+                self.performSegue(withIdentifier: "DeleteProjectUnwind", sender: self)
+            })
+            alert.addAction(UIAlertAction(title: "취소", style: .cancel))
+            present(alert, animated: true)
+            
         default:
             break
         }
@@ -262,11 +285,18 @@ extension AddModifyProjectViewController: UIPickerViewDataSource, UIPickerViewDe
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         switch component {
-        case 0: return "\(years[row])년"
-        case 1: return "\(months[row])월"
-        default: return ""
+        case 0:
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .right
+            return NSAttributedString(string:"\(years[row])년", attributes: [.paragraphStyle: paragraphStyle])
+        case 1:
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .left
+            return NSAttributedString(string:"\(months[row])월", attributes: [.paragraphStyle: paragraphStyle])
+        default:
+            return nil
         }
     }
     
@@ -289,7 +319,7 @@ extension AddModifyProjectViewController: UIPickerViewDataSource, UIPickerViewDe
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return 100
+        return 110
     }
     
 }

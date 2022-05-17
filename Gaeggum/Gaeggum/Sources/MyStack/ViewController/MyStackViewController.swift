@@ -48,7 +48,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     func updateBoj() {
-        if let handle = self.bojUsername {
+        if let handle = bojUsername {
             let width = self.view.frame.width - 40
             let scale = width * 0.00136
             bojView.isHidden = false
@@ -65,18 +65,16 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
             projectStackView.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
-        self.projects.enumerated().forEach { (index, project) in
+        projects.enumerated().forEach { (index, project) in
             let projectView = project.view
             projectView.tag = index
             projectView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapView(_:))))
-            self.projectStackView.addArrangedSubview(projectView)
+            projectStackView.addArrangedSubview(projectView)
         }
     }
     
     func updateGrass() {
-        guard let username = self.gitHubUsername else {
-            return
-        }
+        guard let username = gitHubUsername else { return }
         let controller = UIHostingController(rootView: GrassView(username: username))
         addChild(controller)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
@@ -106,10 +104,9 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
                 invalidAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(invalidAlert, animated: false)
             }
-            
         })
         
-        present(alert, animated: false)
+        present(alert, animated: true)
     }
     
     @IBAction func createGrass(_ sender: Any) {
@@ -130,10 +127,9 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
                 invalidAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(invalidAlert, animated: false)
             }
-            
         })
         
-        present(alert, animated: false)
+        present(alert, animated: true)
     }
     
     @objc func didTapView(_ sender: UITapGestureRecognizer) {
@@ -153,7 +149,7 @@ extension MyStackViewController {
             destViewController.projectDelegate = self
             
             guard let index = sender as? Int else { return }
-            self.selectedIndex = index
+            selectedIndex = index
             destViewController.project = projects[index]
             
         default: break
@@ -166,8 +162,8 @@ extension MyStackViewController {
         switch unwindSegue.identifier {
         case "CreateProjectUnwind":
             let sourceViewController = unwindSegue.source as! AddModifyProjectViewController
-            
             guard let project = sourceViewController.project else { return }
+            
             projects.append(project)
             updateProjects()
             Project.saveProjects(projects)

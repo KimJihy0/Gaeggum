@@ -13,6 +13,17 @@ extension Project: CustomStringConvertible, Comparable {
     var term: String {
         "\(self.startDate.string) ~" + (self.isOnGoing ? "" : "\n\(self.endDate!.string)")
     }
+    
+    var detailTerm: String {
+        if (self.isOnGoing) {
+            return "\(self.startDate.year)년 \(self.startDate.month)월부터\n진행 중"
+        } else if self.startDate == self.endDate {
+            return  "\(self.startDate.year)년 \(self.startDate.month)월"
+        } else {
+            return "\(self.startDate.year)년 \(self.startDate.month)월부터\n\(self.endDate!.year)년 \(self.endDate!.month)월까지"
+        }
+    }
+    
     var view: UIView {
         let projectView = UIView()
 
@@ -67,24 +78,3 @@ extension Project: CustomStringConvertible, Comparable {
     }
 
 }
-
-
-struct YearMonth: Codable, Comparable {
-    
-    var year: Int
-    var month: Int
-    var string: String{
-        return String(self.year) + "." + String(format: "%2d", self.month) + "."
-    }
-    
-    init(_ year: Int = Calendar.current.component(.year, from: Date()),
-         _ month: Int = Calendar.current.component(.month, from: Date())) {
-        self.year = year
-        self.month = month
-    }
-    
-    static func < (lhs: YearMonth, rhs: YearMonth) -> Bool {
-        return lhs.year < rhs.year || (lhs.year == rhs.year && lhs.month < rhs.month)
-    }
-}
-
