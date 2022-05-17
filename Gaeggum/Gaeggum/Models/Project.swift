@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct Project: Codable{
-    var startDate: Date
-    var endDate: Date?
-    var title: String? // 추후 지효 컨트롤러 수정 후 optional 뺄 것
+struct Project: Codable {
+    var title: String
+    var startDate: YearMonth
+    var endDate: YearMonth?
+    var isOnGoing: Bool
     var content: String
 
     static let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -35,14 +36,10 @@ struct Project: Codable{
     }
 
     static func loadSampleProjects() -> [Project] {
-        let project1 = Project(startDate: Date(), endDate: Date(), content: "소스 개꿈을 만들었다. 참 즐거웠다.")
-        let project2 = Project(startDate: Date(), endDate: Date(), content: "하이루")
-        let project3 = Project(startDate: Date(), endDate: Date(), content: "룰루랄라")
+        let project1 = Project(title: "소프트웨어스튜디오", startDate: YearMonth(2022, 3), isOnGoing: true, content: "소스 개꿈을 만들었다. 참 즐거웠다.")
+        let project2 = Project(title: "코카콜라 맛있다", startDate: YearMonth(), endDate: YearMonth(), isOnGoing: false, content: "하이루")
+        let project3 = Project(title: "프로젝트명3", startDate: YearMonth(1999, 5), isOnGoing: true, content: "룰루랄라")
         return [project1, project2, project3]
     }
-
-
 }
-
-
 
