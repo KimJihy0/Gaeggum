@@ -19,6 +19,15 @@ class FindCareerViewController: UIViewController {
         return isActive && isSearchBarHasText
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination as?ModalViewController
+            if let index = sender as? Int {
+                vc?.career = self.isFiltering ? self.searchFilter[index] : dummyCareer[index]
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
@@ -42,6 +51,7 @@ extension FindCareerViewController : UITableViewDelegate, UITableViewDataSource 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.isFiltering ? self.searchFilter.count : dummyCareer.count
     }
@@ -49,10 +59,15 @@ extension FindCareerViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath)
 
-    // Configure the cell...
-    cell.textLabel?.text = isFiltering ? self.searchFilter[indexPath.row].name : dummyCareer[indexPath.row].name
+        // Configure the cell...
+        cell.textLabel?.text = isFiltering ? self.searchFilter[indexPath.row].name : dummyCareer[indexPath.row].name
 
-    return cell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("--> \(indexPath.row)")
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
     }
 }
 
