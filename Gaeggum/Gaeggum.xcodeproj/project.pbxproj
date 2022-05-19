@@ -33,7 +33,6 @@
 		32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */; };
 		F8160A6428310E1B008D0B4A /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8160A6328310E1B008D0B4A /* Project.swift */; };
 		F8160A6C2831227B008D0B4A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F8160A6B2831227B008D0B4A /* SwiftSoup */; };
-		F820570D282D1347004FFD5F /* Project+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820570C282D1347004FFD5F /* Project+Extension.swift */; };
 		F86D54A6282CDB1600D49B63 /* Boj.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5499282CDB1600D49B63 /* Boj.swift */; };
 		F86D54A8282CDB1600D49B63 /* Grass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D549D282CDB1600D49B63 /* Grass.swift */; };
 		F86D54AA282CDB1600D49B63 /* RoundView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D549F282CDB1600D49B63 /* RoundView+Extension.swift */; };
@@ -43,6 +42,9 @@
 		F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */; };
 		F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB612283173DC00ED9668 /* UILabel+Extension.swift */; };
 		F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DD472282FAA8C002F78BA /* UIView+Extension.swift */; };
+		F8ABE5C32836005B0013B736 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ABE5C22836005B0013B736 /* ModalViewController.swift */; };
+		F8ABE5C8283600710013B736 /* CareerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ABE5C6283600710013B736 /* CareerDetail.xib */; };
+		F8ABE5C9283600710013B736 /* CareerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ABE5C7283600710013B736 /* CareerDetailView.swift */; };
 		F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B169812832AD7E00339CA4 /* YearMonth.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +76,6 @@
 		32C6B41C2811D5200090AA9D /* FindCareer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindCareer.storyboard; sourceTree = "<group>"; };
 		32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCareerViewController.swift; sourceTree = "<group>"; };
 		F8160A6328310E1B008D0B4A /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		F820570C282D1347004FFD5F /* Project+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+Extension.swift"; sourceTree = "<group>"; };
 		F86D5499282CDB1600D49B63 /* Boj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boj.swift; sourceTree = "<group>"; };
 		F86D549D282CDB1600D49B63 /* Grass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grass.swift; sourceTree = "<group>"; };
 		F86D549F282CDB1600D49B63 /* RoundView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RoundView+Extension.swift"; sourceTree = "<group>"; };
@@ -84,6 +85,9 @@
 		F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectViewController.swift; sourceTree = "<group>"; };
 		F86EB612283173DC00ED9668 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F87DD472282FAA8C002F78BA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F8ABE5C22836005B0013B736 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		F8ABE5C6283600710013B736 /* CareerDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CareerDetail.xib; sourceTree = "<group>"; };
+		F8ABE5C7283600710013B736 /* CareerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailView.swift; sourceTree = "<group>"; };
 		F8B169812832AD7E00339CA4 /* YearMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,7 @@
 				3236DF85281FC463006792AC /* Ability.swift */,
 				3236DF86281FC463006792AC /* Career.swift */,
 				F8160A6328310E1B008D0B4A /* Project.swift */,
+				F8B169812832AD7E00339CA4 /* YearMonth.swift */,
 				3236DF87281FC463006792AC /* Education.swift */,
 				3236DF88281FC463006792AC /* Stat.swift */,
 			);
@@ -268,6 +273,7 @@
 		32C6B4132811C8AF0090AA9D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F8ABE5C4283600710013B736 /* Views */,
 				32B27AF728361FB2004E9057 /* Views */,
 				32C6B4142811C8BD0090AA9D /* Extension */,
 			);
@@ -277,6 +283,9 @@
 		32C6B4142811C8BD0090AA9D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F86D549F282CDB1600D49B63 /* RoundView+Extension.swift */,
+				F86EB612283173DC00ED9668 /* UILabel+Extension.swift */,
+				F87DD472282FAA8C002F78BA /* UIView+Extension.swift */,
 				32C6B4152811C8E00090AA9D /* UIViewController+Extension.swift */,
 				3236DF81281FC453006792AC /* PaddingLabel+Extension.swift */,
 			);
@@ -295,6 +304,7 @@
 		32C6B41A2811D4F40090AA9D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F8ABE5C22836005B0013B736 /* ModalViewController.swift */,
 				32B27AFF283620A2004E9057 /* CareerDetailViewController.swift */,
 				32B27AFD2836209D004E9057 /* ModalViewController.swift */,
 				32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */,
@@ -320,8 +330,8 @@
 		F820570B282D131C004FFD5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F86D5499282CDB1600D49B63 /* Boj.swift */,
 				F86D549D282CDB1600D49B63 /* Grass.swift */,
-				F8B169812832AD7E00339CA4 /* YearMonth.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -329,11 +339,6 @@
 		F86D5497282CDB1600D49B63 /* MyStack */ = {
 			isa = PBXGroup;
 			children = (
-				F86D5499282CDB1600D49B63 /* Boj.swift */,
-				F86D549F282CDB1600D49B63 /* RoundView+Extension.swift */,
-				F86EB612283173DC00ED9668 /* UILabel+Extension.swift */,
-				F87DD472282FAA8C002F78BA /* UIView+Extension.swift */,
-				F820570C282D1347004FFD5F /* Project+Extension.swift */,
 				F820570B282D131C004FFD5F /* Models */,
 				F86D54A4282CDB1600D49B63 /* ViewController */,
 				F86D54B2282CDC8200D49B63 /* Storyboard */,
@@ -357,6 +362,23 @@
 				F86D54B3282CDCE400D49B63 /* MyStack.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F8ABE5C4283600710013B736 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F8ABE5C5283600710013B736 /* CareerDetail */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8ABE5C5283600710013B736 /* CareerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F8ABE5C6283600710013B736 /* CareerDetail.xib */,
+				F8ABE5C7283600710013B736 /* CareerDetailView.swift */,
+			);
+			path = CareerDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +450,7 @@
 				F86D54B4282CDCE400D49B63 /* MyStack.storyboard in Resources */,
 				327D9203283672EE00AAE287 /* Question.storyboard in Resources */,
 				32C6B3E82811A1CC0090AA9D /* Main.storyboard in Resources */,
+				F8ABE5C8283600710013B736 /* CareerDetail.xib in Resources */,
 				32B27B10283626BE004E9057 /* LaunchScreen.storyboard in Resources */,
 				32B27B12283627BE004E9057 /* Assets.xcassets in Resources */,
 				32B27AFB28361FB2004E9057 /* CareerDetail.xib in Resources */,
@@ -455,15 +478,16 @@
 				3236DF8B281FC463006792AC /* Career.swift in Sources */,
 				F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */,
 				F8160A6428310E1B008D0B4A /* Project.swift in Sources */,
+				F8ABE5C32836005B0013B736 /* ModalViewController.swift in Sources */,
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
 				3236DF8C281FC463006792AC /* Education.swift in Sources */,
 				32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */,
 				32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */,
-				F820570D282D1347004FFD5F /* Project+Extension.swift in Sources */,
 				3236DF8D281FC463006792AC /* Stat.swift in Sources */,
 				F86D54A8282CDB1600D49B63 /* Grass.swift in Sources */,
 				F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */,
 				3236DF89281FC463006792AC /* UserInfo.swift in Sources */,
+				F8ABE5C9283600710013B736 /* CareerDetailView.swift in Sources */,
 				3236DF8A281FC463006792AC /* Ability.swift in Sources */,
 				32B27AFE2836209D004E9057 /* ModalViewController.swift in Sources */,
 				32B27B00283620A3004E9057 /* CareerDetailViewController.swift in Sources */,
@@ -608,7 +632,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JKUHXBJ87G;
+				DEVELOPMENT_TEAM = 9U55MT2UV7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaeggum/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -621,7 +645,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zeroStone1.Gaeggum;
+				PRODUCT_BUNDLE_IDENTIFIER = zeroStone.Gaeggum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -636,7 +660,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JKUHXBJ87G;
+				DEVELOPMENT_TEAM = 9U55MT2UV7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaeggum/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -649,7 +673,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zeroStone1.Gaeggum;
+				PRODUCT_BUNDLE_IDENTIFIER = zeroStone.Gaeggum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
