@@ -13,6 +13,8 @@
 		3236DF8B281FC463006792AC /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF86281FC463006792AC /* Career.swift */; };
 		3236DF8C281FC463006792AC /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF87281FC463006792AC /* Education.swift */; };
 		3236DF8D281FC463006792AC /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF88281FC463006792AC /* Stat.swift */; };
+		32B27AFB28361FB2004E9057 /* CareerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B27AF928361FB2004E9057 /* CareerDetail.xib */; };
+		32B27AFC28361FB2004E9057 /* CareerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFA28361FB2004E9057 /* CareerDetailView.swift */; };
 		32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */; };
 		32C6B3E32811A1CC0090AA9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */; };
 		32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E42811A1CC0090AA9D /* MainViewController.swift */; };
@@ -46,6 +48,8 @@
 		3236DF86281FC463006792AC /* Career.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
 		3236DF87281FC463006792AC /* Education.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
 		3236DF88281FC463006792AC /* Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
+		32B27AF928361FB2004E9057 /* CareerDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CareerDetail.xib; sourceTree = "<group>"; };
+		32B27AFA28361FB2004E9057 /* CareerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailView.swift; sourceTree = "<group>"; };
 		32C6B3DD2811A1CC0090AA9D /* Gaeggum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaeggum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,23 @@
 				3236DF88281FC463006792AC /* Stat.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		32B27AF728361FB2004E9057 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32B27AF828361FB2004E9057 /* CareerDetail */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32B27AF828361FB2004E9057 /* CareerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				32B27AF928361FB2004E9057 /* CareerDetail.xib */,
+				32B27AFA28361FB2004E9057 /* CareerDetailView.swift */,
+			);
+			path = CareerDetail;
 			sourceTree = "<group>";
 		};
 		32C6B3D42811A1CB0090AA9D = {
@@ -212,6 +233,7 @@
 		32C6B4132811C8AF0090AA9D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				32B27AF728361FB2004E9057 /* Views */,
 				32C6B4142811C8BD0090AA9D /* Extension */,
 			);
 			path = Utils;
@@ -369,6 +391,7 @@
 				32C6B41D2811D5200090AA9D /* FindCareer.storyboard in Resources */,
 				F86D54B4282CDCE400D49B63 /* MyStack.storyboard in Resources */,
 				32C6B3E82811A1CC0090AA9D /* Main.storyboard in Resources */,
+				32B27AFB28361FB2004E9057 /* CareerDetail.xib in Resources */,
 				32C6B4062811AAF40090AA9D /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +406,7 @@
 				F86D54AA282CDB1600D49B63 /* RoundView+Extension.swift in Sources */,
 				F86D54B1282CDBC600D49B63 /* MyStackViewController.swift in Sources */,
 				F86EB60F2831458A00ED9668 /* AddModifyProjectViewController.swift in Sources */,
+				32B27AFC28361FB2004E9057 /* CareerDetailView.swift in Sources */,
 				F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */,
 				F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */,
 				32C6B4162811C8E00090AA9D /* UIViewController+Extension.swift in Sources */,
