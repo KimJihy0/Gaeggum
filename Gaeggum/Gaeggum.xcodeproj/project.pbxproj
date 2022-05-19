@@ -15,8 +15,6 @@
 		3236DF8D281FC463006792AC /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF88281FC463006792AC /* Stat.swift */; };
 		327D9203283672EE00AAE287 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327D9200283672EE00AAE287 /* Question.storyboard */; };
 		327D9204283672EE00AAE287 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D9202283672EE00AAE287 /* QuestionViewController.swift */; };
-		32B27AFB28361FB2004E9057 /* CareerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B27AF928361FB2004E9057 /* CareerDetail.xib */; };
-		32B27AFC28361FB2004E9057 /* CareerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFA28361FB2004E9057 /* CareerDetailView.swift */; };
 		32B27AFE2836209D004E9057 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFD2836209D004E9057 /* ModalViewController.swift */; };
 		32B27B00283620A3004E9057 /* CareerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFF283620A2004E9057 /* CareerDetailViewController.swift */; };
 		32B27B10283626BE004E9057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B27B0F283626BE004E9057 /* LaunchScreen.storyboard */; };
@@ -57,8 +55,6 @@
 		3236DF88281FC463006792AC /* Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		327D9200283672EE00AAE287 /* Question.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
 		327D9202283672EE00AAE287 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		32B27AF928361FB2004E9057 /* CareerDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CareerDetail.xib; sourceTree = "<group>"; };
-		32B27AFA28361FB2004E9057 /* CareerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailView.swift; sourceTree = "<group>"; };
 		32B27AFD2836209D004E9057 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		32B27AFF283620A2004E9057 /* CareerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailViewController.swift; sourceTree = "<group>"; };
 		32B27B0F283626BE004E9057 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,23 +136,6 @@
 				327D9202283672EE00AAE287 /* QuestionViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		32B27AF728361FB2004E9057 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				32B27AF828361FB2004E9057 /* CareerDetail */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		32B27AF828361FB2004E9057 /* CareerDetail */ = {
-			isa = PBXGroup;
-			children = (
-				32B27AF928361FB2004E9057 /* CareerDetail.xib */,
-				32B27AFA28361FB2004E9057 /* CareerDetailView.swift */,
-			);
-			path = CareerDetail;
 			sourceTree = "<group>";
 		};
 		32C6B3D42811A1CB0090AA9D = {
@@ -274,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				F8ABE5C4283600710013B736 /* Views */,
-				32B27AF728361FB2004E9057 /* Views */,
 				32C6B4142811C8BD0090AA9D /* Extension */,
 			);
 			path = Utils;
@@ -453,7 +431,6 @@
 				F8ABE5C8283600710013B736 /* CareerDetail.xib in Resources */,
 				32B27B10283626BE004E9057 /* LaunchScreen.storyboard in Resources */,
 				32B27B12283627BE004E9057 /* Assets.xcassets in Resources */,
-				32B27AFB28361FB2004E9057 /* CareerDetail.xib in Resources */,
 				32C6B4062811AAF40090AA9D /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,7 +446,6 @@
 				F86D54B1282CDBC600D49B63 /* MyStackViewController.swift in Sources */,
 				327D9204283672EE00AAE287 /* QuestionViewController.swift in Sources */,
 				F86EB60F2831458A00ED9668 /* AddModifyProjectViewController.swift in Sources */,
-				32B27AFC28361FB2004E9057 /* CareerDetailView.swift in Sources */,
 				F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */,
 				F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */,
 				32C6B4162811C8E00090AA9D /* UIViewController+Extension.swift in Sources */,
