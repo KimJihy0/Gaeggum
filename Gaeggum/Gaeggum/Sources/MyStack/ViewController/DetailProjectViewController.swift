@@ -37,13 +37,8 @@ class DetailProjectViewController: UITableViewController {
         termLabel.text = project.detailTerm
         contentLabel.text = project.content
         
-        if contentLabel.text == "" {
-            contentTitleLabel.isHidden = true
-        }
-        
-        if (contentLabel.countCurrentLines() <= maxContentLine) {
-            fullContentLabel.isHidden = true
-        }
+        contentTitleLabel.isHidden = contentLabel.text == ""
+        fullContentLabel.isHidden = contentLabel.countCurrentLines() <= maxContentLine
         
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -69,7 +64,8 @@ extension DetailProjectViewController {
         
         switch segue.identifier {
         case "EditProjectSegue":
-            let destViewController = segue.destination as! AddModifyProjectViewController
+            let navigationController = segue.destination as! UINavigationController
+            let destViewController = navigationController.topViewController as! AddModifyProjectViewController
             destViewController.project = self.project
             
         default:

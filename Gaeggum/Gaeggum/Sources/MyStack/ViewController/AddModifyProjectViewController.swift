@@ -11,9 +11,7 @@ class AddModifyProjectViewController: UITableViewController {
     
     var project: Project?
     
-    enum Task {
-    case create, update
-    }
+    enum Task { case create, update }
     var task: Task = .create
 
     let years = Array(0...9999).map { $0 + 1 }

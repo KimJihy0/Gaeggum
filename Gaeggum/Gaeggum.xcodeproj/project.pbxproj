@@ -36,6 +36,9 @@
 		F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */; };
 		F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB612283173DC00ED9668 /* UILabel+Extension.swift */; };
 		F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DD472282FAA8C002F78BA /* UIView+Extension.swift */; };
+		F8ABE5C32836005B0013B736 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ABE5C22836005B0013B736 /* ModalViewController.swift */; };
+		F8ABE5C8283600710013B736 /* CareerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ABE5C6283600710013B736 /* CareerDetail.xib */; };
+		F8ABE5C9283600710013B736 /* CareerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ABE5C7283600710013B736 /* CareerDetailView.swift */; };
 		F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B169812832AD7E00339CA4 /* YearMonth.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,9 @@
 		F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectViewController.swift; sourceTree = "<group>"; };
 		F86EB612283173DC00ED9668 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F87DD472282FAA8C002F78BA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F8ABE5C22836005B0013B736 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		F8ABE5C6283600710013B736 /* CareerDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CareerDetail.xib; sourceTree = "<group>"; };
+		F8ABE5C7283600710013B736 /* CareerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailView.swift; sourceTree = "<group>"; };
 		F8B169812832AD7E00339CA4 /* YearMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +218,7 @@
 		32C6B4132811C8AF0090AA9D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F8ABE5C4283600710013B736 /* Views */,
 				32C6B4142811C8BD0090AA9D /* Extension */,
 			);
 			path = Utils;
@@ -238,6 +245,7 @@
 		32C6B41A2811D4F40090AA9D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F8ABE5C22836005B0013B736 /* ModalViewController.swift */,
 				32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */,
 			);
 			path = ViewController;
@@ -298,6 +306,23 @@
 				F86D54B3282CDCE400D49B63 /* MyStack.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F8ABE5C4283600710013B736 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F8ABE5C5283600710013B736 /* CareerDetail */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8ABE5C5283600710013B736 /* CareerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F8ABE5C6283600710013B736 /* CareerDetail.xib */,
+				F8ABE5C7283600710013B736 /* CareerDetailView.swift */,
+			);
+			path = CareerDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +394,7 @@
 				32C6B41D2811D5200090AA9D /* FindCareer.storyboard in Resources */,
 				F86D54B4282CDCE400D49B63 /* MyStack.storyboard in Resources */,
 				32C6B3E82811A1CC0090AA9D /* Main.storyboard in Resources */,
+				F8ABE5C8283600710013B736 /* CareerDetail.xib in Resources */,
 				32C6B4062811AAF40090AA9D /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +417,7 @@
 				3236DF8B281FC463006792AC /* Career.swift in Sources */,
 				F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */,
 				F8160A6428310E1B008D0B4A /* Project.swift in Sources */,
+				F8ABE5C32836005B0013B736 /* ModalViewController.swift in Sources */,
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
 				3236DF8C281FC463006792AC /* Education.swift in Sources */,
 				32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */,
@@ -400,6 +427,7 @@
 				F86D54A8282CDB1600D49B63 /* Grass.swift in Sources */,
 				F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */,
 				3236DF89281FC463006792AC /* UserInfo.swift in Sources */,
+				F8ABE5C9283600710013B736 /* CareerDetailView.swift in Sources */,
 				3236DF8A281FC463006792AC /* Ability.swift in Sources */,
 				32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */,
 				3236DF82281FC453006792AC /* PaddingLabel+Extension.swift in Sources */,
