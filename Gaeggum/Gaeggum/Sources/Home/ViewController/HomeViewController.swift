@@ -20,7 +20,10 @@ class HomeViewController : UIViewController {
         super.viewDidLoad()
         
         updateCareer(career : getTestUser().career!)
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 2000)
     }
     
     func updateCareer(career: Career){
@@ -31,4 +34,15 @@ class HomeViewController : UIViewController {
         curriculumLabel.text = career.curriculum
         tipLabel.text = career.tips
     }
+    @IBAction func moveVC(_ sender: Any) {
+        print("heyhey")
+        let storyboard = UIStoryboard(name: "Question", bundle: nil)
+        guard let secondViewController = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController else { return }
+                // 화면 전환 애니메이션 설정
+                secondViewController.modalTransitionStyle = .coverVertical
+                // 전환된 화면이 보여지는 방법 설정 (fullScreen)
+                secondViewController.modalPresentationStyle = .fullScreen
+                self.present(secondViewController, animated: true, completion: nil)
+    }
+    
 }

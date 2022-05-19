@@ -13,11 +13,18 @@
 		3236DF8B281FC463006792AC /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF86281FC463006792AC /* Career.swift */; };
 		3236DF8C281FC463006792AC /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF87281FC463006792AC /* Education.swift */; };
 		3236DF8D281FC463006792AC /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF88281FC463006792AC /* Stat.swift */; };
+		327D9203283672EE00AAE287 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327D9200283672EE00AAE287 /* Question.storyboard */; };
+		327D9204283672EE00AAE287 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D9202283672EE00AAE287 /* QuestionViewController.swift */; };
+		32B27AFB28361FB2004E9057 /* CareerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B27AF928361FB2004E9057 /* CareerDetail.xib */; };
+		32B27AFC28361FB2004E9057 /* CareerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFA28361FB2004E9057 /* CareerDetailView.swift */; };
+		32B27AFE2836209D004E9057 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFD2836209D004E9057 /* ModalViewController.swift */; };
+		32B27B00283620A3004E9057 /* CareerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFF283620A2004E9057 /* CareerDetailViewController.swift */; };
+		32B27B10283626BE004E9057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B27B0F283626BE004E9057 /* LaunchScreen.storyboard */; };
+		32B27B12283627BE004E9057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B27B11283627BE004E9057 /* Assets.xcassets */; };
 		32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */; };
 		32C6B3E32811A1CC0090AA9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */; };
 		32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E42811A1CC0090AA9D /* MainViewController.swift */; };
 		32C6B3E82811A1CC0090AA9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B3E62811A1CC0090AA9D /* Main.storyboard */; };
-		32C6B3ED2811A1CD0090AA9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B3EB2811A1CD0090AA9D /* LaunchScreen.storyboard */; };
 		32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3FD2811A8610090AA9D /* MainTab.swift */; };
 		32C6B4062811AAF40090AA9D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B4052811AAF40090AA9D /* Home.storyboard */; };
 		32C6B40E2811C6280090AA9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B40D2811C6280090AA9D /* HomeViewController.swift */; };
@@ -49,13 +56,19 @@
 		3236DF86281FC463006792AC /* Career.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
 		3236DF87281FC463006792AC /* Education.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
 		3236DF88281FC463006792AC /* Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
+		327D9200283672EE00AAE287 /* Question.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
+		327D9202283672EE00AAE287 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		32B27AF928361FB2004E9057 /* CareerDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CareerDetail.xib; sourceTree = "<group>"; };
+		32B27AFA28361FB2004E9057 /* CareerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailView.swift; sourceTree = "<group>"; };
+		32B27AFD2836209D004E9057 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		32B27AFF283620A2004E9057 /* CareerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailViewController.swift; sourceTree = "<group>"; };
+		32B27B0F283626BE004E9057 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32B27B11283627BE004E9057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32C6B3DD2811A1CC0090AA9D /* Gaeggum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaeggum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		32C6B3E42811A1CC0090AA9D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		32C6B3E72811A1CC0090AA9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		32C6B3E92811A1CD0090AA9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		32C6B3EC2811A1CD0090AA9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32C6B3EE2811A1CD0090AA9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32C6B3FD2811A8610090AA9D /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		32C6B4052811AAF40090AA9D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -105,6 +118,48 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		327D91FE283672EE00AAE287 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				327D91FF283672EE00AAE287 /* Storyboard */,
+				327D9201283672EE00AAE287 /* ViewController */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		327D91FF283672EE00AAE287 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				327D9200283672EE00AAE287 /* Question.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		327D9201283672EE00AAE287 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				327D9202283672EE00AAE287 /* QuestionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		32B27AF728361FB2004E9057 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32B27AF828361FB2004E9057 /* CareerDetail */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32B27AF828361FB2004E9057 /* CareerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				32B27AF928361FB2004E9057 /* CareerDetail.xib */,
+				32B27AFA28361FB2004E9057 /* CareerDetailView.swift */,
+			);
+			path = CareerDetail;
+			sourceTree = "<group>";
+		};
 		32C6B3D42811A1CB0090AA9D = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +194,8 @@
 			children = (
 				32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */,
 				32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */,
-				32C6B3EB2811A1CD0090AA9D /* LaunchScreen.storyboard */,
 				32C6B3EE2811A1CD0090AA9D /* Info.plist */,
+				32B27B0F283626BE004E9057 /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -148,6 +203,7 @@
 		32C6B3F52811A1F90090AA9D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				327D91FE283672EE00AAE287 /* Question */,
 				32C6B4192811D4DD0090AA9D /* FindCareer */,
 				F86D5497282CDB1600D49B63 /* MyStack */,
 				32C6B3F82811A5C30090AA9D /* Home */,
@@ -159,7 +215,7 @@
 		32C6B3F62811A20E0090AA9D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				32C6B3E92811A1CD0090AA9D /* Assets.xcassets */,
+				32B27B11283627BE004E9057 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -219,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				F8ABE5C4283600710013B736 /* Views */,
+				32B27AF728361FB2004E9057 /* Views */,
 				32C6B4142811C8BD0090AA9D /* Extension */,
 			);
 			path = Utils;
@@ -246,6 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				F8ABE5C22836005B0013B736 /* ModalViewController.swift */,
+				32B27AFF283620A2004E9057 /* CareerDetailViewController.swift */,
+				32B27AFD2836209D004E9057 /* ModalViewController.swift */,
 				32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */,
 			);
 			path = ViewController;
@@ -390,11 +449,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32C6B3ED2811A1CD0090AA9D /* LaunchScreen.storyboard in Resources */,
 				32C6B41D2811D5200090AA9D /* FindCareer.storyboard in Resources */,
 				F86D54B4282CDCE400D49B63 /* MyStack.storyboard in Resources */,
+				327D9203283672EE00AAE287 /* Question.storyboard in Resources */,
 				32C6B3E82811A1CC0090AA9D /* Main.storyboard in Resources */,
 				F8ABE5C8283600710013B736 /* CareerDetail.xib in Resources */,
+				32B27B10283626BE004E9057 /* LaunchScreen.storyboard in Resources */,
+				32B27B12283627BE004E9057 /* Assets.xcassets in Resources */,
+				32B27AFB28361FB2004E9057 /* CareerDetail.xib in Resources */,
 				32C6B4062811AAF40090AA9D /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +470,9 @@
 			files = (
 				F86D54AA282CDB1600D49B63 /* RoundView+Extension.swift in Sources */,
 				F86D54B1282CDBC600D49B63 /* MyStackViewController.swift in Sources */,
+				327D9204283672EE00AAE287 /* QuestionViewController.swift in Sources */,
 				F86EB60F2831458A00ED9668 /* AddModifyProjectViewController.swift in Sources */,
+				32B27AFC28361FB2004E9057 /* CareerDetailView.swift in Sources */,
 				F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */,
 				F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */,
 				32C6B4162811C8E00090AA9D /* UIViewController+Extension.swift in Sources */,
@@ -429,6 +493,8 @@
 				3236DF89281FC463006792AC /* UserInfo.swift in Sources */,
 				F8ABE5C9283600710013B736 /* CareerDetailView.swift in Sources */,
 				3236DF8A281FC463006792AC /* Ability.swift in Sources */,
+				32B27AFE2836209D004E9057 /* ModalViewController.swift in Sources */,
+				32B27B00283620A3004E9057 /* CareerDetailViewController.swift in Sources */,
 				32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */,
 				3236DF82281FC453006792AC /* PaddingLabel+Extension.swift in Sources */,
 				32C6B3E32811A1CC0090AA9D /* SceneDelegate.swift in Sources */,
@@ -444,14 +510,6 @@
 				32C6B3E72811A1CC0090AA9D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		32C6B3EB2811A1CD0090AA9D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				32C6B3EC2811A1CD0090AA9D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -578,7 +636,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9U55MT2UV7;
+				DEVELOPMENT_TEAM = JKUHXBJ87G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaeggum/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -591,7 +649,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zeroStone.Gaeggum;
+				PRODUCT_BUNDLE_IDENTIFIER = zeroStone1.Gaeggum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -606,7 +664,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9U55MT2UV7;
+				DEVELOPMENT_TEAM = JKUHXBJ87G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaeggum/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -619,7 +677,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zeroStone.Gaeggum;
+				PRODUCT_BUNDLE_IDENTIFIER = zeroStone1.Gaeggum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
