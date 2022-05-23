@@ -13,15 +13,15 @@ class QuestionViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    
-    override func viewDidLayoutSubviews() {
         let starterView = QuestionStarterView()
         starterView.parentViewController = self
         
         self.view.addSubview(starterView)
-
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
