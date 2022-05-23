@@ -11,7 +11,6 @@
 		3236DF89281FC463006792AC /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF84281FC463006792AC /* UserInfo.swift */; };
 		3236DF8A281FC463006792AC /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF85281FC463006792AC /* Ability.swift */; };
 		3236DF8B281FC463006792AC /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF86281FC463006792AC /* Career.swift */; };
-		3236DF8C281FC463006792AC /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF87281FC463006792AC /* Education.swift */; };
 		3236DF8D281FC463006792AC /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF88281FC463006792AC /* Stat.swift */; };
 		327D9203283672EE00AAE287 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327D9200283672EE00AAE287 /* Question.storyboard */; };
 		327D9204283672EE00AAE287 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D9202283672EE00AAE287 /* QuestionViewController.swift */; };
@@ -25,6 +24,7 @@
 		32B27B12283627BE004E9057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B27B11283627BE004E9057 /* Assets.xcassets */; };
 		32BECDC9283B49760062C65E /* QuestionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BECDC8283B49760062C65E /* QuestionDetail.storyboard */; };
 		32BECDCB283B49930062C65E /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BECDCA283B49930062C65E /* QuestionDetailViewController.swift */; };
+		32BECDCD283BF8A60062C65E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BECDCC283BF8A60062C65E /* Question.swift */; };
 		32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */; };
 		32C6B3E32811A1CC0090AA9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */; };
 		32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E42811A1CC0090AA9D /* MainViewController.swift */; };
@@ -55,7 +55,6 @@
 		3236DF84281FC463006792AC /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		3236DF85281FC463006792AC /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		3236DF86281FC463006792AC /* Career.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
-		3236DF87281FC463006792AC /* Education.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
 		3236DF88281FC463006792AC /* Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		327D9200283672EE00AAE287 /* Question.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
 		327D9202283672EE00AAE287 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		32B27B11283627BE004E9057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32BECDC8283B49760062C65E /* QuestionDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionDetail.storyboard; sourceTree = "<group>"; };
 		32BECDCA283B49930062C65E /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
+		32BECDCC283BF8A60062C65E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		32C6B3DD2811A1CC0090AA9D /* Gaeggum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaeggum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32C6B3E22811A1CC0090AA9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,8 +115,8 @@
 				3236DF86281FC463006792AC /* Career.swift */,
 				F8160A6328310E1B008D0B4A /* Project.swift */,
 				F8B169812832AD7E00339CA4 /* YearMonth.swift */,
-				3236DF87281FC463006792AC /* Education.swift */,
 				3236DF88281FC463006792AC /* Stat.swift */,
+				32BECDCC283BF8A60062C65E /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,11 +453,11 @@
 				32C6B40E2811C6280090AA9D /* HomeViewController.swift in Sources */,
 				3236DF8B281FC463006792AC /* Career.swift in Sources */,
 				F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */,
+				32BECDCD283BF8A60062C65E /* Question.swift in Sources */,
 				F8160A6428310E1B008D0B4A /* Project.swift in Sources */,
 				F8ABE5C32836005B0013B736 /* ModalViewController.swift in Sources */,
 				32BECDCB283B49930062C65E /* QuestionDetailViewController.swift in Sources */,
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
-				3236DF8C281FC463006792AC /* Education.swift in Sources */,
 				32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */,
 				32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */,
 				3236DF8D281FC463006792AC /* Stat.swift in Sources */,
