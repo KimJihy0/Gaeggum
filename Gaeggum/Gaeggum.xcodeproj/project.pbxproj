@@ -18,7 +18,6 @@
 		32B27AFB28361FB2004E9057 /* CareerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B27AF928361FB2004E9057 /* CareerDetail.xib */; };
 		32B27AFC28361FB2004E9057 /* CareerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFA28361FB2004E9057 /* CareerDetailView.swift */; };
 		32B27AFE2836209D004E9057 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFD2836209D004E9057 /* ModalViewController.swift */; };
-		32B27B00283620A3004E9057 /* CareerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B27AFF283620A2004E9057 /* CareerDetailViewController.swift */; };
 		32B27B10283626BE004E9057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B27B0F283626BE004E9057 /* LaunchScreen.storyboard */; };
 		32B27B12283627BE004E9057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B27B11283627BE004E9057 /* Assets.xcassets */; };
 		32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B3E02811A1CC0090AA9D /* AppDelegate.swift */; };
@@ -42,7 +41,6 @@
 		F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */; };
 		F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB612283173DC00ED9668 /* UILabel+Extension.swift */; };
 		F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DD472282FAA8C002F78BA /* UIView+Extension.swift */; };
-		F8ABE5C32836005B0013B736 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ABE5C22836005B0013B736 /* ModalViewController.swift */; };
 		F8ABE5C8283600710013B736 /* CareerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ABE5C6283600710013B736 /* CareerDetail.xib */; };
 		F8ABE5C9283600710013B736 /* CareerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ABE5C7283600710013B736 /* CareerDetailView.swift */; };
 		F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B169812832AD7E00339CA4 /* YearMonth.swift */; };
@@ -60,7 +58,6 @@
 		32B27AF928361FB2004E9057 /* CareerDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CareerDetail.xib; sourceTree = "<group>"; };
 		32B27AFA28361FB2004E9057 /* CareerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailView.swift; sourceTree = "<group>"; };
 		32B27AFD2836209D004E9057 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		32B27AFF283620A2004E9057 /* CareerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailViewController.swift; sourceTree = "<group>"; };
 		32B27B0F283626BE004E9057 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32B27B11283627BE004E9057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32C6B3DD2811A1CC0090AA9D /* Gaeggum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaeggum.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +82,6 @@
 		F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectViewController.swift; sourceTree = "<group>"; };
 		F86EB612283173DC00ED9668 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F87DD472282FAA8C002F78BA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		F8ABE5C22836005B0013B736 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		F8ABE5C6283600710013B736 /* CareerDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CareerDetail.xib; sourceTree = "<group>"; };
 		F8ABE5C7283600710013B736 /* CareerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailView.swift; sourceTree = "<group>"; };
 		F8B169812832AD7E00339CA4 /* YearMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonth.swift; sourceTree = "<group>"; };
@@ -304,8 +300,6 @@
 		32C6B41A2811D4F40090AA9D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F8ABE5C22836005B0013B736 /* ModalViewController.swift */,
-				32B27AFF283620A2004E9057 /* CareerDetailViewController.swift */,
 				32B27AFD2836209D004E9057 /* ModalViewController.swift */,
 				32C6B41E2811D5350090AA9D /* FindCareerViewController.swift */,
 			);
@@ -478,7 +472,6 @@
 				3236DF8B281FC463006792AC /* Career.swift in Sources */,
 				F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */,
 				F8160A6428310E1B008D0B4A /* Project.swift in Sources */,
-				F8ABE5C32836005B0013B736 /* ModalViewController.swift in Sources */,
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
 				3236DF8C281FC463006792AC /* Education.swift in Sources */,
 				32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */,
@@ -490,7 +483,6 @@
 				F8ABE5C9283600710013B736 /* CareerDetailView.swift in Sources */,
 				3236DF8A281FC463006792AC /* Ability.swift in Sources */,
 				32B27AFE2836209D004E9057 /* ModalViewController.swift in Sources */,
-				32B27B00283620A3004E9057 /* CareerDetailViewController.swift in Sources */,
 				32C6B3E12811A1CC0090AA9D /* AppDelegate.swift in Sources */,
 				3236DF82281FC453006792AC /* PaddingLabel+Extension.swift in Sources */,
 				32C6B3E32811A1CC0090AA9D /* SceneDelegate.swift in Sources */,
@@ -632,7 +624,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9U55MT2UV7;
+				DEVELOPMENT_TEAM = 386RS2FZFN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaeggum/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -645,7 +637,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zeroStone.Gaeggum;
+				PRODUCT_BUNDLE_IDENTIFIER = sanghyunn.Gaeggum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -660,7 +652,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9U55MT2UV7;
+				DEVELOPMENT_TEAM = 386RS2FZFN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gaeggum/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -673,7 +665,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zeroStone.Gaeggum;
+				PRODUCT_BUNDLE_IDENTIFIER = sanghyunn.Gaeggum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
