@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="4i7-tC-kSH">
-                                        <rect key="frame" x="0.0" y="157" width="414" height="874.5"/>
+                                        <rect key="frame" x="0.0" y="157" width="414" height="499.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Wk-UQ-fib">
                                                 <rect key="frame" x="141.5" y="0.0" width="131" height="128"/>
@@ -61,13 +61,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Yzz-u0-W9B">
-                                                <rect key="frame" x="20.5" y="254" width="373" height="386.5"/>
+                                                <rect key="frame" x="20.5" y="254" width="373" height="181.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lyr-On-tqG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="117.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="52.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="어떤 일을 하는데?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBO-po-Xut" customClass="PaddingLabel" customModule="Gaeggum" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="171" height="54"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="141" height="24"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgp-5n-Cxv" customClass="PaddingLabel" customModule="Gaeggum" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="62" width="71.5" height="55.5"/>
+                                                                <rect key="frame" x="0.0" y="32" width="41.5" height="20.5"/>
                                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="10" bottom="8" trailing="8"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -114,10 +114,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H0b-Nc-DhS">
-                                                        <rect key="frame" x="0.0" y="129.5" width="373" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="64.5" width="373" height="52.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떻게 준비해야 할까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKE-ps-huu" customClass="PaddingLabel" customModule="Gaeggum" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="205.5" height="54"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="24"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -134,7 +134,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtW-qw-HH6" customClass="PaddingLabel" customModule="Gaeggum" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="62" width="71.5" height="60.5"/>
+                                                                <rect key="frame" x="0.0" y="32" width="41.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -157,10 +157,10 @@
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u9R-bz-QnC">
-                                                        <rect key="frame" x="0.0" y="264" width="373" height="122.5"/>
+                                                        <rect key="frame" x="0.0" y="129" width="373" height="52.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBk-RG-Y5w" customClass="PaddingLabel" customModule="Gaeggum" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="54"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="37.5" height="24"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -177,7 +177,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-sl-oFj" customClass="PaddingLabel" customModule="Gaeggum" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="62" width="71.5" height="60.5"/>
+                                                                <rect key="frame" x="0.0" y="32" width="41.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -202,7 +202,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCN-5I-jZw">
-                                                <rect key="frame" x="0.0" y="674.5" width="414" height="200"/>
+                                                <rect key="frame" x="0.0" y="469.5" width="414" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BL-PK-tmB">
                                                         <rect key="frame" x="303.5" y="7" width="100.5" height="32"/>
@@ -217,7 +217,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="8BL-PK-tmB" secondAttribute="trailing" constant="10" id="EeS-xS-wom"/>
-                                                    <constraint firstAttribute="height" constant="200" id="JRI-u5-YAM"/>
+                                                    <constraint firstAttribute="height" constant="30" id="JRI-u5-YAM"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -332,22 +332,22 @@
     </scenes>
     <designables>
         <designable name="EtW-qw-HH6">
-            <size key="intrinsicContentSize" width="71.5" height="60.5"/>
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
         <designable name="NKE-ps-huu">
-            <size key="intrinsicContentSize" width="205.5" height="54"/>
+            <size key="intrinsicContentSize" width="175.5" height="24"/>
         </designable>
         <designable name="ZBO-po-Xut">
-            <size key="intrinsicContentSize" width="171" height="54"/>
+            <size key="intrinsicContentSize" width="141" height="24"/>
         </designable>
         <designable name="dHw-sl-oFj">
-            <size key="intrinsicContentSize" width="71.5" height="60.5"/>
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
         <designable name="kgp-5n-Cxv">
-            <size key="intrinsicContentSize" width="71.5" height="55.5"/>
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
         <designable name="xBk-RG-Y5w">
-            <size key="intrinsicContentSize" width="67.5" height="54"/>
+            <size key="intrinsicContentSize" width="37.5" height="24"/>
         </designable>
     </designables>
     <resources>
