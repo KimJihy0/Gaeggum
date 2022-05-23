@@ -38,8 +38,8 @@ class FindCareerViewController: UIViewController {
         
         searchController.searchBar.placeholder = "직업 찾기"
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.automaticallyShowsCancelButton = false
-        
+        searchController.automaticallyShowsCancelButton = true
+        searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
         searchController.searchResultsUpdater = self
 
         self.navigationItem.searchController = searchController
