@@ -127,6 +127,20 @@
 			path = Question;
 			sourceTree = "<group>";
 		};
+		327D91FF283672EE00AAE287 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				327D9200283672EE00AAE287 /* Question.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		327D9201283672EE00AAE287 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				327D9202283672EE00AAE287 /* QuestionViewController.swift */,
+			);
+			path = ViewController;
 		32B27AF728361FB2004E9057 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +285,7 @@
 		32C6B4132811C8AF0090AA9D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F8ABE5C4283600710013B736 /* Views */,
 				32B27AF728361FB2004E9057 /* Views */,
 				32C6B4142811C8BD0090AA9D /* Extension */,
 			);
@@ -449,7 +464,6 @@
 				327D9209283ACB4A00AAE287 /* QuestionStarterView.swift in Sources */,
 				327D9204283672EE00AAE287 /* QuestionViewController.swift in Sources */,
 				F86EB60F2831458A00ED9668 /* AddModifyProjectViewController.swift in Sources */,
-				32B27AFC28361FB2004E9057 /* CareerDetailView.swift in Sources */,
 				F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */,
 				F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */,
 				32C6B4162811C8E00090AA9D /* UIViewController+Extension.swift in Sources */,
