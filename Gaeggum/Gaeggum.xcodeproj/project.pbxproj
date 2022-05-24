@@ -45,9 +45,6 @@
 		F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */; };
 		F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB612283173DC00ED9668 /* UILabel+Extension.swift */; };
 		F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DD472282FAA8C002F78BA /* UIView+Extension.swift */; };
-		F8ABE5C32836005B0013B736 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ABE5C22836005B0013B736 /* ModalViewController.swift */; };
-		F8ABE5C8283600710013B736 /* CareerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8ABE5C6283600710013B736 /* CareerDetail.xib */; };
-		F8ABE5C9283600710013B736 /* CareerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ABE5C7283600710013B736 /* CareerDetailView.swift */; };
 		F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B169812832AD7E00339CA4 /* YearMonth.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +89,6 @@
 		F86EB612283173DC00ED9668 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F87DD472282FAA8C002F78BA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		F8ABE5C22836005B0013B736 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		F8ABE5C6283600710013B736 /* CareerDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CareerDetail.xib; sourceTree = "<group>"; };
-		F8ABE5C7283600710013B736 /* CareerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerDetailView.swift; sourceTree = "<group>"; };
 		F8B169812832AD7E00339CA4 /* YearMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,12 +145,21 @@
 			path = CareerDetail;
 			sourceTree = "<group>";
 		};
+		32BECDD1283CE5C10062C65E /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F8ABE5C22836005B0013B736 /* ModalViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		32C6B3D42811A1CB0090AA9D = {
 			isa = PBXGroup;
 			children = (
 				32C6B3DF2811A1CC0090AA9D /* Gaeggum */,
 				32C6B3DE2811A1CC0090AA9D /* Products */,
 				F8160A682831219B008D0B4A /* Frameworks */,
+				32BECDD1283CE5C10062C65E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -455,7 +459,6 @@
 				F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */,
 				32BECDCD283BF8A60062C65E /* TestPaper.swift in Sources */,
 				F8160A6428310E1B008D0B4A /* Project.swift in Sources */,
-				F8ABE5C32836005B0013B736 /* ModalViewController.swift in Sources */,
 				32BECDCB283B49930062C65E /* QuestionDetailViewController.swift in Sources */,
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
 				32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */,
