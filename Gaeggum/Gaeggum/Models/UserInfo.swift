@@ -8,13 +8,11 @@
 import Foundation
 
 struct UserInfo {
-    let id : Int
-    let education : Education
     var career : Career?
     var stat : Stat
 }
 
 func getTestUser()->UserInfo{
-    return UserInfo(id: 0, education: .highSchoolStudent, career: testCareer, stat: Stat(data: 2, system: 3, userFriendly: 0, math: 5, collaboration: 2))
+    return UserInfo(career: testCareer, stat: Stat(data: 2, system: 3, userFriendly: 0, math: 5, collaboration: 2))
 
 }
