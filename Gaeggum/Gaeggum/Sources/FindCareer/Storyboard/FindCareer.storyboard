@@ -65,31 +65,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1G-vS-kqb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="r0J-Du-ilB">
-                                        <barButtonItem key="leftBarButtonItem" title="X" id="QwR-cZ-R7J">
-                                            <connections>
-                                                <action selector="close:" destination="UbR-fY-ZEN" id="g47-FC-muj"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-rL-oZ1" customClass="CareerDetailView" customModule="Gaeggum" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="414" height="744"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rp2-FN-IAo" customClass="CareerDetailView" customModule="Gaeggum" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yMm-52-cSY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rp2-FN-IAo" firstAttribute="width" secondItem="yMm-52-cSY" secondAttribute="width" id="Gec-L2-wfS"/>
+                            <constraint firstItem="rp2-FN-IAo" firstAttribute="trailing" secondItem="yMm-52-cSY" secondAttribute="trailing" id="JPI-74-uCB"/>
+                            <constraint firstItem="rp2-FN-IAo" firstAttribute="leading" secondItem="yMm-52-cSY" secondAttribute="leading" id="P6A-IY-Fh7"/>
+                            <constraint firstItem="rp2-FN-IAo" firstAttribute="centerX" secondItem="yMm-52-cSY" secondAttribute="centerX" id="fBK-GM-5hf"/>
+                            <constraint firstItem="rp2-FN-IAo" firstAttribute="top" secondItem="Uj9-v0-qUv" secondAttribute="top" id="gCK-Vm-yN9"/>
+                            <constraint firstItem="yMm-52-cSY" firstAttribute="bottom" secondItem="rp2-FN-IAo" secondAttribute="bottom" id="ye2-WK-36Q"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="careerDetailView" destination="7Yc-rL-oZ1" id="tu4-kc-dMG"/>
-                        <outlet property="navBar" destination="R1G-vS-kqb" id="8Fz-bd-69M"/>
+                        <outlet property="careerDetailView" destination="rp2-FN-IAo" id="Lkq-Rh-QvS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFr-aR-HkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

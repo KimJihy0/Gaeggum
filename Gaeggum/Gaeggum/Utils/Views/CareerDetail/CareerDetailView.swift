@@ -13,7 +13,8 @@ class CareerDetailView: UIView {
     @IBOutlet weak var jobImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var taskLabel: UILabel!
+
+    @IBOutlet weak var taskLabel: UILabel! // new
     @IBOutlet weak var curriculumLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
 
@@ -44,9 +45,17 @@ class CareerDetailView: UIView {
     func updateCareer(career: Career){
         jobNameLabel.text = career.name
         jobImageView.image = UIImage(named: "AIEngineer")
+        
+        taskLabel.numberOfLines = 0
+        taskLabel.lineBreakMode = .byCharWrapping
         taskLabel.text = career.task
         
+        curriculumLabel.numberOfLines = 0
+        curriculumLabel.lineBreakMode = .byCharWrapping
         curriculumLabel.text = career.curriculum
+
+        tipLabel.numberOfLines = 0
+        tipLabel.lineBreakMode = .byCharWrapping
         tipLabel.text = career.tips
     }
 }
