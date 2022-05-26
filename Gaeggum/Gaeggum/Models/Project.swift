@@ -66,7 +66,7 @@ extension Project: CustomStringConvertible, Comparable {
         let line = UIView()
         projectView.addSubview(line)
         line.backgroundColor = .darkGray
-        line.anchor(top: projectView.topAnchor, left: projectView.leftAnchor, bottom: projectView.bottomAnchor, paddingLeft: 10, width: 2)
+        line.anchor(top: projectView.topAnchor, left: projectView.leftAnchor, bottom: projectView.bottomAnchor, paddingLeft: 20, width: 2)
 
         let circle = RoundView()
         projectView.addSubview(circle)
