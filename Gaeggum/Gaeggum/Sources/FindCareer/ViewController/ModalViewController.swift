@@ -9,10 +9,12 @@ import UIKit
 
 class ModalViewController: UIViewController {
     @IBOutlet weak var careerDetailView: CareerDetailView!
+    /*
     @IBOutlet weak var navBar: UINavigationBar!
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    */
     
     var career: Career?
     
@@ -23,7 +25,7 @@ class ModalViewController: UIViewController {
     
     func updateUI() {
         if let career = career {
-            navBar.topItem?.title = career.name
+            // navBar.topItem?.title = career.name
             careerDetailView.updateCareer(career: career)
         }
     }
