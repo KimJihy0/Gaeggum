@@ -9,6 +9,8 @@ import UIKit
 
 class QuestionDetailViewController: UIViewController{
     var testPaperIndex = 0
+    var userStat : Stat = Stat(data: 0, system: 0, userFriendly: 0, math: 0, collaboration: 0)
+    
     var answerStats : [Stat] = []
     
     
@@ -53,6 +55,7 @@ class QuestionDetailViewController: UIViewController{
                 button.backgroundColor = .gray
                 button.setTitle(answerText, for: .normal)
                 button.setTitleColor(.white, for: .normal)
+                button.addTarget(self, action: #selector(answerTapped), for: .touchUpInside)
                 return button
             }()
             
@@ -63,5 +66,30 @@ class QuestionDetailViewController: UIViewController{
         return stackView
         
     }
+    
+    @IBAction func answerTapped(_ sender: Any) {
+        let nextTestPaperIndex = self.testPaperIndex + 1
+        var nextUserStat : Stat = Stat()
+        nextUserStat.addStat(answerStat: self.userStat)
+        
+        if nextTestPaperIndex >= dummyTestPaper.count {
+            
+        } else {
+            let storyboard = UIStoryboard(name: "QuestionDetail", bundle: nil)
+            guard let nextQuestionDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuestionDetailVC") as? QuestionDetailViewController else { return }
+            
+            nextQuestionDetailViewController.testPaperIndex = nextTestPaperIndex
+            nextQuestionDetailViewController.userStat = nextUserStat
+            
+            // 화면 전환 애니메이션 설정
+            nextQuestionDetailViewController.modalTransitionStyle = .coverVertical
+            // 전환된 화면이 보여지는 방법 설정 (fullScreen)
+    //                secondViewController.modalPresentationStyle = .fullScreen
+            
+            self.navigationController?.pushViewController(nextQuestionDetailViewController, animated: true)
+            
+        }
+    }
+        
 }
 
