@@ -13,7 +13,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     
     var bojUsername: String?
     var gitHubUsername: String?
-    var projects = [Project]()
+    var projects: [Project] = []
     
     var selectedIndex: Int?
     
