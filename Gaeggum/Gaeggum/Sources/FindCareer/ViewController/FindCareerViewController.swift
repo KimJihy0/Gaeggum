@@ -68,6 +68,7 @@ extension FindCareerViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("--> \(indexPath.row)")
         performSegue(withIdentifier: "showDetail", sender: indexPath.row)
+        tableView.deselectRow(at: indexPath , animated: true)
     }
 }
 
