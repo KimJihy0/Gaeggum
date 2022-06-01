@@ -11,7 +11,7 @@ class QuestionDetailViewController: UIViewController{
     var nowTestPaperIndex = 0
     lazy var nowTestPaper : TestPaper = {return dummyTestPaper[nowTestPaperIndex]}()
     
-    var userStat : Stat = Stat(data: 0, system: 0, userFriendly: 0, math: 0, collaboration: 0)
+    var nowUserStat : Stat = Stat(data: 0, system: 0, userFriendly: 0, math: 0, collaboration: 0)
     
     var answerStats : [Stat] = []
     
@@ -19,7 +19,8 @@ class QuestionDetailViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(nowTestPaperIndex, nowTestPaper, userStat, separator: "\n")
+//        print(nowTestPaperIndex, nowTestPaper, nowUserStat, separator: "\n") // property 전달 test
+        
         let testPaperStackView = makeStackView()
         self.view.addSubview(testPaperStackView)
         
@@ -54,7 +55,7 @@ class QuestionDetailViewController: UIViewController{
         for (answerIndex, (answerText,stat)) in nowTestPaper.answer.enumerated() {
             lazy var answerButton: UIButton = {
                 let button = UIButton(type: .system)
-                button.tag = answerIndex // put button id
+                button.tag = answerIndex // put button id to recognize question index
                 button.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
                 button.backgroundColor = .gray
                 button.setTitle(answerText, for: .normal)
@@ -77,7 +78,7 @@ class QuestionDetailViewController: UIViewController{
         
         let tappedAnswerStat : Stat = nowTestPaper.answer[sender.tag].1
         nextUserStat.addStat(answerStat: tappedAnswerStat)
-        nextUserStat.addStat(answerStat: self.userStat)
+        nextUserStat.addStat(answerStat: self.nowUserStat)
         
         if nextTestPaperIndex >= dummyTestPaper.count {
             
@@ -86,7 +87,7 @@ class QuestionDetailViewController: UIViewController{
             guard let nextQuestionDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuestionDetailVC") as? QuestionDetailViewController else { return }
             
             nextQuestionDetailViewController.nowTestPaperIndex = nextTestPaperIndex
-            nextQuestionDetailViewController.userStat = nextUserStat
+            nextQuestionDetailViewController.nowUserStat = nextUserStat
             
             // 화면 전환 애니메이션 설정
             nextQuestionDetailViewController.modalTransitionStyle = .coverVertical
