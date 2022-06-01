@@ -13,4 +13,12 @@ struct Stat {
     var userFriendly : Int = 0  // UI, UX
     var math: Int = 0           // 수학적 능력
     var collaboration : Int = 0 // 협업 능력
+    
+    mutating func addStat(answerStat: Stat) {
+        self.data += answerStat.data
+        self.system += answerStat.system
+        self.userFriendly += answerStat.userFriendly
+        self.math += answerStat.math
+        self.collaboration += answerStat.collaboration
+    }
 }
