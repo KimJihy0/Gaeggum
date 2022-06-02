@@ -61,6 +61,7 @@ class AddModifyProjectViewController: UITableViewController {
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDatePicker: UIPickerView!
     @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var deleteLabel: UILabel!
     
@@ -75,6 +76,7 @@ class AddModifyProjectViewController: UITableViewController {
             selectedStartDate = project.startDate
             selectedEndDate = project.endDate ?? YearMonth()
             onGoingSwitch.isOn = project.isOnGoing
+            urlTextField.text = project.url
             contentTextView.text = project.content
         } else {
             task = .create
@@ -129,10 +131,6 @@ class AddModifyProjectViewController: UITableViewController {
         updateSaveButton()
     }
     
-    @IBAction func returnPressed(_ sender: Any) {
-        titleTextField.resignFirstResponder()
-    }
-    
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         guard isValidTerm else {
             let alert = UIAlertController(title: "프로젝트를 저장할 수 없음", message: "시작 날짜는 종료 날짜 이전이어야 합니다.", preferredStyle: .alert)
@@ -155,8 +153,9 @@ class AddModifyProjectViewController: UITableViewController {
             let startDate = selectedStartDate
             let endDate = onGoingSwitch.isOn ? nil : selectedEndDate
             let isOnGoing = onGoingSwitch.isOn
+            let url = urlTextField.text ?? ""
             let content = contentTextView.text ?? ""
-            let inputProject = Project(title: title, startDate: startDate, endDate: endDate, isOnGoing: isOnGoing, content: content)
+            let inputProject = Project(title: title, startDate: startDate, endDate: endDate, isOnGoing: isOnGoing, url: url, content: content)
             
             if inputProject == project! {
                 dismiss(animated: true)
@@ -186,8 +185,9 @@ extension AddModifyProjectViewController {
             let startDate = selectedStartDate
             let endDate = onGoingSwitch.isOn ? nil : selectedEndDate
             let isOnGoing = onGoingSwitch.isOn
+            let url = urlTextField.text ?? ""
             let content = contentTextView.text ?? ""
-            self.project = Project(title: title, startDate: startDate, endDate: endDate, isOnGoing: isOnGoing, content: content)
+            self.project = Project(title: title, startDate: startDate, endDate: endDate, isOnGoing: isOnGoing, url: url, content: content)
             
         default:
             break
@@ -318,6 +318,21 @@ extension AddModifyProjectViewController: UIPickerViewDataSource, UIPickerViewDe
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return 110
+    }
+    
+}
+
+// MARK: - Keyboard
+
+extension AddModifyProjectViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.titleTextField.becomeFirstResponder()
+    }
+    
+    @IBAction func returnPressed(_ sender: Any) {
+        titleTextField.resignFirstResponder()
+        urlTextField.resignFirstResponder()
     }
     
 }

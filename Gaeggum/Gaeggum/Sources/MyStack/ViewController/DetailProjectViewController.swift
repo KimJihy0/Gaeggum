@@ -15,17 +15,28 @@ class DetailProjectViewController: UITableViewController {
     
     let maxContentLine: Int = 8
     
-    let contentIndexPath = IndexPath(row: 1, section: 0)
-    let fullContentIndexPath = IndexPath(row: 2, section: 0)
+    let urlIndexPath = IndexPath(row: 1, section: 0)
+    let contentIndexPath = IndexPath(row: 2, section: 0)
     
     @IBOutlet weak var projectNavigationItem: UINavigationItem!
     @IBOutlet weak var termLabel: UILabel!
+    @IBOutlet weak var urlTitleLabel: UILabel!
+    @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var contentTitleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var fullContentLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if URL(string: urlLabel.text ?? "") != nil {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tap))
+            urlLabel.textColor = .link
+            urlLabel.isUserInteractionEnabled = true
+            urlLabel.addGestureRecognizer(tap)
+        } else {
+            print("unvalid url")
+            urlLabel.textColor = .systemGray
+        }
         
         updateProject()
     }
@@ -36,19 +47,29 @@ class DetailProjectViewController: UITableViewController {
         projectNavigationItem.title = project.title
         termLabel.text = project.detailTerm
         contentLabel.text = project.content
+        urlLabel.text = project.url
         
+        urlTitleLabel.isHidden = urlLabel.text == ""
         contentTitleLabel.isHidden = contentLabel.text == ""
-        fullContentLabel.isHidden = contentLabel.countCurrentLines() <= maxContentLine
         
         tableView.beginUpdates()
         tableView.endUpdates()
     }
     
+    @objc func tap() {
+        guard let url = URL(string: urlLabel.text ?? "") else { return }
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:])
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath == contentIndexPath && contentTitleLabel.isHidden {
+        if indexPath == urlIndexPath && urlTitleLabel.isHidden {
             return 0
         }
-        if indexPath == fullContentIndexPath && fullContentLabel.isHidden {
+        if indexPath == contentIndexPath && contentTitleLabel.isHidden {
             return 0
         }
         return tableView.estimatedRowHeight

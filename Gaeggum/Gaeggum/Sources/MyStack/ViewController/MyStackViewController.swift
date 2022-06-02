@@ -13,17 +13,22 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     
     var bojUsername: String?
     var gitHubUsername: String?
-    var projects = [Project]()
+    var projects: [Project] = []
     
     var selectedIndex: Int?
+    var bojStatViewHeightConstraint: NSLayoutConstraint?
     
     @IBOutlet weak var algorithmBarView: UIView!
     @IBOutlet weak var projectBarView: UIView!
     @IBOutlet weak var csStudyBarView: UIView!
     
     @IBOutlet weak var bojView: WKWebView!
+    @IBOutlet weak var bojStatView: UIView!
     @IBOutlet weak var projectStackView: UIStackView!
     @IBOutlet weak var grassView: UIView!
+    
+    @IBOutlet weak var ratingLineView: UIView!
+    @IBOutlet weak var currentRatingView: RoundView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +42,9 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
 
         updateGraph(90, 80, 70)
         updateBoj()
-        updateGrass()
+        updateBojStat()
         updateProjects()
+        updateGrass()
     }
     
     func updateGraph(_ algorithmPercent: CGFloat, _ projectPercent: CGFloat, _ csStudyPercent: CGFloat) {
@@ -53,10 +59,31 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
             let scale = width * 0.00136
             bojView.isHidden = false
             bojView.scrollView.isScrollEnabled = false
-            bojView.loadHTMLString(bojStatHtml(scale, handle), baseURL: nil)
+            bojView.loadHTMLString(BojStat.bojStatHtml(scale, handle), baseURL: nil)
         } else {
             bojView.isHidden = true
         }
+    }
+    
+    func updateBojStat() {
+        guard bojUsername != nil else {
+            bojStatView.isHidden = true
+            return
+        }
+        bojStatView.isHidden = false
+        
+        let url = URL(string: "https://solved.ac/api/v3/user/show?handle=hyo0508")!
+        let data = try! String(contentsOf: url).data(using: .utf8)!
+        let stat = try! JSONDecoder().decode(BojStat.self, from: data)
+        
+        print(stat)
+        
+        let lineHeight = ratingLineView.frame.height
+        let percent = CGFloat(stat.rating - Tier(value: stat.tier).rating) / CGFloat(Tier(value: stat.tier+1).rating - Tier(value: stat.tier).rating)
+        currentRatingView.anchor(bottom: ratingLineView.bottomAnchor, paddingBottom: lineHeight * percent)
+        
+        print(lineHeight)
+        print(percent)
     }
     
     func updateProjects() {
@@ -98,6 +125,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
             
             if isValid(handle: self.bojUsername!) {
                 self.updateBoj()
+                self.updateBojStat()
             } else {
                 self.bojUsername = nil
                 let invalidAlert = UIAlertController(title: "오류", message: "solved.ac에 등록되지 않은 아이디입니다.", preferredStyle: .alert)
