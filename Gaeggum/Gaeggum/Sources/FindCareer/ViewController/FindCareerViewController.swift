@@ -69,7 +69,7 @@ class FindCareerViewController: UIViewController {
     
     func testCollectionView() {
         for i in 0...4 {
-            tagList.append(dummyTag[4])
+            tagList.append(dummyTag[i])
         }
     }
 }
@@ -142,8 +142,7 @@ extension FindCareerViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
 
-        // cell.backgroundColor = UIColor.lightGray
-        // cell.tagLabel.text = tagList[indexPath.item].ability.rawValue
+        cell.tagLabel.text = tagList[indexPath.item].ability.rawValue
 
         return cell
     }

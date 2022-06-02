@@ -13,11 +13,9 @@ class TagCell: UICollectionViewCell {
     
     func setupTag(){
         // label
-        tagLabel.backgroundColor = UIColor.red
         tagLabel.font = .systemFont(ofSize: fontSize)
         tagLabel.textColor = .gray
         tagLabel.textAlignment = .center
-        tagLabel.text = "test"
         
         contentView.addSubview(tagLabel)
         
@@ -28,9 +26,9 @@ class TagCell: UICollectionViewCell {
         
         // contraints
         tagLabel.translatesAutoresizingMaskIntoConstraints = false
-        tagLabel.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 30).isActive = true // ---- 1
-        tagLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 40).isActive = true // ---- 2
-        tagLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -40).isActive = true // ---- 3
+        tagLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        tagLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        tagLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
     }
 
     override init(frame: CGRect) {
