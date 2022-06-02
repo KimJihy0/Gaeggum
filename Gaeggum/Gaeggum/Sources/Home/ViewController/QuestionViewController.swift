@@ -26,11 +26,11 @@ class QuestionViewController: UIViewController{
     
     @IBAction func startButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "QuestionDetail", bundle: nil)
-        guard let secondViewController = storyboard.instantiateViewController(withIdentifier: "QuestionDetailVC") as? QuestionDetailViewController else { return }
-                // 화면 전환 애니메이션 설정
-                secondViewController.modalTransitionStyle = .coverVertical
-                // 전환된 화면이 보여지는 방법 설정 (fullScreen)
+        guard let questionDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuestionDetailVC") as? QuestionDetailViewController else { return }
+        // 화면 전환 애니메이션 설정
+        questionDetailViewController.modalTransitionStyle = .coverVertical
+        // 전환된 화면이 보여지는 방법 설정 (fullScreen)
 //                secondViewController.modalPresentationStyle = .fullScreen
-                self.present(secondViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(questionDetailViewController, animated: true)
     }
 }
