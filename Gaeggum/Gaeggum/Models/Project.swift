@@ -13,6 +13,7 @@ struct Project: Codable {
     var startDate: YearMonth
     var endDate: YearMonth?
     var isOnGoing: Bool
+    var url: String
     var content: String
 
     static let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -37,9 +38,9 @@ struct Project: Codable {
     }
 
     static func loadSampleProjects() -> [Project] {
-        let project1 = Project(title: "소프트웨어스튜디오", startDate: YearMonth(2022, 3), isOnGoing: true, content: "소스 개꿈을 만들었다. 참 즐거웠다.")
-        let project2 = Project(title: "코카콜라 맛있다", startDate: YearMonth(), endDate: YearMonth(), isOnGoing: false, content: "하이루")
-        let project3 = Project(title: "프로젝트명3", startDate: YearMonth(1999, 5), isOnGoing: true, content: "룰루랄라")
+        let project1 = Project(title: "소프트웨어스튜디오", startDate: YearMonth(2022, 3), isOnGoing: true, url: "", content: "소스 개꿈을 만들었다. 참 즐거웠다.")
+        let project2 = Project(title: "코카콜라 맛있다", startDate: YearMonth(), endDate: YearMonth(), isOnGoing: false, url: "", content: "하이루")
+        let project3 = Project(title: "프로젝트명3", startDate: YearMonth(1999, 5), isOnGoing: true, url: "", content: "룰루랄라")
         return [project1, project2, project3]
     }
 }
