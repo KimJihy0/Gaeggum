@@ -57,10 +57,12 @@ extension FindCareerViewController : UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath) as! CareerCell
 
+        let currentCareer = isFiltering ? self.searchFilter[indexPath.row] : dummyCareer[indexPath.row]
+        
         // Configure the cell...
-        cell.textLabel?.text = isFiltering ? self.searchFilter[indexPath.row].name : dummyCareer[indexPath.row].name
+        cell.careerLabel.text = currentCareer.name
 
         return cell
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		053D9CA92848897800FC7707 /* Hashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D9CA82848897800FC7707 /* Hashtag.swift */; };
+		053D9CAB28488D4200FC7707 /* CareerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D9CAA28488D4200FC7707 /* CareerCell.swift */; };
 		3236DF82281FC453006792AC /* PaddingLabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF81281FC453006792AC /* PaddingLabel+Extension.swift */; };
 		3236DF89281FC463006792AC /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF84281FC463006792AC /* UserInfo.swift */; };
 		3236DF8A281FC463006792AC /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF85281FC463006792AC /* Ability.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		053D9CA82848897800FC7707 /* Hashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashtag.swift; sourceTree = "<group>"; };
+		053D9CAA28488D4200FC7707 /* CareerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerCell.swift; sourceTree = "<group>"; };
 		3236DF81281FC453006792AC /* PaddingLabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaddingLabel+Extension.swift"; sourceTree = "<group>"; };
 		3236DF84281FC463006792AC /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		3236DF85281FC463006792AC /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			children = (
 				32C6B41A2811D4F40090AA9D /* ViewController */,
 				32C6B41B2811D4FD0090AA9D /* Storyboard */,
+				053D9CAA28488D4200FC7707 /* CareerCell.swift */,
 			);
 			path = FindCareer;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				32C6B41F2811D5350090AA9D /* FindCareerViewController.swift in Sources */,
 				32C6B3FE2811A8610090AA9D /* MainTab.swift in Sources */,
 				32C6B3E52811A1CC0090AA9D /* MainViewController.swift in Sources */,
+				053D9CAB28488D4200FC7707 /* CareerCell.swift in Sources */,
 				3236DF8D281FC463006792AC /* Stat.swift in Sources */,
 				F86D54A8282CDB1600D49B63 /* Grass.swift in Sources */,
 				F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */,
