@@ -43,17 +43,17 @@ func isValid(gitUsername: String) -> Bool {
     return html != nil
 }
 
-struct Tier: Codable {
+struct Tier {
     
     let roughTier: RoughTier
     let detailTier: DetailTier
     let rating: Int
     
-    enum RoughTier: Codable {
+    enum RoughTier: String {
         case Master, Ruby, Diamond, Platinum, Gold, Silver, Bronze, Null;
     }
 
-    enum DetailTier: Codable {
+    enum DetailTier: String {
         case I, II, III, IV, V;
     }
     
@@ -102,5 +102,9 @@ struct Tier: Codable {
     
     init(value: Int) {
         self = Tier.tiers()[value]
+    }
+    
+    func toString() -> String {
+        return roughTier.rawValue + " " + detailTier.rawValue
     }
 }

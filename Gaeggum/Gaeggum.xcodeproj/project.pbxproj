@@ -45,6 +45,7 @@
 		F86EB61128314D8400ED9668 /* DetailProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB61028314D8400ED9668 /* DetailProjectViewController.swift */; };
 		F86EB613283173DC00ED9668 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EB612283173DC00ED9668 /* UILabel+Extension.swift */; };
 		F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DD472282FAA8C002F78BA /* UIView+Extension.swift */; };
+		F88C763628488981000D79D3 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = F88C763528488981000D79D3 /* Charts */; };
 		F8B169822832AD7E00339CA4 /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B169812832AD7E00339CA4 /* YearMonth.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8160A6C2831227B008D0B4A /* SwiftSoup in Frameworks */,
+				F88C763628488981000D79D3 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +379,7 @@
 			name = Gaeggum;
 			packageProductDependencies = (
 				F8160A6B2831227B008D0B4A /* SwiftSoup */,
+				F88C763528488981000D79D3 /* Charts */,
 			);
 			productName = Gaeggum;
 			productReference = 32C6B3DD2811A1CC0090AA9D /* Gaeggum.app */;
@@ -409,6 +412,7 @@
 			packageReferences = (
 				F8684EBB2816ABBC00A1F3F3 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				F8160A65283120B6008D0B4A /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				F88C763428488981000D79D3 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 32C6B3DE2811A1CC0090AA9D /* Products */;
 			projectDirPath = "";
@@ -699,6 +703,14 @@
 				kind = branch;
 			};
 		};
+		F88C763428488981000D79D3 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -706,6 +718,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F8160A65283120B6008D0B4A /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		F88C763528488981000D79D3 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F88C763428488981000D79D3 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

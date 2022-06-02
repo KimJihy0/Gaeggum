@@ -27,8 +27,10 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var projectStackView: UIStackView!
     @IBOutlet weak var grassView: UIView!
     
+    @IBOutlet weak var nextTierLabel: UILabel!
     @IBOutlet weak var ratingLineView: UIView!
     @IBOutlet weak var currentRatingView: RoundView!
+    @IBOutlet weak var currentTierLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,24 +68,22 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     func updateBojStat() {
-        guard bojUsername != nil else {
+        guard let bojUsername = self.bojUsername else {
             bojStatView.isHidden = true
             return
         }
         bojStatView.isHidden = false
         
-        let url = URL(string: "https://solved.ac/api/v3/user/show?handle=hyo0508")!
+        let url = URL(string: "https://solved.ac/api/v3/user/show?handle=\(bojUsername)")!
         let data = try! String(contentsOf: url).data(using: .utf8)!
         let stat = try! JSONDecoder().decode(BojStat.self, from: data)
         
-        print(stat)
+        nextTierLabel.text = Tier(value: stat.tier + 1).toString() + " 승급까지 - " + String(Tier(value: stat.tier + 1).rating - stat.rating)
+        currentTierLabel.text = Tier(value: stat.tier).toString() + " " + String(stat.rating)
         
         let lineHeight = ratingLineView.frame.height
         let percent = CGFloat(stat.rating - Tier(value: stat.tier).rating) / CGFloat(Tier(value: stat.tier+1).rating - Tier(value: stat.tier).rating)
         currentRatingView.anchor(bottom: ratingLineView.bottomAnchor, paddingBottom: lineHeight * percent)
-        
-        print(lineHeight)
-        print(percent)
     }
     
     func updateProjects() {
