@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053D9CA92848897800FC7707 /* Hashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D9CA82848897800FC7707 /* Hashtag.swift */; };
 		3236DF82281FC453006792AC /* PaddingLabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF81281FC453006792AC /* PaddingLabel+Extension.swift */; };
 		3236DF89281FC463006792AC /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF84281FC463006792AC /* UserInfo.swift */; };
 		3236DF8A281FC463006792AC /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236DF85281FC463006792AC /* Ability.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		053D9CA82848897800FC7707 /* Hashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashtag.swift; sourceTree = "<group>"; };
 		3236DF81281FC453006792AC /* PaddingLabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaddingLabel+Extension.swift"; sourceTree = "<group>"; };
 		3236DF84281FC463006792AC /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		3236DF85281FC463006792AC /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				F8B169812832AD7E00339CA4 /* YearMonth.swift */,
 				3236DF88281FC463006792AC /* Stat.swift */,
 				32BECDCC283BF8A60062C65E /* TestPaper.swift */,
+				053D9CA82848897800FC7707 /* Hashtag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				3236DF8D281FC463006792AC /* Stat.swift in Sources */,
 				F86D54A8282CDB1600D49B63 /* Grass.swift in Sources */,
 				F87DD473282FAA8C002F78BA /* UIView+Extension.swift in Sources */,
+				053D9CA92848897800FC7707 /* Hashtag.swift in Sources */,
 				3236DF89281FC463006792AC /* UserInfo.swift in Sources */,
 				3236DF8A281FC463006792AC /* Ability.swift in Sources */,
 				32B27AFE2836209D004E9057 /* ModalViewController.swift in Sources */,
