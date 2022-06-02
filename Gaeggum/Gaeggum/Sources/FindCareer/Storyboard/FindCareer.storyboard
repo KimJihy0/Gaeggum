@@ -26,7 +26,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="brk-9f-Mfk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.65734836100000005" green="0.8371876868" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UDm-pJ-Lyo">
@@ -36,7 +36,7 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MS5-8N-R11">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCell" id="MS5-8N-R11">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="i3Z-6a-YcE">
@@ -48,7 +48,7 @@
                                         </collectionView>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CareerCell" id="MlD-5M-JTc" customClass="CareerCell" customModule="Gaeggum" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="139.5" width="414" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="84.5" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MlD-5M-JTc" id="t7h-Y2-HOw">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -97,6 +97,7 @@
                     <navigationItem key="navigationItem" title="직업 찾기" id="CKP-Ol-uhz"/>
                     <connections>
                         <outlet property="careerTable" destination="VtI-8C-HDY" id="viH-Cd-ned"/>
+                        <outlet property="tagCollectionView" destination="brk-9f-Mfk" id="BCM-kS-E9x"/>
                         <segue destination="UbR-fY-ZEN" kind="presentation" identifier="showDetail" id="RXP-4G-Ngf"/>
                     </connections>
                 </viewController>
