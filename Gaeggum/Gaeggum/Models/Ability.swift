@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Ability: String, CaseIterable {
+enum Ability: String, CaseIterable, Codable {
     // 변수이름 및 능력 종류..?
     case design = "디자인"                     // 디자인적 요소
     case dataManagement = "데이터"          // 데이터 주고받기 흥미

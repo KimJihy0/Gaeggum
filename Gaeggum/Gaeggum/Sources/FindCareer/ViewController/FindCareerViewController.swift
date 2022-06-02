@@ -9,8 +9,11 @@ import UIKit
 
 class FindCareerViewController: UIViewController {
     var searchFilter: [Career] = []
-    @IBOutlet weak var careerTable: UITableView!
+    var tagList: [Hashtag] = []
     
+    @IBOutlet weak var careerTable: UITableView!
+    @IBOutlet weak var tagCollectionView: UICollectionView!
+
     var isFiltering: Bool {
         let searchController = self.navigationItem.searchController
         let isActive = searchController?.isActive ?? false
@@ -31,6 +34,8 @@ class FindCareerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
+        setupCollectionView()
+        testCollectionView()
     }
     
     func setupSearchBar() {
@@ -43,6 +48,29 @@ class FindCareerViewController: UIViewController {
         searchController.searchResultsUpdater = self
 
         self.navigationItem.searchController = searchController
+    }
+    
+    func setupCollectionView() {
+        tagCollectionView.delegate = self
+        tagCollectionView.dataSource = self
+    
+        
+        // let layout = TagLeftAlignedCollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 3
+        layout.minimumInteritemSpacing = 3
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
+        
+        tagCollectionView.frame.size.height = 40
+        tagCollectionView.collectionViewLayout = layout
+        tagCollectionView.backgroundColor = UIColor.white
+        tagCollectionView.register(TagCell.classForCoder(), forCellWithReuseIdentifier: "TagCell")
+    }
+    
+    func testCollectionView() {
+        for i in 0...4 {
+            tagList.append(dummyTag[4])
+        }
     }
 }
     
@@ -57,10 +85,12 @@ extension FindCareerViewController : UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath) as! CareerCell
 
+        let currentCareer = isFiltering ? self.searchFilter[indexPath.row] : dummyCareer[indexPath.row]
+        
         // Configure the cell...
-        cell.textLabel?.text = isFiltering ? self.searchFilter[indexPath.row].name : dummyCareer[indexPath.row].name
+        cell.careerLabel.text = currentCareer.name
 
         return cell
     }
@@ -86,4 +116,42 @@ extension FindCareerViewController: UISearchResultsUpdating {
             
         self.careerTable.reloadData()
     }
+}
+
+extension FindCareerViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    // cell 크기 결정
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let tagCell = TagCell()
+        let label = UILabel()
+        label.font = .systemFont(ofSize: tagCell.fontSize)
+        label.text = tagList[indexPath.item].ability.rawValue
+        label.sizeToFit()
+
+        let size = label.frame.size
+
+        return CGSize(width: size.width + 16, height: size.height + 10)
+    }
+
+    // cell 개수
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tagList.count
+    }
+
+    // cell 텍스트 입력
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
+
+        // cell.backgroundColor = UIColor.lightGray
+        // cell.tagLabel.text = tagList[indexPath.item].ability.rawValue
+
+        return cell
+    }
+    
+    // cell 탭
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            // handle tap events
+            print("You selected cell #\(indexPath.item)!")
+        }
+
 }
