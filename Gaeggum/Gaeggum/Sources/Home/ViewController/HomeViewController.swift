@@ -10,11 +10,21 @@ import UIKit
 class HomeViewController : UIViewController {
     @IBOutlet weak var careerDetailView: CareerDetailView!
     
+    var userInfo: UserInfo = UserInfo.loadTestUser()
     var career: Career = testCareer
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //test UserInfo Algorithm
+        userInfo.updateCareer()
+        if let myCareer = userInfo.career{
+            career = myCareer
+            print(career)
+        }
+        
         updateUI()
+        
     }
     
     func updateUI() {
