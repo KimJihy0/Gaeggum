@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController : UIViewController {
     @IBOutlet weak var careerDetailView: CareerDetailView!
     
+    // 추후에 바로 career 가져오는 것으로 바꿀 것
+    // 검사지 끝나고 -> updateStat하면 자동 updateCareer -> 여기선 바로 career 가져오기
     var userInfo: UserInfo = UserInfo.loadTestUser()
     var career: Career = testCareer
     
