@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Career {
+struct Career : Codable {
     let id : Int
     let name : String
     let task : String
