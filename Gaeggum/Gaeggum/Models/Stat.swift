@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Stat {
+struct Stat : Codable {
     var data: Int = 0           // data
     var system: Int = 0         // system
     var userFriendly : Int = 0  // UI, UX
@@ -20,5 +20,20 @@ struct Stat {
         self.userFriendly += answerStat.userFriendly
         self.math += answerStat.math
         self.collaboration += answerStat.collaboration
+    }
+    
+    func calculateMSE(compare: Stat) -> Double {
+        var sum : Int = 0
+        sum += square(x: self.data - compare.data)
+        sum += square(x: self.system - compare.system)
+        sum += square(x: self.userFriendly - compare.userFriendly)
+        sum += square(x: self.math - compare.math)
+        sum += square(x: self.collaboration - compare.collaboration)
+        return Double(sum)/5
+    }
+    
+    func square(x : Int) -> Int{
+        print(x*x)
+        return x*x
     }
 }

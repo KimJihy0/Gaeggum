@@ -8,35 +8,20 @@
 import UIKit
 
 class HomeViewController : UIViewController {
-    @IBOutlet weak var jobNameLabel: UILabel!
-    @IBOutlet weak var jobImageView: UIImageView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var careerDetailView: CareerDetailView!
     
-    @IBOutlet weak var taskLabel: UILabel!
-    @IBOutlet weak var curriculumLabel: UILabel!
-    @IBOutlet weak var tipLabel: UILabel!
-
+    var career: Career = testCareer
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateCareer(career : getTestUser().career!)
+        updateUI()
     }
     
-    override func viewDidLayoutSubviews() {
-//        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 2000)
-        scrollView.isUserInteractionEnabled = true
-        scrollView.isExclusiveTouch = true
-        scrollView.canCancelContentTouches = true
-        scrollView.delaysContentTouches = true
-    }
-    
-    func updateCareer(career: Career){
-        jobNameLabel.text = career.name
-        jobImageView.image = UIImage(named: "AIEngineer")
-        taskLabel.text = career.task
-        
-        curriculumLabel.text = career.curriculum
-        tipLabel.text = career.tips
+    func updateUI() {
+//        if let career = career {
+//            careerDetailView.updateCareer(career: career)
+//        }
+        careerDetailView.updateCareer(career: career)
     }
     
     @IBAction func moveVC(_ sender: Any) {
