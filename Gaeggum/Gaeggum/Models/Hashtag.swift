@@ -47,3 +47,4 @@ func updateDummyTag() -> [Hashtag] {
     return returnValue
 }
 
+
