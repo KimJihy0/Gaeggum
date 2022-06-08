@@ -8,8 +8,12 @@
 import UIKit
 
 class FindCareerViewController: UIViewController {
-    var searchFilter: [Career] = []
     var tagList: [Hashtag] = []
+    
+    var searchFilter: [Career] = []
+    var tagFilter: [Career] = []
+    
+    var displayCareer : [Career] = []
     
     @IBOutlet weak var careerTable: UITableView!
     @IBOutlet weak var tagCollectionView: UICollectionView!
@@ -34,8 +38,10 @@ class FindCareerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
+        setupTagEditButton()
         setupCollectionView()
         testCollectionView()
+        updateTagResults()
     }
     
     func setupSearchBar() {
@@ -55,8 +61,8 @@ class FindCareerViewController: UIViewController {
         tagCollectionView.dataSource = self
     
         
-        // let layout = TagLeftAlignedCollectionViewFlowLayout()
-        let layout = UICollectionViewFlowLayout()
+        let layout = TagLeftAlignedCollectionViewFlowLayout()
+        // let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 3
         layout.minimumInteritemSpacing = 3
         layout.sectionInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
@@ -67,27 +73,75 @@ class FindCareerViewController: UIViewController {
         tagCollectionView.register(TagCell.classForCoder(), forCellWithReuseIdentifier: "TagCell")
     }
     
+    func setupTagEditButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "•••", style: .plain, target: nil, action: nil)
+        
+        let tagEdit = UIAction(title: "태그 편집", image: nil, handler: { _ in print("태그 편집") })
+        let test = UIAction(title: "test") {
+            (action) in
+            if self.tagList.count == 0 {
+                self.testCollectionView()
+                self.updateTagResults()
+                self.tagCollectionView.reloadData()
+                self.careerTable.reloadData()
+            }
+        }
+        
+        self.navigationItem.rightBarButtonItem?.menu = UIMenu(title: "타이틀", image: nil, identifier: nil, options: .displayInline, children: [tagEdit, test])
+    }
+    
+    func updateTagResults() {
+        self.tagFilter = []
+        
+        if tagList.count == 0 {
+            dump(tagFilter)
+            
+            return
+        }
+        
+        for career in dummyCareer {
+            for tag in tagList {
+                if career.abilities.contains(tag.ability) {
+                    self.tagFilter.append(career)
+                    break;
+                }
+            }
+        }
+        dump(tagFilter)
+    }
+    
     func testCollectionView() {
-        for i in 0...4 {
+        for i in 0...2 {
             tagList.append(dummyTag[i])
         }
     }
 }
     
 extension FindCareerViewController : UITableViewDelegate, UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.isFiltering ? self.searchFilter.count : dummyCareer.count
+      //  self.displayCareer = (tagList.count == 0) ? dummyCareer : self.tagFilter
+        if(tagList.count == 0) {
+            self.displayCareer = dummyCareer
+            tagCollectionView.isHidden = true
+            tagCollectionView.frame.size.height = 0
+        } else {
+            self.displayCareer = self.tagFilter
+            tagCollectionView.isHidden = false
+            tagCollectionView.frame.size.height = 40
+        }
+        
+        return self.isFiltering ? self.searchFilter.count : displayCareer.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath) as! CareerCell
 
-        let currentCareer = isFiltering ? self.searchFilter[indexPath.row] : dummyCareer[indexPath.row]
+        print(displayCareer[0])
+        let currentCareer = isFiltering ? self.searchFilter[indexPath.row] : displayCareer[indexPath.row]
         
         // Configure the cell...
         cell.careerLabel.text = currentCareer.name
@@ -115,17 +169,25 @@ extension FindCareerViewController: UISearchResultsUpdating {
         dump(searchFilter)
             
         self.careerTable.reloadData()
+        
+        if(isFiltering) {
+            tagCollectionView.isHidden = true
+            tagCollectionView.frame.size.height = 0
+        }
+        /*
+        tagCollectionView.isHidden = isFiltering ? true : false
+        tagCollectionView.frame.size.height = isFiltering ? 0 : tagCollectionView.frame.size.height
+         */
     }
 }
 
 extension FindCareerViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
     // cell 크기 결정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let tagCell = TagCell()
         let label = UILabel()
         label.font = .systemFont(ofSize: tagCell.fontSize)
-        label.text = tagList[indexPath.item].ability.rawValue
+        label.text = "# " + tagList[indexPath.item].ability.rawValue
         label.sizeToFit()
 
         let size = label.frame.size
@@ -142,15 +204,26 @@ extension FindCareerViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
 
-        cell.tagLabel.text = tagList[indexPath.item].ability.rawValue
+        cell.tagLabel.text = "# " + tagList[indexPath.item].ability.rawValue
 
         return cell
     }
     
     // cell 탭
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            // handle tap events
-            print("You selected cell #\(indexPath.item)!")
-        }
-
+        /*
+        let cell = tagCollectionView.cellForItem(at: indexPath)!
+        
+        if cell.backgroundColor == tagList[indexPath.item].tagColor { cell.layer.borderColor = UIColor.systemGray5.cgColor}
+        else { cell.layer.borderColor = tagList[indexPath.item].tagColor.cgColor }
+        */
+        
+        collectionView.deleteItems(at: [IndexPath(row: indexPath.item, section: 0)])
+        tagList.remove(at: indexPath.item)
+        
+        updateTagResults()
+        self.careerTable.reloadData()
+        
+        print("You selected cell #\(indexPath.item)!")
+    }
 }
