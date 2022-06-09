@@ -28,7 +28,7 @@ struct Hashtag {
 }
 
 
-let dummyTag = updateDummyTag()
+var dummyTag = updateDummyTag()
 
 func updateDummyTag() -> [Hashtag] {
     var returnValue : [Hashtag] = []
