@@ -8,18 +8,19 @@
 import UIKit
 
 class QuestionDetailViewController: UIViewController{
-    var nowTestPaperIndex = 0
-    lazy var nowTestPaper : TestPaper = {return dummyTestPaper[nowTestPaperIndex]}()
-    
-    var nowUserStat : Stat = Stat(data: 0, system: 0, userFriendly: 0, math: 0, collaboration: 0)
+    var userInfoDelegate: UserInfoDelegate?
     
     var answerStats : [Stat] = []
     
-    
+    var nowTestPaperIndex = 0
+    lazy var nowTestPaper : TestPaper = {return dummyTestPaper[nowTestPaperIndex]}()
+    var nowUserStat : Stat = Stat(data: 0, system: 0, userFriendly: 0, math: 0, collaboration: 0)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(nowTestPaperIndex, nowTestPaper, nowUserStat, separator: "\n") // property 전달 test
+        // property 전달 test
+//        print(nowTestPaperIndex, nowTestPaper, nowUserStat, separator: "\n")
         
         let testPaperStackView = makeStackView()
         self.view.addSubview(testPaperStackView)
@@ -81,8 +82,11 @@ class QuestionDetailViewController: UIViewController{
         nextUserStat.addStat(answerStat: self.nowUserStat)
         
         if nextTestPaperIndex >= dummyTestPaper.count {
-            
+            // 모든 질문 끝났을 때
+            userInfoDelegate?.statUpdated(stat: nextUserStat)
+            dismiss(animated: true)
         } else {
+            // 안 끝났을 때
             let storyboard = UIStoryboard(name: "QuestionDetail", bundle: nil)
             guard let nextQuestionDetailViewController = storyboard.instantiateViewController(withIdentifier: "QuestionDetailVC") as? QuestionDetailViewController else { return }
             
@@ -91,7 +95,6 @@ class QuestionDetailViewController: UIViewController{
             
             // 화면 전환 애니메이션 설정
             nextQuestionDetailViewController.modalTransitionStyle = .coverVertical
-            // 전환된 화면이 보여지는 방법 설정 (fullScreen)
     //                secondViewController.modalPresentationStyle = .fullScreen
             
             self.navigationController?.pushViewController(nextQuestionDetailViewController, animated: true)

@@ -11,28 +11,32 @@ class HomeViewController : UIViewController {
     @IBOutlet weak var careerDetailView: CareerDetailView!
     
     // 추후에 바로 career 가져오는 것으로 바꿀 것
-    // 검사지 끝나고 -> updateStat하면 자동 updateCareer -> 여기선 바로 career 가져오기
+    // 검사지 끝나고 -> updateStat하면 자동 updateCareer -> 여기선 바로 career 가져오기 -> updateUI
     var userInfo: UserInfo = UserInfo.loadTestUser()
     var career: Career = testCareer
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //test UserInfo Algorithm
-        userInfo.updateCareer()
-        if let myCareer = userInfo.career{
-            career = myCareer
-            print(career)
-        }
         
-        updateUI()
+        updateUserInfo()
+        updateCareerView()
         
     }
     
-    func updateUI() {
-//        if let career = career {
-//            careerDetailView.updateCareer(career: career)
-//        }
+    fileprivate func updateUserInfo() {
+        if let savedUserInfo = UserInfo.loadUserInfo() {
+            userInfo = savedUserInfo
+        }
+        
+        //test UserInfo MSE Algorithm
+        userInfo.updateCareer()
+        if let myCareer = userInfo.career{
+            career = myCareer
+        }
+    }
+    
+    func updateCareerView() {
         careerDetailView.updateCareer(career: career)
     }
     
@@ -44,6 +48,22 @@ class HomeViewController : UIViewController {
         // 전환된 화면이 보여지는 방법 설정 (fullScreen)
 //        secondViewController.modalPresentationStyle = .fullScreen
         self.present(secondViewController, animated: true, completion: nil)
+    }
+    
+}
+
+protocol UserInfoDelegate {
+    func statUpdated(stat: Stat)
+}
+
+extension HomeViewController: UserInfoDelegate {
+    
+    func statUpdated(stat: Stat) {
+        print("스탯 업데이트", stat)
+        userInfo.updateStat(newStat: stat)
+        updateUserInfo()
+        UserInfo.saveUserInfo(userInfo)
+        updateCareerView()
     }
     
 }
