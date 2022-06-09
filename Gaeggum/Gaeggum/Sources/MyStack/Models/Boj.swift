@@ -26,22 +26,14 @@ struct BojStat: Codable {
                 </html>
                 """
     }
-}
-
-func isValid(handle: String) -> Bool {
-    guard let url = URL(string: "https://solved.ac/api/v3/user/show?handle=\(handle)") else {
-        return false
+    
+    static func isValid(handle: String) -> Bool {
+        guard let url = URL(string: "https://solved.ac/api/v3/user/show?handle=\(handle)") else {
+            return false
+        }
+        let html = try? String(contentsOf: url, encoding: .utf8)
+        return html != nil
     }
-    let html = try? String(contentsOf: url, encoding: .utf8)
-    return html != nil
-}
-
-func isValid(gitUsername: String) -> Bool {
-    guard let url = URL(string: "https://api.github.com/users/\(gitUsername)") else {
-        return false
-    }
-    let html = try? String(contentsOf: url, encoding: .utf8)
-    return html != nil
 }
 
 struct Tier {
@@ -54,14 +46,14 @@ struct Tier {
         case Master, Ruby, Diamond, Platinum, Gold, Silver, Bronze, Null;
         var color: Color {
             switch self {
-            case .Null: return .emptyTile
-            case .Bronze: return .brown
-            case .Silver: return .gray
-            case .Gold: return .yellow
-            case .Platinum: return .green
-            case .Diamond: return .blue
-            case .Ruby: return .red
-            case .Master: return .purple
+            case .Null: return Color(rgb: 0x2d2d2d)
+            case .Bronze: return Color(rgb: 0xad5600)
+            case .Silver: return Color(rgb: 0x435f7a)
+            case .Gold: return Color(rgb: 0xec9a00)
+            case .Platinum: return Color(rgb: 0x27e2a4)
+            case .Diamond: return Color(rgb: 0x00b4fc)
+            case .Ruby: return Color(rgb: 0xff0062)
+            case .Master: return .white
             }
         }
     }
@@ -122,12 +114,12 @@ struct Tier {
 }
 
 struct ProblemStatView: View {
-    let colors: [[Color]]
+    let tiers: [[Tier]]
     
     public var body: some View {
-        GridStack(rows: 7, columns: 15, spacing: 3.0) { row, column in
-            if let color = colors.element(at: row)?.element(at: column) {
-                color.tileStyle()
+        VerticalGridStack() { row, column in
+            if let tier = tiers.element(at: row)?.element(at: column) {
+                tier.roughTier.color.tierStyle(number: detailTierToNumber(tier: tier.detailTier))
             } else {
                 Color.clear
             }
@@ -135,7 +127,7 @@ struct ProblemStatView: View {
     }
     
     public init(username: String) {
-        self.colors = ProblemStat.getColors(of: username)
+        self.tiers = ProblemStat.getColors(of: username)
     }
 }
 
@@ -146,9 +138,9 @@ public struct ProblemStat: Decodable {
         return Tier(value: level)
     }
     
-    static func getColors(of username: String) -> [[Color]] {
+    static func getColors(of username: String) -> [[Tier]] {
         var tiers : [Tier] = []
-        let url = URL(string: "https://solved.ac/api/v3/user/problem_stats?handle=hyo0508")!
+        let url = URL(string: "https://solved.ac/api/v3/user/problem_stats?handle=\(username)")!
         let data = try! String(contentsOf: url).data(using: .utf8)!
         var stats = try! JSONDecoder().decode([ProblemStat].self, from: data)
         
@@ -159,6 +151,77 @@ public struct ProblemStat: Decodable {
                 tiers.append(Tier(value: stat.level))
             }
         }
-        return tiers.prefix(140).map(\.roughTier.color).chunked(into: 7)
+        return Array(tiers.prefix(100)).chunked(into: 15)
     }
+}
+
+struct TierTile: ViewModifier {
+    
+    let number: Int
+    
+    func body(content: Content) -> some View {
+        content
+            .overlay(RoundedRectangle(cornerRadius: 2, style: .continuous).stroke(Color.tileBorder, lineWidth: 1))
+            .cornerRadius(2)
+            .overlay(Text(String(number)).font(.system(size: 14, weight: .black)).foregroundColor(.white))
+    }
+    
+    init(number: Int) {
+        self.number = number
+    }
+}
+
+extension View {
+    func tierStyle(number: Int) -> some View {
+        modifier(TierTile(number: number))
+    }
+}
+
+func detailTierToNumber(tier: Tier.DetailTier) -> Int {
+    switch tier {
+    case .I: return 1
+    case .II: return 2
+    case .III: return 3
+    case .IV: return 4
+    case .V: return 5
+    }
+}
+
+struct VerticalGridStack<Content: View>: View {
+    
+    let content: (Int, Int) -> Content
+    
+    var body: some View {
+        VStack(spacing: 3.0) {
+            ForEach(0 ..< 7, id: \.self) { row in
+                HStack(spacing: 3.0) {
+                    ForEach(0 ..< 15, id: \.self) { column in
+                        content(row, column)
+                    }
+                }
+            }
+        }
+    }
+    
+    init(@ViewBuilder content: @escaping (Int, Int) -> Content) {
+        self.content = content
+    }
+}
+
+extension Color {
+    init(red: Int, green: Int, blue: Int) {
+       assert(red >= 0 && red <= 255, "Invalid red component")
+       assert(green >= 0 && green <= 255, "Invalid green component")
+       assert(blue >= 0 && blue <= 255, "Invalid blue component")
+
+       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0)
+   }
+
+    init(rgb: Int) {
+       self.init(
+           red: (rgb >> 16) & 0xFF,
+           green: (rgb >> 8) & 0xFF,
+           blue: rgb & 0xFF
+       )
+   }
 }

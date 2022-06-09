@@ -194,7 +194,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         alert.addAction(UIAlertAction(title: "Add", style: .default) {_ in
             self.bojUsername = alert.textFields?[0].text
             
-            if isValid(handle: self.bojUsername!) {
+            if BojStat.isValid(handle: self.bojUsername!) {
                 self.updateBoj()
                 self.updateBojStat()
             } else {
@@ -218,7 +218,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         alert.addAction(UIAlertAction(title: "Add", style: .default) {_ in
             self.gitHubUsername = alert.textFields?[0].text
             
-            if isValid(gitUsername: self.gitHubUsername!) {
+            if Contribution.isValid(gitUsername: self.gitHubUsername!) {
                 self.updateGrass()
             } else {
                 self.gitHubUsername = nil
