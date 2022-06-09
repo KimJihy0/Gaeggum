@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import UIKit
 
 struct BojStat: Codable {
@@ -51,6 +52,18 @@ struct Tier {
     
     enum RoughTier: String {
         case Master, Ruby, Diamond, Platinum, Gold, Silver, Bronze, Null;
+        var color: Color {
+            switch self {
+            case .Null: return .emptyTile
+            case .Bronze: return .brown
+            case .Silver: return .gray
+            case .Gold: return .yellow
+            case .Platinum: return .green
+            case .Diamond: return .blue
+            case .Ruby: return .red
+            case .Master: return .purple
+            }
+        }
     }
 
     enum DetailTier: String {
@@ -90,6 +103,7 @@ struct Tier {
         Tier(roughTier: .Ruby, detailTier: .II, rating: 2900),
         Tier(roughTier: .Ruby, detailTier: .I, rating: 2950),
         Tier(roughTier: .Master, detailTier: .I, rating: 3000),
+        Tier(roughTier: .Master, detailTier: .I, rating: 10000)
     ]
     
     init(roughTier: RoughTier, detailTier: DetailTier, rating: Int) {
@@ -104,5 +118,47 @@ struct Tier {
     
     func toString() -> String {
         return roughTier.rawValue + " " + detailTier.rawValue
+    }
+}
+
+struct ProblemStatView: View {
+    let colors: [[Color]]
+    
+    public var body: some View {
+        GridStack(rows: 7, columns: 15, spacing: 3.0) { row, column in
+            if let color = colors.element(at: row)?.element(at: column) {
+                color.tileStyle()
+            } else {
+                Color.clear
+            }
+        }
+    }
+    
+    public init(username: String) {
+        self.colors = ProblemStat.getColors(of: username)
+    }
+}
+
+public struct ProblemStat: Decodable {
+    var level: Int
+    var solved: Int
+    var tier: Tier {
+        return Tier(value: level)
+    }
+    
+    static func getColors(of username: String) -> [[Color]] {
+        var tiers : [Tier] = []
+        let url = URL(string: "https://solved.ac/api/v3/user/problem_stats?handle=hyo0508")!
+        let data = try! String(contentsOf: url).data(using: .utf8)!
+        var stats = try! JSONDecoder().decode([ProblemStat].self, from: data)
+        
+        stats.reverse()
+        
+        for stat in stats {
+            for _ in 0..<stat.solved {
+                tiers.append(Tier(value: stat.level))
+            }
+        }
+        return tiers.prefix(140).map(\.roughTier.color).chunked(into: 7)
     }
 }

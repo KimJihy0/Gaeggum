@@ -401,17 +401,25 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llK-Q0-Mtj">
+                                                                        <rect key="frame" x="67" y="36" width="299" height="128"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    </view>
                                                                 </subviews>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="trailingMargin" secondItem="llK-Q0-Mtj" secondAttribute="trailing" id="78K-sD-yhP"/>
                                                                     <constraint firstItem="ZqA-sx-2Tw" firstAttribute="top" secondItem="Rff-DH-XwV" secondAttribute="bottom" id="Ni5-p9-xJF"/>
+                                                                    <constraint firstItem="ZqA-sx-2Tw" firstAttribute="top" secondItem="llK-Q0-Mtj" secondAttribute="bottom" constant="15.5" id="RVi-vT-i1s"/>
                                                                     <constraint firstAttribute="bottom" secondItem="ZqA-sx-2Tw" secondAttribute="bottom" id="W9r-88-DcH"/>
                                                                     <constraint firstItem="zvN-cv-p7D" firstAttribute="centerX" secondItem="Rff-DH-XwV" secondAttribute="centerX" id="Zy6-13-PO1"/>
                                                                     <constraint firstItem="Rff-DH-XwV" firstAttribute="top" secondItem="e6a-6k-Hbj" secondAttribute="bottom" constant="7" id="aL9-ii-qZS"/>
                                                                     <constraint firstItem="ZqA-sx-2Tw" firstAttribute="leading" secondItem="eIY-Vc-4g7" secondAttribute="leading" constant="20" id="aOy-Gr-sgx"/>
+                                                                    <constraint firstItem="llK-Q0-Mtj" firstAttribute="leading" secondItem="zvN-cv-p7D" secondAttribute="trailing" constant="42.5" id="kBg-rQ-t5C"/>
                                                                     <constraint firstItem="Rff-DH-XwV" firstAttribute="leading" secondItem="eIY-Vc-4g7" secondAttribute="leading" constant="20" id="pMz-5n-zdQ"/>
                                                                     <constraint firstItem="e6a-6k-Hbj" firstAttribute="top" secondItem="eIY-Vc-4g7" secondAttribute="top" id="pW5-CV-UKz"/>
                                                                     <constraint firstAttribute="height" constant="200" id="uRo-f8-Bgw"/>
                                                                     <constraint firstItem="e6a-6k-Hbj" firstAttribute="leading" secondItem="eIY-Vc-4g7" secondAttribute="leading" constant="20" id="v7X-Rs-bY3"/>
+                                                                    <constraint firstItem="llK-Q0-Mtj" firstAttribute="top" secondItem="e6a-6k-Hbj" secondAttribute="bottom" constant="15.5" id="vul-es-AIN"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -531,6 +539,7 @@
                     <navigationItem key="navigationItem" title="My 스택" largeTitleDisplayMode="never" id="Okw-bH-9NI"/>
                     <connections>
                         <outlet property="algorithmBarView" destination="Eat-hN-LWO" id="v3D-5O-twd"/>
+                        <outlet property="bojProblemsView" destination="llK-Q0-Mtj" id="2qV-o7-B9j"/>
                         <outlet property="bojStatView" destination="eIY-Vc-4g7" id="Ad3-3R-n7Z"/>
                         <outlet property="bojView" destination="Vpl-hs-Zx4" id="wTg-Vn-gWi"/>
                         <outlet property="chartView" destination="CfV-LM-dgr" id="cq0-de-s5H"/>

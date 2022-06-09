@@ -29,6 +29,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var chartView: BarChartView!
     @IBOutlet weak var bojView: WKWebView!
     @IBOutlet weak var bojStatView: UIView!
+    @IBOutlet weak var bojProblemsView: UIView!
     @IBOutlet weak var projectStackView: UIStackView!
     @IBOutlet weak var grassView: UIView!
     
@@ -144,6 +145,16 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         let lineHeight = ratingLineView.frame.height
         let percent = CGFloat(stat.rating - Tier(value: stat.tier).rating) / CGFloat(Tier(value: stat.tier+1).rating - Tier(value: stat.tier).rating)
         currentRatingView.anchor(bottom: ratingLineView.bottomAnchor, paddingBottom: lineHeight * percent)
+        
+        let controller = UIHostingController(rootView: ProblemStatView(username: bojUsername))
+        addChild(controller)
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        bojProblemsView.addSubview(controller.view)
+        controller.didMove(toParent: self)
+        NSLayoutConstraint.activate([
+            controller.view.heightAnchor.constraint(equalTo: bojProblemsView.heightAnchor),
+            controller.view.widthAnchor.constraint(equalTo: bojProblemsView.widthAnchor),
+        ])
     }
     
     func updateProjects() {
