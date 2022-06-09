@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Charts
 import WebKit
 
 class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
@@ -15,6 +16,9 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     var gitHubUsername: String?
     var projects: [Project] = []
     
+    var points: [String] = ["알고리즘", "프로젝트", "CS공부"]
+    var values: [Double] = [90, 80, 70]
+    
     var selectedIndex: Int?
     var bojStatViewHeightConstraint: NSLayoutConstraint?
     
@@ -22,6 +26,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var projectBarView: UIView!
     @IBOutlet weak var csStudyBarView: UIView!
     
+    @IBOutlet weak var chartView: BarChartView!
     @IBOutlet weak var bojView: WKWebView!
     @IBOutlet weak var bojStatView: UIView!
     @IBOutlet weak var projectStackView: UIStackView!
@@ -42,17 +47,72 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
             projects = Project.loadSampleProjects()
         }
 
-        updateGraph(90, 80, 70)
+        updateGraph()
+        updateChart()
         updateBoj()
         updateBojStat()
         updateProjects()
         updateGrass()
     }
     
-    func updateGraph(_ algorithmPercent: CGFloat, _ projectPercent: CGFloat, _ csStudyPercent: CGFloat) {
-        algorithmBarView.anchor(height: algorithmPercent * 2)
-        projectBarView.anchor(height: projectPercent * 2)
-        csStudyBarView.anchor(height: csStudyPercent * 2)
+    func updateGraph() {
+        algorithmBarView.anchor(height: values[0] * 2)
+        projectBarView.anchor(height: values[1] * 2)
+        csStudyBarView.anchor(height: values[2] * 2)
+    }
+    
+    func updateChart() {
+        var dataEntries: [BarChartDataEntry] = []
+        for i in 0..<points.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
+            dataEntries.append(dataEntry)
+        }
+
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "")
+
+        // 차트 컬러
+        chartDataSet.colors = [UIColor(Color("GreenLevel2"))]
+        chartDataSet.highlightEnabled = false
+
+        // 데이터 삽입
+        let chartData = BarChartData(dataSet: chartDataSet)
+        chartView.data = chartData
+        
+        chartView.xAxis.labelPosition = .bottom
+        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: points)
+        chartView.xAxis.setLabelCount(points.count, force: false)
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.barData?.barWidth = 0.5
+        
+        
+//        chartView.borderLineWidth = 1
+//        chartView.borderColor = .lightGray
+//        chartView.drawBordersEnabled = true
+        
+//        chartView.backgroundColor = .systemGray6
+        
+        chartView.legendRenderer.legend?.enabled = false
+        
+        chartView.highlightFullBarEnabled = false
+        
+        //        chartView.
+        
+        chartView.rightAxis.enabled = false
+        
+        chartView.animate(yAxisDuration: 2.0)
+        
+        chartView.leftAxis.axisMaximum = 100
+        
+        chartView.doubleTapToZoomEnabled = false
+        
+        // ????
+        
+        chartView.leftAxis.enabled = false
+        chartView.leftAxis.drawGridLinesEnabled = false
+        chartView.xAxis.drawAxisLineEnabled = false
+        chartView.drawBarShadowEnabled = true
+        
+        chartView.barData?.setDrawValues(false)
     }
     
     func updateBoj() {
