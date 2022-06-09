@@ -42,12 +42,16 @@ class HomeViewController : UIViewController {
     
     @IBAction func moveVC(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Question", bundle: nil)
-        guard let secondViewController = storyboard.instantiateViewController(withIdentifier: "QuestionNC") as? UINavigationController else { return }
+        guard let questionViewController = storyboard.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController else { return }
+        questionViewController.userInfoDelegate = self
+        
+        let questionNavigationController = UINavigationController(rootViewController: questionViewController)
         // 화면 전환 애니메이션 설정
-        secondViewController.modalTransitionStyle = .coverVertical
+        questionNavigationController.modalTransitionStyle = .coverVertical
+        
         // 전환된 화면이 보여지는 방법 설정 (fullScreen)
 //        secondViewController.modalPresentationStyle = .fullScreen
-        self.present(secondViewController, animated: true, completion: nil)
+        self.present(questionNavigationController, animated: true, completion: nil)
     }
     
 }
@@ -64,6 +68,7 @@ extension HomeViewController: UserInfoDelegate {
         updateUserInfo()
         UserInfo.saveUserInfo(userInfo)
         updateCareerView()
+        
     }
     
 }

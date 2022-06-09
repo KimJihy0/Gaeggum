@@ -33,7 +33,7 @@ struct Stat : Codable {
     }
     
     func square(x : Int) -> Int{
-        print(x*x)
+//        print(x*x)
         return x*x
     }
 }

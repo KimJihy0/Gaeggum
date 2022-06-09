@@ -92,6 +92,7 @@ class QuestionDetailViewController: UIViewController{
             
             nextQuestionDetailViewController.nowTestPaperIndex = nextTestPaperIndex
             nextQuestionDetailViewController.nowUserStat = nextUserStat
+            nextQuestionDetailViewController.userInfoDelegate = self.userInfoDelegate
             
             // 화면 전환 애니메이션 설정
             nextQuestionDetailViewController.modalTransitionStyle = .coverVertical
