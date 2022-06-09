@@ -8,7 +8,7 @@
 import UIKit
 
 class QuestionViewController: UIViewController{
-    
+    var userInfoDelegate: UserInfoDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,7 @@ class QuestionViewController: UIViewController{
         questionDetailViewController.modalTransitionStyle = .coverVertical
         // 전환된 화면이 보여지는 방법 설정 (fullScreen)
 //                secondViewController.modalPresentationStyle = .fullScreen
+        questionDetailViewController.userInfoDelegate = self.userInfoDelegate
         self.navigationController?.pushViewController(questionDetailViewController, animated: true)
     }
 }
