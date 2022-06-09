@@ -20,7 +20,7 @@ class HomeViewController : UIViewController {
         
         
         updateUserInfo()
-        updateCareerView()
+        updateCareerView(newCareer: career)
         
     }
     
@@ -36,8 +36,12 @@ class HomeViewController : UIViewController {
         }
     }
     
-    func updateCareerView() {
-        careerDetailView.updateCareer(career: career)
+    func updateCareerView(newCareer: Career?) {
+        if let newCareer = newCareer {
+            careerDetailView.updateCareer(career: newCareer)
+            careerDetailView.reloadInputViews()
+        }
+        
     }
     
     @IBAction func moveVC(_ sender: Any) {
@@ -63,12 +67,10 @@ protocol UserInfoDelegate {
 extension HomeViewController: UserInfoDelegate {
     
     func statUpdated(stat: Stat) {
-        print("스탯 업데이트", stat)
+//        print("스탯 업데이트", stat)
         userInfo.updateStat(newStat: stat)
-        updateUserInfo()
+        updateCareerView(newCareer: userInfo.career)
         UserInfo.saveUserInfo(userInfo)
-        updateCareerView()
-        
     }
     
 }
