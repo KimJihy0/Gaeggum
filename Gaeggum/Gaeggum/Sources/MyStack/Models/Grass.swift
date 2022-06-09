@@ -80,11 +80,13 @@ public struct Contribution {
 }
 
 struct GridStack<Content: View>: View {
+    
+    let columns: Int
     let content: (Int, Int) -> Content
     
     var body: some View {
         HStack(spacing: 3.0) {
-            ForEach(0 ..< 20, id: \.self) { row in
+            ForEach(0 ..< columns, id: \.self) { row in
                 VStack(spacing: 3.0) {
                     ForEach(0 ..< 7, id: \.self) { column in
                         content(row, column)
@@ -95,6 +97,7 @@ struct GridStack<Content: View>: View {
     }
     
     init(rows: Int, columns: Int, spacing: CGFloat? = nil, @ViewBuilder content: @escaping (Int, Int) -> Content) {
+        self.columns = columns
         self.content = content
     }
 }
