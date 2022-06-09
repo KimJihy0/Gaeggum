@@ -30,7 +30,7 @@ class FindCareerViewController: UIViewController {
         if segue.identifier == "showDetail" {
             let vc = segue.destination as?ModalViewController
             if let index = sender as? Int {
-                vc?.career = self.isFiltering ? self.searchFilter[index] : dummyCareer[index]
+                vc?.career = self.isFiltering ? self.searchFilter[index] : displayCareer[index]
             }
         }
     }
@@ -140,7 +140,6 @@ extension FindCareerViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath) as! CareerCell
 
-        print(displayCareer[0])
         let currentCareer = isFiltering ? self.searchFilter[indexPath.row] : displayCareer[indexPath.row]
         
         // Configure the cell...
