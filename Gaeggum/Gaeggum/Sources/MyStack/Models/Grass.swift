@@ -13,7 +13,7 @@ struct GrassView : View {
     let colors: [[Color]]
     
     public var body: some View {
-        GridStack(rows: 7, columns: 20, spacing: 3.0) { row, column in
+        HorizontalGridStack() { row, column in
             if let color = colors.element(at: row)?.element(at: column) {
                 color.tileStyle()
             } else {
@@ -42,6 +42,14 @@ public struct Contribution {
             case .fourth: return .greenLevel4
             }
         }
+    }
+    
+    static func isValid(gitUsername: String) -> Bool {
+        guard let url = URL(string: "https://api.github.com/users/\(gitUsername)") else {
+            return false
+        }
+        let html = try? String(contentsOf: url, encoding: .utf8)
+        return html != nil
     }
 
     static func contribution(from htmlElement: Element) throws -> Contribution? {
@@ -79,14 +87,13 @@ public struct Contribution {
 
 }
 
-struct GridStack<Content: View>: View {
+struct HorizontalGridStack<Content: View>: View {
     
-    let columns: Int
     let content: (Int, Int) -> Content
     
     var body: some View {
         HStack(spacing: 3.0) {
-            ForEach(0 ..< columns, id: \.self) { row in
+            ForEach(0 ..< 20, id: \.self) { row in
                 VStack(spacing: 3.0) {
                     ForEach(0 ..< 7, id: \.self) { column in
                         content(row, column)
@@ -96,8 +103,7 @@ struct GridStack<Content: View>: View {
         }
     }
     
-    init(rows: Int, columns: Int, spacing: CGFloat? = nil, @ViewBuilder content: @escaping (Int, Int) -> Content) {
-        self.columns = columns
+    init(@ViewBuilder content: @escaping (Int, Int) -> Content) {
         self.content = content
     }
 }

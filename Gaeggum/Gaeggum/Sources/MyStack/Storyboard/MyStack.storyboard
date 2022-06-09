@@ -405,9 +405,16 @@
                                                                         <rect key="frame" x="67" y="36" width="299" height="128"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상위 100문제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwk-Gi-tZ9">
+                                                                        <rect key="frame" x="274.5" y="8.5" width="91.5" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailingMargin" secondItem="llK-Q0-Mtj" secondAttribute="trailing" id="78K-sD-yhP"/>
+                                                                    <constraint firstAttribute="trailingMargin" secondItem="kwk-Gi-tZ9" secondAttribute="trailing" id="ETY-ez-E3F"/>
                                                                     <constraint firstItem="ZqA-sx-2Tw" firstAttribute="top" secondItem="Rff-DH-XwV" secondAttribute="bottom" id="Ni5-p9-xJF"/>
                                                                     <constraint firstItem="ZqA-sx-2Tw" firstAttribute="top" secondItem="llK-Q0-Mtj" secondAttribute="bottom" constant="15.5" id="RVi-vT-i1s"/>
                                                                     <constraint firstAttribute="bottom" secondItem="ZqA-sx-2Tw" secondAttribute="bottom" id="W9r-88-DcH"/>
@@ -415,6 +422,7 @@
                                                                     <constraint firstItem="Rff-DH-XwV" firstAttribute="top" secondItem="e6a-6k-Hbj" secondAttribute="bottom" constant="7" id="aL9-ii-qZS"/>
                                                                     <constraint firstItem="ZqA-sx-2Tw" firstAttribute="leading" secondItem="eIY-Vc-4g7" secondAttribute="leading" constant="20" id="aOy-Gr-sgx"/>
                                                                     <constraint firstItem="llK-Q0-Mtj" firstAttribute="leading" secondItem="zvN-cv-p7D" secondAttribute="trailing" constant="42.5" id="kBg-rQ-t5C"/>
+                                                                    <constraint firstItem="llK-Q0-Mtj" firstAttribute="top" secondItem="kwk-Gi-tZ9" secondAttribute="bottom" constant="7" id="oVj-kM-gBe"/>
                                                                     <constraint firstItem="Rff-DH-XwV" firstAttribute="leading" secondItem="eIY-Vc-4g7" secondAttribute="leading" constant="20" id="pMz-5n-zdQ"/>
                                                                     <constraint firstItem="e6a-6k-Hbj" firstAttribute="top" secondItem="eIY-Vc-4g7" secondAttribute="top" id="pW5-CV-UKz"/>
                                                                     <constraint firstAttribute="height" constant="200" id="uRo-f8-Bgw"/>
