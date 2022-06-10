@@ -70,7 +70,7 @@ class FindCareerViewController: UIViewController {
         layout.minimumInteritemSpacing = 3
         layout.sectionInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         
-        tagCollectionView.frame.size.height = (UIScreen.main.bounds.size.width >= 375) ? 80 : 120
+        tagCollectionView.frame.size.height = (UIScreen.main.bounds.size.width >= 400) ? 80 : 120
         tagCollectionView.collectionViewLayout = layout
         tagCollectionView.backgroundColor = UIColor.white
         tagCollectionView.register(TagCell.classForCoder(), forCellWithReuseIdentifier: "TagCell")
@@ -176,7 +176,7 @@ extension FindCareerViewController: UICollectionViewDelegate, UICollectionViewDa
 
         let size = label.frame.size
 
-        return CGSize(width: size.width + 16, height: size.height + 10)
+        return CGSize(width: size.width + 25, height: size.height + 15)
     }
 
     // cell 개수
@@ -185,15 +185,17 @@ extension FindCareerViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     // cell 텍스트 입력
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {        
         let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
 
         cell.tagLabel.text = "# " + dummyTag[indexPath.item].ability.rawValue
         
         if dummyTag[indexPath.item].selected {
-            cell.tagLabel.textColor = UIColor.red
+            cell.contentView.backgroundColor = UIColor(rgb: 0x19A9DE )
+            cell.tagLabel.textColor = UIColor.white
         } else {
-            cell.tagLabel.textColor = .gray
+            cell.contentView.backgroundColor = .systemGray5
+            cell.tagLabel.textColor = UIColor.gray
         }
         
         return cell
@@ -216,11 +218,26 @@ extension FindCareerViewController: UICollectionViewDelegate, UICollectionViewDa
             tagList.append(dummyTag[indexPath.item])
         }
         
-        print(careerTable.frame.height)
-        print(UIScreen.main.bounds.size.height)
-        
         updateTagResults()
         self.careerTable.reloadData()
         self.tagCollectionView.reloadData()
     }
+}
+
+extension UIColor {
+   convenience init(red: Int, green: Int, blue: Int) {
+       assert(red >= 0 && red <= 255, "Invalid red component")
+       assert(green >= 0 && green <= 255, "Invalid green component")
+       assert(blue >= 0 && blue <= 255, "Invalid blue component")
+
+       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+   }
+
+   convenience init(rgb: Int) {
+       self.init(
+           red: (rgb >> 16) & 0xFF,
+           green: (rgb >> 8) & 0xFF,
+           blue: rgb & 0xFF
+       )
+   }
 }

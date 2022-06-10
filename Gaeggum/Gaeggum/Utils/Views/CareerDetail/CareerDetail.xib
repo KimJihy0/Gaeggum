@@ -14,6 +14,7 @@
                 <outlet property="jobImageView" destination="g99-ny-IjA" id="9UU-TP-Mcb"/>
                 <outlet property="jobNameLabel" destination="FqU-CF-kF8" id="HeY-cf-BJd"/>
                 <outlet property="scrollView" destination="Ufy-1L-4w1" id="667-Qd-AoS"/>
+                <outlet property="tagCollectionView" destination="3lB-Qf-pG4" id="xGK-6T-ho3"/>
                 <outlet property="taskLabel" destination="o0b-3q-xPD" id="5a0-8e-ws6"/>
                 <outlet property="tipLabel" destination="cl5-90-TS0" id="kiv-T6-U1r"/>
             </connections>
@@ -27,13 +28,20 @@
                     <rect key="frame" x="0.0" y="61" width="414" height="774"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="S1v-49-PWk">
-                            <rect key="frame" x="0.0" y="157" width="414" height="621.5"/>
+                            <rect key="frame" x="0.0" y="157" width="414" height="1017.5"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g99-ny-IjA">
                                     <rect key="frame" x="141.5" y="0.0" width="131" height="128"/>
                                 </imageView>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PA-jX-W23">
+                                    <rect key="frame" x="87" y="162" width="240" height="300"/>
+                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="UuQ-9b-yeL"/>
+                                    </constraints>
+                                </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jVG-Mn-Sgf">
-                                    <rect key="frame" x="113.5" y="162" width="187" height="58"/>
+                                    <rect key="frame" x="113.5" y="496" width="187" height="58"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나와 어울리는 IT 직업은" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yV3-vT-jaQ">
                                             <rect key="frame" x="0.0" y="0.0" width="187" height="24"/>
@@ -68,10 +76,23 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="81T-Gv-7jC">
-                                    <rect key="frame" x="20.5" y="254" width="373" height="367.5"/>
+                                    <rect key="frame" x="20.5" y="588" width="373" height="429.5"/>
                                     <subviews>
-                                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n6Z-E4-qZO">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="114.5"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3lB-Qf-pG4">
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="40" id="UqB-mp-rMf"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l9g-Dg-H72">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n6Z-E4-qZO">
+                                            <rect key="frame" x="0.0" y="62" width="373" height="114.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 일을 하는데?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Puz-OF-z8g">
                                                     <rect key="frame" x="20" y="30" width="333" height="24"/>
@@ -95,8 +116,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </stackView>
-                                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eRV-DD-R88">
-                                            <rect key="frame" x="0.0" y="126.5" width="373" height="114.5"/>
+                                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eRV-DD-R88">
+                                            <rect key="frame" x="0.0" y="188.5" width="373" height="114.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떻게 준비해야 할까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iag-0Q-fB8">
                                                     <rect key="frame" x="20" y="30" width="333" height="24"/>
@@ -120,8 +141,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V7R-wZ-NzJ">
-                                            <rect key="frame" x="0.0" y="253" width="373" height="114.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V7R-wZ-NzJ">
+                                            <rect key="frame" x="0.0" y="315" width="373" height="114.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ4-Vn-h4B">
                                                     <rect key="frame" x="20" y="30" width="333" height="24"/>
@@ -189,6 +210,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
