@@ -70,7 +70,7 @@ class FindCareerViewController: UIViewController {
         layout.minimumInteritemSpacing = 3
         layout.sectionInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         
-        tagCollectionView.frame.size.height = (UIScreen.main.bounds.size.width >= 375) ? 80 : 120
+        tagCollectionView.frame.size.height = (UIScreen.main.bounds.size.width >= 428) ? 80 : 120
         tagCollectionView.collectionViewLayout = layout
         tagCollectionView.backgroundColor = UIColor.white
         tagCollectionView.register(TagCell.classForCoder(), forCellWithReuseIdentifier: "TagCell")
