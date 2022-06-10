@@ -98,6 +98,10 @@ class FindCareerViewController: UIViewController {
 }
     
 extension FindCareerViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -124,6 +128,7 @@ extension FindCareerViewController : UITableViewDelegate, UITableViewDataSource 
         
         // Configure the cell...
         cell.careerLabel.text = currentCareer.name
+        cell.careerLabel.font = cell.careerLabel.font.withSize(20)
         cell.frame.size.width = UIScreen.main.bounds.size.width
         cell.separatorInset = .zero
 
