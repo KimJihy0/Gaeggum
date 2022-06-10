@@ -57,10 +57,10 @@ class AddModifyProjectViewController: UITableViewController {
     @IBOutlet weak var projectNavigationItem: UINavigationItem!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var onGoingSwitch: UISwitch!
-    @IBOutlet weak var startDatePicker: UIPickerView!
     @IBOutlet weak var startDateLabel: UILabel!
-    @IBOutlet weak var endDatePicker: UIPickerView!
+    @IBOutlet weak var startDatePicker: UIPickerView!
     @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var endDatePicker: UIPickerView!
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var deleteLabel: UILabel!

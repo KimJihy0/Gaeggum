@@ -37,7 +37,6 @@ struct BojStat: Codable {
 }
 
 struct Tier {
-    
     let roughTier: RoughTier
     let detailTier: DetailTier
     let rating: Int

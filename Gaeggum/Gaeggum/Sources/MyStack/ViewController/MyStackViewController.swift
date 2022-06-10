@@ -117,15 +117,16 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     func updateBoj() {
-        if let handle = bojUsername {
-            let width = self.view.frame.width - 40
-            let scale = width * 0.00136
-            bojView.isHidden = false
-            bojView.scrollView.isScrollEnabled = false
-            bojView.loadHTMLString(BojStat.bojStatHtml(scale, handle), baseURL: nil)
-        } else {
+        guard let bojUsername = bojUsername else {
             bojView.isHidden = true
+            return
         }
+        bojView.isHidden = false
+        
+        let width = self.view.frame.width - 40
+        let scale = width * 0.00136
+        bojView.scrollView.isScrollEnabled = false
+        bojView.loadHTMLString(BojStat.bojStatHtml(scale, bojUsername), baseURL: nil)
     }
     
     func updateBojStat() {
