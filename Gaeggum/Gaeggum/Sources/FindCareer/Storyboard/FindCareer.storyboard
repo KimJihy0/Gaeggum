@@ -56,14 +56,14 @@
                                                             <rect key="frame" x="20.5" y="11.5" width="373" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0I-JD-Mia">
-                                                                    <rect key="frame" x="186.5" y="0.0" width="186.5" height="20.5"/>
+                                                                    <rect key="frame" x="74.5" y="0.0" width="298.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="s0I-JD-Mia" firstAttribute="width" secondItem="m5k-JL-Drd" secondAttribute="width" multiplier="0.5" id="93l-6h-l1z"/>
+                                                                <constraint firstItem="s0I-JD-Mia" firstAttribute="width" secondItem="m5k-JL-Drd" secondAttribute="width" multiplier="0.8" id="93l-6h-l1z"/>
                                                                 <constraint firstItem="s0I-JD-Mia" firstAttribute="leading" secondItem="m5k-JL-Drd" secondAttribute="leading" constant="10" id="S8K-bb-bTy"/>
                                                             </constraints>
                                                         </stackView>
