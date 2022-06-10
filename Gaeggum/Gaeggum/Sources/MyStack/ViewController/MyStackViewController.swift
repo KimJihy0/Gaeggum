@@ -12,12 +12,11 @@ import WebKit
 
 class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     
-    var bojUsername: String?
-    var gitHubUsername: String?
     var projects: [Project] = []
+    var userInfo: UserInfo?
     
-    var points: [String] = ["알고리즘", "프로젝트", "CS공부"]
-    var values: [Double] = [90, 80, 70]
+    var points: [String] = ["알고리즘", "프로젝트"]
+    var values: [Double] = [0, 0]
     
     var selectedIndex: Int?
     var bojStatViewHeightConstraint: NSLayoutConstraint?
@@ -40,7 +39,12 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("My Stack")
+        
+        if let savedUserInfo = UserInfo.loadUserInfo() {
+            userInfo = savedUserInfo
+        } else {
+            userInfo = UserInfo.loadTestUser()
+        }
         
         if let savedProjects = Project.loadProjects() {
             projects = savedProjects
@@ -49,20 +53,27 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         }
 
         updateGraph()
-        updateChart()
         updateBoj()
         updateBojStat()
         updateProjects()
         updateGrass()
+        updateChart()
     }
     
     func updateGraph() {
         algorithmBarView.anchor(height: values[0] * 2)
         projectBarView.anchor(height: values[1] * 2)
-        csStudyBarView.anchor(height: values[2] * 2)
     }
     
     func updateChart() {
+        print("values[0]:\(values[0])")
+        values[1] = (Double(projects.count) / Double((userInfo?.goalNumProjects)!)) * 100.0
+        print("projects.count:\(projects.count)")
+        print("userInfo?.goalNumProjects:\(userInfo?.goalNumProjects)")
+        print("values[1]:\(values[1])")
+        
+        values = [52.0, 66.6]
+        
         var dataEntries: [BarChartDataEntry] = []
         for i in 0..<points.count {
             let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
@@ -79,6 +90,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         let chartData = BarChartData(dataSet: chartDataSet)
         chartView.data = chartData
         
+        chartView.xAxis.labelFont = .systemFont(ofSize: 17)
         chartView.xAxis.labelPosition = .bottom
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: points)
         chartView.xAxis.setLabelCount(points.count, force: false)
@@ -102,6 +114,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         
         chartView.animate(yAxisDuration: 2.0)
         
+        chartView.leftAxis.axisMinimum = 0
         chartView.leftAxis.axisMaximum = 100
         
         chartView.doubleTapToZoomEnabled = false
@@ -117,7 +130,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     func updateBoj() {
-        guard let bojUsername = bojUsername else {
+        guard let bojUsername = userInfo?.bojID else {
             bojView.isHidden = true
             return
         }
@@ -130,7 +143,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     func updateBojStat() {
-        guard let bojUsername = self.bojUsername else {
+        guard let bojUsername = userInfo?.bojID else {
             bojStatView.isHidden = true
             return
         }
@@ -145,6 +158,10 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         
         let lineHeight = ratingLineView.frame.height
         let percent = CGFloat(stat.rating - Tier(value: stat.tier).rating) / CGFloat(Tier(value: stat.tier+1).rating - Tier(value: stat.tier).rating)
+        print("------dfsdfadfasdf-------")
+        print(percent)
+        values[0] = percent * 100
+        print(values[0])
         currentRatingView.anchor(bottom: ratingLineView.bottomAnchor, paddingBottom: lineHeight * percent)
         
         let controller = UIHostingController(rootView: ProblemStatView(username: bojUsername))
@@ -170,10 +187,16 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
             projectView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapView(_:))))
             projectStackView.addArrangedSubview(projectView)
         }
+        
+        updateChart()
     }
     
     func updateGrass() {
-        guard let username = gitHubUsername else { return }
+        print(userInfo)
+        guard let username = userInfo?.gitID else {
+            print("------------------------------")
+            return }
+        print("username:\(username)")
         let controller = UIHostingController(rootView: GrassView(username: username))
         addChild(controller)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
@@ -193,13 +216,15 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alert.addAction(UIAlertAction(title: "Add", style: .default) {_ in
-            self.bojUsername = alert.textFields?[0].text
+            self.userInfo?.bojID = alert.textFields?[0].text
             
-            if BojStat.isValid(handle: self.bojUsername!) {
+            if BojStat.isValid(handle: (self.userInfo?.bojID)!) {
+                UserInfo.saveUserInfo(self.userInfo!)
                 self.updateBoj()
                 self.updateBojStat()
+                self.updateChart()
             } else {
-                self.bojUsername = nil
+                self.userInfo?.bojID = nil
                 let invalidAlert = UIAlertController(title: "오류", message: "solved.ac에 등록되지 않은 아이디입니다.", preferredStyle: .alert)
                 invalidAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(invalidAlert, animated: false)
@@ -217,12 +242,12 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alert.addAction(UIAlertAction(title: "Add", style: .default) {_ in
-            self.gitHubUsername = alert.textFields?[0].text
-            
-            if Contribution.isValid(gitUsername: self.gitHubUsername!) {
+            self.userInfo?.gitID = alert.textFields?[0].text
+            if Contribution.isValid(gitUsername: (self.userInfo?.gitID)!) {
+                UserInfo.saveUserInfo(self.userInfo!)
                 self.updateGrass()
             } else {
-                self.gitHubUsername = nil
+                self.userInfo?.gitID = nil
                 let invalidAlert = UIAlertController(title: "오류", message: "GitHub에 등록되지 않은 아이디입니다.", preferredStyle: .alert)
                 invalidAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(invalidAlert, animated: false)
@@ -232,6 +257,22 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         present(alert, animated: true)
     }
     
+    @IBAction func setGoalNumProjects(_ sender: Any) {
+        let alert = UIAlertController(title: "목표 프로젝트 개수 설정", message: nil, preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.keyboardType = .numberPad
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Done", style: .default) {_ in
+            guard let num = Int(alert.textFields?[0].text ?? "") else { return }
+            self.userInfo?.goalNumProjects = num
+            UserInfo.saveUserInfo(self.userInfo!)
+            self.updateChart()
+        })
+        
+        present(alert, animated: true)
+    }
+                        
     @objc func didTapView(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "ShowProjectSegue", sender: sender.view!.tag)
     }

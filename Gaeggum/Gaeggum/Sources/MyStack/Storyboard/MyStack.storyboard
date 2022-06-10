@@ -45,10 +45,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="pxu-Y7-3LO">
-                                        <rect key="frame" x="0.0" y="108" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="108" width="414" height="69.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pxu-Y7-3LO" id="qS8-Kb-F80">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccD-2E-cpA">
@@ -58,7 +58,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/ProjectInTheClass/Gaeggum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0d-EN-n96">
-                                                    <rect key="frame" x="20" y="37" width="374" height="21"/>
+                                                    <rect key="frame" x="20" y="37" width="374" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="linkColor"/>
                                                     <nil key="highlightedColor"/>
@@ -76,7 +76,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="t5N-eY-iMm">
-                                        <rect key="frame" x="0.0" y="177" width="414" height="231.5"/>
+                                        <rect key="frame" x="0.0" y="177.5" width="414" height="231.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t5N-eY-iMm" id="agw-ly-AbE">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="231.5"/>
@@ -460,14 +460,26 @@
                                                                             <segue destination="aWH-7B-Tc6" kind="presentation" identifier="NewProjectSegue" id="qHv-7s-myk"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxD-So-Ol9">
+                                                                        <rect key="frame" x="104" y="2.5" width="45" height="45"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="lxD-So-Ol9" secondAttribute="height" multiplier="1:1" id="nSb-LX-wmF"/>
+                                                                        </constraints>
+                                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                                        <connections>
+                                                                            <action selector="setGoalNumProjects:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Bul-Ir-cWb"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="M5A-Zb-6Ql" secondAttribute="bottom" id="I6b-w5-eZO"/>
                                                                     <constraint firstItem="M5A-Zb-6Ql" firstAttribute="top" secondItem="96X-h1-QAj" secondAttribute="top" id="IBx-bT-ANI"/>
+                                                                    <constraint firstItem="lxD-So-Ol9" firstAttribute="centerY" secondItem="M5A-Zb-6Ql" secondAttribute="centerY" id="MCd-dT-pVR"/>
                                                                     <constraint firstItem="Ylg-1e-8bB" firstAttribute="top" secondItem="96X-h1-QAj" secondAttribute="top" id="QHj-qo-4NM"/>
                                                                     <constraint firstAttribute="bottom" secondItem="Ylg-1e-8bB" secondAttribute="bottom" id="aVh-bv-36m"/>
                                                                     <constraint firstItem="M5A-Zb-6Ql" firstAttribute="leading" secondItem="96X-h1-QAj" secondAttribute="leading" id="cG8-Ru-zm7"/>
+                                                                    <constraint firstItem="lxD-So-Ol9" firstAttribute="leading" secondItem="M5A-Zb-6Ql" secondAttribute="trailing" id="grm-Fd-UX5"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Ylg-1e-8bB" secondAttribute="trailing" id="nPe-Yf-mbX"/>
                                                                 </constraints>
                                                             </view>
@@ -910,7 +922,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="l8T-bz-tju"/>
+        <segue reference="qHv-7s-myk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
