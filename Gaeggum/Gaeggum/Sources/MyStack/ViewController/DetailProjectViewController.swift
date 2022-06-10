@@ -13,8 +13,6 @@ class DetailProjectViewController: UITableViewController {
     
     var projectDelegate: ProjectDelegate?
     
-    let maxContentLine: Int = 8
-    
     let urlIndexPath = IndexPath(row: 1, section: 0)
     let contentIndexPath = IndexPath(row: 2, section: 0)
     

@@ -12,6 +12,7 @@ struct UserInfo : Codable {
     var stat : Stat?
     var gitID : String?
     var bojID : String?
+    var goalNumProjects : Int = 1
     
     mutating func updateStat(newStat: Stat) {
         self.stat = newStat
