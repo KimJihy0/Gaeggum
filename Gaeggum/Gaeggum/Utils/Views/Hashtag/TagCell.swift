@@ -15,6 +15,7 @@ class TagCell: UICollectionViewCell {
         // label
         tagLabel.font = .systemFont(ofSize: fontSize)
         tagLabel.textColor = .gray
+        tagLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         tagLabel.textAlignment = .center
         
         contentView.addSubview(tagLabel)
