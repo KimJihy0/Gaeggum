@@ -24,12 +24,10 @@ class QuestionDetailViewController: UIViewController{
         
         let testPaperStackView = makeStackView()
         self.view.addSubview(testPaperStackView)
+        testPaperStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -10).isActive = true
+        testPaperStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        testPaperStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive = true
         
-        // horizontally, vertically center constraint / 중앙 위치
-        NSLayoutConstraint.activate([
-            testPaperStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            testPaperStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
-        ])
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,30 +40,51 @@ class QuestionDetailViewController: UIViewController{
             stackV.translatesAutoresizingMaskIntoConstraints = false
             stackV.axis = .vertical
             stackV.spacing = 10
-            stackV.distribution = .fillEqually
+            stackV.distribution = .fillProportionally
+            
             return stackV
         }()
 
         let nowTestPaper = dummyTestPaper[nowTestPaperIndex]
-        
         let questionText = nowTestPaper.question
-        let questionLabel = UILabel()
-        questionLabel.text = questionText
-        stackView.addArrangedSubview(questionLabel)
+        
+        // 질문 헤더 세팅
+        let questionHeaderView = QuestionHeaderView()
+        questionHeaderView.updateQuestionHeader(index: nowTestPaperIndex + 1, dummyArrayLength: dummyTestPaper.count, questionText:questionText)
+        stackView.addArrangedSubview(questionHeaderView)
+//        questionHeaderView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50).isActive = true
+        
         
         for (answerIndex, (answerText,stat)) in nowTestPaper.answer.enumerated() {
-            lazy var answerButton: UIButton = {
+            lazy var answerView: UIButton = {
+//                let answerView = AnswerView()
+//                answerView.updateAnswer(answerText: answerText)
+//                answerView.isUserInteractionEnabled = true
+//                answerView.tag = answerIndex
+//
+//                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.answerTapped))
+//                answerView.addGestureRecognizer(tapGesture)
+//
+//                return answerView
+
+                
                 let button = UIButton(type: .system)
                 button.tag = answerIndex // put button id to recognize question index
-                button.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-                button.backgroundColor = .gray
+//                button.frame = CGRect(x: 0, y: 0, width: 500, height: 700)
+                button.backgroundColor = .systemGray5
+                button.titleLabel?.numberOfLines = 0
+                button.titleLabel?.lineBreakMode = .byCharWrapping
                 button.setTitle(answerText, for: .normal)
-                button.setTitleColor(.white, for: .normal)
+                button.setTitleColor(.black, for: .normal)
                 button.addTarget(self, action: #selector(answerTapped), for: .touchUpInside)
+                
+                
                 return button
             }()
             
-            stackView.addArrangedSubview(answerButton)
+            stackView.addArrangedSubview(answerView)
+            
+            
             answerStats.append(stat)
         }
         
