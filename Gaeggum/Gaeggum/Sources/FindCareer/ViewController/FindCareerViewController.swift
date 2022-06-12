@@ -30,7 +30,7 @@ class FindCareerViewController: UIViewController {
         if segue.identifier == "showDetail" {
             let vc = segue.destination as?ModalViewController
             if let index = sender as? Int {
-                vc?.career = self.isFiltering ? self.searchFilter[index] : dummyCareer[index]
+                vc?.career = self.isFiltering ? self.searchFilter[index] : displayCareer[index]
             }
         }
     }
