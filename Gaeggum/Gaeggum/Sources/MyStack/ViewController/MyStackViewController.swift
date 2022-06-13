@@ -58,8 +58,6 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     func updateChart() {
         values[1] = (Double(projects.count) / Double((userInfo?.goalNumProjects)!)) * 100.0
         
-        values = [52.0, 66.6]
-        
         var dataEntries: [BarChartDataEntry] = []
         for i in 0..<points.count {
             let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
