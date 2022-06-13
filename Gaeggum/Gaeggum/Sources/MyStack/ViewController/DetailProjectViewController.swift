@@ -32,7 +32,6 @@ class DetailProjectViewController: UITableViewController {
             urlLabel.isUserInteractionEnabled = true
             urlLabel.addGestureRecognizer(tap)
         } else {
-            print("invalid url")
             urlLabel.textColor = .systemGray
         }
         
