@@ -8,32 +8,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionStarterView" customModule="Gaeggum" customModuleProvider="target">
-            <connections>
-                <outlet property="startButton" destination="2dL-8y-FYE" id="CKn-fR-eV8"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionStarterView" customModule="Gaeggum" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="512"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TeamLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5YL-UL-2j8">
-                    <rect key="frame" x="20" y="121" width="360.00000000000011" height="222.99999999999991"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TeamLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5YL-UL-2j8">
+                    <rect key="frame" x="10" y="44" width="394" height="468"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dL-8y-FYE">
-                    <rect key="frame" x="129" y="400" width="156" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="MBTIT 검사 시작하기"/>
-                    <connections>
-                        <action selector="startButtonTapped:" destination="-1" eventType="touchUpInside" id="KbE-un-9PO"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5YL-UL-2j8" secondAttribute="bottom" id="0cv-Km-fxh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5YL-UL-2j8" secondAttribute="trailing" constant="10" id="5OP-b0-At8"/>
+                <constraint firstItem="5YL-UL-2j8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="LrR-NY-KgN"/>
+                <constraint firstItem="5YL-UL-2j8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ZTn-Ql-FGi"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="131.8840579710145" y="172.09821428571428"/>
         </view>
