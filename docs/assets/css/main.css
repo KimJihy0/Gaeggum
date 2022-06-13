@@ -2842,9 +2842,8 @@ input, select, textarea {
 
 
 	.features .image {
-		width: calc(100% );
+		width: calc(50% );
 		/* width: 30em; */
-		padding-left: 2.0em;
 	}
 
 
@@ -3236,7 +3235,7 @@ input, select, textarea {
 				transition-delay: 0s;
 				display: block;
 				margin: 0 0 1.5em 0;
-				max-width: 350px;
+				max-width: 500px;
 				margin: auto;
 			}
 
