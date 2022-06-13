@@ -21,10 +21,6 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     var selectedIndex: Int?
     var bojStatViewHeightConstraint: NSLayoutConstraint?
     
-    @IBOutlet weak var algorithmBarView: UIView!
-    @IBOutlet weak var projectBarView: UIView!
-    @IBOutlet weak var csStudyBarView: UIView!
-    
     @IBOutlet weak var chartView: BarChartView!
     @IBOutlet weak var bojView: WKWebView!
     @IBOutlet weak var bojStatView: UIView!
@@ -52,7 +48,6 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
             projects = Project.loadSampleProjects()
         }
 
-        updateGraph()
         updateBoj()
         updateBojStat()
         updateProjects()
@@ -60,19 +55,8 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         updateChart()
     }
     
-    func updateGraph() {
-        algorithmBarView.anchor(height: values[0] * 2)
-        projectBarView.anchor(height: values[1] * 2)
-    }
-    
     func updateChart() {
-        print("values[0]:\(values[0])")
         values[1] = (Double(projects.count) / Double((userInfo?.goalNumProjects)!)) * 100.0
-        print("projects.count:\(projects.count)")
-        print("userInfo?.goalNumProjects:\(userInfo?.goalNumProjects)")
-        print("values[1]:\(values[1])")
-        
-        values = [52.0, 66.6]
         
         var dataEntries: [BarChartDataEntry] = []
         for i in 0..<points.count {
@@ -95,38 +79,22 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: points)
         chartView.xAxis.setLabelCount(points.count, force: false)
         chartView.xAxis.drawGridLinesEnabled = false
-        chartView.barData?.barWidth = 0.5
-        
-        
-//        chartView.borderLineWidth = 1
-//        chartView.borderColor = .lightGray
-//        chartView.drawBordersEnabled = true
-        
-//        chartView.backgroundColor = .systemGray6
-        
-        chartView.legendRenderer.legend?.enabled = false
-        
-        chartView.highlightFullBarEnabled = false
-        
-        //        chartView.
+        chartView.xAxis.drawAxisLineEnabled = false
         
         chartView.rightAxis.enabled = false
-        
-        chartView.animate(yAxisDuration: 2.0)
-        
         chartView.leftAxis.axisMinimum = 0
         chartView.leftAxis.axisMaximum = 100
-        
-        chartView.doubleTapToZoomEnabled = false
-        
-        // ????
-        
         chartView.leftAxis.enabled = false
         chartView.leftAxis.drawGridLinesEnabled = false
-        chartView.xAxis.drawAxisLineEnabled = false
-        chartView.drawBarShadowEnabled = true
         
+        chartView.barData?.barWidth = 0.5
+        chartView.drawBarShadowEnabled = true
         chartView.barData?.setDrawValues(false)
+        chartView.legend.enabled = false
+        
+        chartView.highlightFullBarEnabled = false
+        chartView.doubleTapToZoomEnabled = false
+        chartView.animate(yAxisDuration: 2.0)
     }
     
     func updateBoj() {
@@ -158,10 +126,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         
         let lineHeight = ratingLineView.frame.height
         let percent = CGFloat(stat.rating - Tier(value: stat.tier).rating) / CGFloat(Tier(value: stat.tier+1).rating - Tier(value: stat.tier).rating)
-        print("------dfsdfadfasdf-------")
-        print(percent)
         values[0] = percent * 100
-        print(values[0])
         currentRatingView.anchor(bottom: ratingLineView.bottomAnchor, paddingBottom: lineHeight * percent)
         
         let controller = UIHostingController(rootView: ProblemStatView(username: bojUsername))
@@ -192,11 +157,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     func updateGrass() {
-        print(userInfo)
-        guard let username = userInfo?.gitID else {
-            print("------------------------------")
-            return }
-        print("username:\(username)")
+        guard let username = userInfo?.gitID else {return }
         let controller = UIHostingController(rootView: GrassView(username: username))
         addChild(controller)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
