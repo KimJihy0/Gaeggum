@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CareerDetailView" customModule="Gaeggum" customModuleProvider="target">
             <connections>
-                <outlet property="chartView" destination="wsi-Ru-7gH" id="fpC-J6-iGD"/>
                 <outlet property="curriculumLabel" destination="aKJ-vY-Lj4" id="4Of-Rn-8Ah"/>
                 <outlet property="jobImageView" destination="g99-ny-IjA" id="9UU-TP-Mcb"/>
                 <outlet property="jobNameLabel" destination="FqU-CF-kF8" id="HeY-cf-BJd"/>
@@ -28,19 +27,18 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ufy-1L-4w1">
                     <rect key="frame" x="0.0" y="61" width="414" height="774"/>
                     <subviews>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wsi-Ru-7gH" customClass="RadarChartView" customModule="Charts">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="S1v-49-PWk">
-                            <rect key="frame" x="0.0" y="157" width="414" height="1017.5"/>
+                            <rect key="frame" x="0.0" y="157" width="414" height="755.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g99-ny-IjA">
-                                    <rect key="frame" x="141.5" y="0.0" width="131" height="128"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g99-ny-IjA">
+                                    <rect key="frame" x="82" y="0.0" width="250" height="200"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="i3h-9M-iCO"/>
+                                        <constraint firstAttribute="width" constant="250" id="zJm-I2-IR8"/>
+                                    </constraints>
                                 </imageView>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jVG-Mn-Sgf">
-                                    <rect key="frame" x="113.5" y="162" width="187" height="58"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jVG-Mn-Sgf">
+                                    <rect key="frame" x="113.5" y="234" width="187" height="58"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나와 어울리는 IT 직업은" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yV3-vT-jaQ">
                                             <rect key="frame" x="0.0" y="0.0" width="187" height="24"/>
@@ -74,15 +72,8 @@
                                         </stackView>
                                     </subviews>
                                 </stackView>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PA-jX-W23">
-                                    <rect key="frame" x="87" y="254" width="240" height="300"/>
-                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="UuQ-9b-yeL"/>
-                                    </constraints>
-                                </view>
                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="81T-Gv-7jC">
-                                    <rect key="frame" x="20.5" y="588" width="373" height="429.5"/>
+                                    <rect key="frame" x="20.5" y="326" width="373" height="429.5"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3lB-Qf-pG4">
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
@@ -216,9 +207,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
