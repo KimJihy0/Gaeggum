@@ -113,6 +113,7 @@ class CareerDetailView: UIView {
 
     
     func updateChart() {
+        //test
         let data = RadarChartData(dataSets: [greenDataSet, blueDataSet])
 
         greenDataSet.colors = [.green]
