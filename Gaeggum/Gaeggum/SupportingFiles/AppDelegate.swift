@@ -11,24 +11,30 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // 가로모드 막기
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Thread.sleep(forTimeInterval: 1.0)
         // Override point for customization after application launch.
         
-        let loadedUserInfo = UserInfo.loadUserInfo()
-        let loadedCareer = loadedUserInfo?.career
-        if let loadedCareer = loadedCareer {
-            // localDB에 이미 career 있을 시
-        } else {
-            // 이전 검사한 이력이 없을 시
-            print("초기 화면", loadedUserInfo, loadedCareer)
-            
-            let storyboard = UIStoryboard(name: "InitialTest", bundle: nil)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialTestVC")
-//            initialViewController.setRootViewController(rootViewController: initialViewController)
-            self.window?.rootViewController = initialViewController
-        }
+//        let loadedUserInfo = UserInfo.loadUserInfo()
+//        let loadedCareer = loadedUserInfo?.career
+//        if let loadedCareer = loadedCareer {
+//            // localDB에 이미 career 있을 시
+//        } else {
+//            // 이전 검사한 이력이 없을 시
+//            print("초기 화면", loadedUserInfo, loadedCareer)
+//
+//            let storyboard = UIStoryboard(name: "InitialTest", bundle: nil)
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialTestVC")
+////            initialViewController.setRootViewController(rootViewController: initialViewController)
+//            self.window?.rootViewController = initialViewController
+//        }
+        
         
         
         return true
@@ -47,6 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    
 
 
 }
