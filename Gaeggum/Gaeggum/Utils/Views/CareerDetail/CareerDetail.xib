@@ -33,15 +33,8 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g99-ny-IjA">
                                     <rect key="frame" x="141.5" y="0.0" width="131" height="128"/>
                                 </imageView>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PA-jX-W23">
-                                    <rect key="frame" x="87" y="162" width="240" height="300"/>
-                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="UuQ-9b-yeL"/>
-                                    </constraints>
-                                </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jVG-Mn-Sgf">
-                                    <rect key="frame" x="113.5" y="496" width="187" height="58"/>
+                                    <rect key="frame" x="113.5" y="162" width="187" height="58"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나와 어울리는 IT 직업은" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yV3-vT-jaQ">
                                             <rect key="frame" x="0.0" y="0.0" width="187" height="24"/>
@@ -75,6 +68,13 @@
                                         </stackView>
                                     </subviews>
                                 </stackView>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PA-jX-W23">
+                                    <rect key="frame" x="87" y="254" width="240" height="300"/>
+                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="UuQ-9b-yeL"/>
+                                    </constraints>
+                                </view>
                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="81T-Gv-7jC">
                                     <rect key="frame" x="20.5" y="588" width="373" height="429.5"/>
                                     <subviews>

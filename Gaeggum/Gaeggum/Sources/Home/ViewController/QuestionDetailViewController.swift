@@ -24,7 +24,7 @@ class QuestionDetailViewController: UIViewController{
         
         let testPaperStackView = makeStackView()
         self.view.addSubview(testPaperStackView)
-        testPaperStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -10).isActive = true
+        testPaperStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
         testPaperStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         testPaperStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive = true
         
@@ -54,31 +54,42 @@ class QuestionDetailViewController: UIViewController{
         stackView.addArrangedSubview(questionHeaderView)
 //        questionHeaderView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50).isActive = true
         
+        // make alphabets array
+        let aScalars = "A".unicodeScalars
+        let aCode = aScalars[aScalars.startIndex].value
+
+        let alphabets: [Character] = (0..<26).map {
+            i in Character(UnicodeScalar(aCode + i)!)
+        }
         
         for (answerIndex, (answerText,stat)) in nowTestPaper.answer.enumerated() {
             lazy var answerView: UIButton = {
-//                let answerView = AnswerView()
-//                answerView.updateAnswer(answerText: answerText)
-//                answerView.isUserInteractionEnabled = true
-//                answerView.tag = answerIndex
+                
+                let headedAnswerText = String(alphabets[answerIndex]) + ". " + answerText
+
+//                var config = UIButton.Configuration.gray()
 //
-//                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.answerTapped))
-//                answerView.addGestureRecognizer(tapGesture)
-//
-//                return answerView
+//                config.baseBackgroundColor = .systemGray5
+//                config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20)
+//                config.title = headedAnswerText
+                
 
                 
-                let button = UIButton(type: .system)
+                let button = UIButton(type: .custom)
+                
                 button.tag = answerIndex // put button id to recognize question index
-//                button.frame = CGRect(x: 0, y: 0, width: 500, height: 700)
-                button.backgroundColor = .systemGray5
+                button.setTitle(headedAnswerText, for: .normal)
                 button.titleLabel?.numberOfLines = 0
-                button.titleLabel?.lineBreakMode = .byCharWrapping
-                button.setTitle(answerText, for: .normal)
+                button.titleLabel?.lineBreakMode = NSLineBreakMode.byCharWrapping
+                button.titleLabel?.textAlignment = .center
+                button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+                button.backgroundColor = .systemGray5
                 button.setTitleColor(.black, for: .normal)
                 button.addTarget(self, action: #selector(answerTapped), for: .touchUpInside)
+                button.translatesAutoresizingMaskIntoConstraints = false
                 
                 
+                button.contentEdgeInsets = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
                 return button
             }()
             

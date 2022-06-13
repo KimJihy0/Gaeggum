@@ -24,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vms-dr-6ob">
-                    <rect key="frame" x="20" y="131" width="374" height="179"/>
+                    <rect key="frame" x="0.0" y="131" width="414" height="179"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="coX-8Q-4zH">
-                            <rect key="frame" x="10" y="0.0" width="354" height="31.5"/>
+                            <rect key="frame" x="10" y="0.0" width="394" height="31.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문제 01." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmp-jO-W3f">
                                     <rect key="frame" x="0.0" y="0.0" width="87" height="31.5"/>
@@ -36,7 +36,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yls-ms-MmR">
-                                    <rect key="frame" x="96" y="8.5" width="258" height="15"/>
+                                    <rect key="frame" x="96" y="8.5" width="298" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="lDs-eH-aTx"/>
                                     </constraints>
@@ -46,10 +46,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="faJ-Hj-6Ow">
-                            <rect key="frame" x="0.0" y="39.5" width="374" height="81.5"/>
+                            <rect key="frame" x="0.0" y="39.5" width="414" height="81.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 일을 하는데?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi0-Kw-7MC" customClass="PaddingLabel" customModule="Gaeggum" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="30" width="334" height="21.5"/>
+                                    <rect key="frame" x="20" y="30" width="374" height="21.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                             </userDefinedRuntimeAttributes>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa9-8I-FEi">
-                            <rect key="frame" x="162" y="129" width="50" height="50"/>
+                            <rect key="frame" x="182" y="129" width="50" height="50"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -81,9 +81,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Vms-dr-6ob" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="bGm-Gz-KcS"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Vms-dr-6ob" secondAttribute="trailing" constant="20" id="fmk-jd-xJO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Vms-dr-6ob" secondAttribute="trailing" id="asZ-Hb-KfD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Vms-dr-6ob" secondAttribute="bottom" constant="20" id="iae-ab-RPq"/>
+                <constraint firstItem="Vms-dr-6ob" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jAW-2c-UaJ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="476.81159420289856" y="114.50892857142857"/>
