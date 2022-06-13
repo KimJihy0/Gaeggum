@@ -9,20 +9,17 @@ import UIKit
 
 class QuestionViewController: UIViewController{
     var userInfoDelegate: UserInfoDelegate?
+    @IBOutlet var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let starterView = QuestionStarterView()
-        starterView.parentViewController = self
+        startButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+//        startButton.backgroundColor = .white
+//        startButton.setTitleColor(.black, for: .normal)
         
-        self.view.addSubview(starterView)
     }
     
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
     
     @IBAction func startButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "QuestionDetail", bundle: nil)

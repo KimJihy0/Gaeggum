@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,11 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpF-e2-Tng">
-                                <rect key="frame" x="174" y="576" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TeamLogo" translatesAutoresizingMaskIntoConstraints="NO" id="NSG-s0-7HV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpF-e2-Tng">
+                                <rect key="frame" x="134" y="532.5" width="146.5" height="31"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <buttonConfiguration key="configuration" style="plain" title="MBTIT 검사 시작하기" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gqD-kc-kaa"/>
                                 </connections>
@@ -27,12 +34,29 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.69019607843137254" green="0.84705882352941175" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NSG-s0-7HV" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="0ad-yv-Hue"/>
+                            <constraint firstItem="NSG-s0-7HV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7iQ-M1-OAo"/>
+                            <constraint firstItem="LpF-e2-Tng" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="AOV-Fy-Ked"/>
+                            <constraint firstItem="LpF-e2-Tng" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="100" id="Nbo-5a-sNo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="NSG-s0-7HV" secondAttribute="bottom" id="XVi-ik-miy"/>
+                            <constraint firstItem="NSG-s0-7HV" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ndO-zx-gev"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dlq-cc-mcg"/>
+                    <connections>
+                        <outlet property="startButton" destination="LpF-e2-Tng" id="UeS-03-3nD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844.9275362318842" y="41.517857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TeamLogo" width="1080" height="1080"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

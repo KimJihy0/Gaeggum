@@ -34,7 +34,6 @@ class QuestionStarterView: UIView {
     private func commonInit(){
         let view = Bundle.main.loadNibNamed(xibName, owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
-        view.bringSubviewToFront(startButton)
         self.addSubview(view)
         
     }
