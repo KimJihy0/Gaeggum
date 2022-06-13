@@ -222,6 +222,7 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         let alert = UIAlertController(title: "목표 프로젝트 개수 설정", message: nil, preferredStyle: .alert)
         alert.addTextField { textField in
             textField.keyboardType = .numberPad
+            textField.placeholder = String((self.userInfo?.goalNumProjects)!)
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alert.addAction(UIAlertAction(title: "Done", style: .default) {_ in
