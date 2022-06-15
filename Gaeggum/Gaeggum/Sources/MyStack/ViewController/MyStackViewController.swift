@@ -117,10 +117,9 @@ class MyStackViewController : UIViewController, UIGestureRecognizerDelegate {
         }
         bojStatView.isHidden = false
         
-        let url = URL(string: "https://solved.ac/api/v3/user/show?handle=\(bojUsername)")!
-        let data = try! String(contentsOf: url).data(using: .utf8)!
-        let stat = try! JSONDecoder().decode(BojStat.self, from: data)
-        
+        guard let url = "https://solved.ac/api/v3/user/show?handle=\(bojUsername)".toURL else { return }
+        guard let data = try? String(contentsOf: url).data(using: .utf8) else { return }
+        guard let stat = try? JSONDecoder().decode(BojStat.self, from: data) else { return }
         nextTierLabel.text = Tier(value: stat.tier + 1).toString() + " 승급까지 - " + String(Tier(value: stat.tier + 1).rating - stat.rating)
         currentTierLabel.text = Tier(value: stat.tier).toString() + " " + String(stat.rating)
         

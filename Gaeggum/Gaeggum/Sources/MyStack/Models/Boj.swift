@@ -139,9 +139,9 @@ public struct ProblemStat: Decodable {
     
     static func getColors(of username: String) -> [[Tier]] {
         var tiers : [Tier] = []
-        let url = URL(string: "https://solved.ac/api/v3/user/problem_stats?handle=\(username)")!
-        let data = try! String(contentsOf: url).data(using: .utf8)!
-        var stats = try! JSONDecoder().decode([ProblemStat].self, from: data)
+        guard let url = "https://solved.ac/api/v3/user/problem_stats?handle=\(username)".toURL else { return []}
+        guard let data = try? String(contentsOf: url).data(using: .utf8) else { return []}
+        guard var stats = try? JSONDecoder().decode([ProblemStat].self, from: data) else { return []}
         
         stats.reverse()
         
@@ -223,4 +223,11 @@ extension Color {
            blue: rgb & 0xFF
        )
    }
+}
+
+extension String {
+  var toURL: URL? {
+     guard let url = URL(string: self) else { return nil }
+     return url
+  }
 }

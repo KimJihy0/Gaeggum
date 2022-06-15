@@ -77,7 +77,7 @@ public struct Contribution {
     }
 
     static func getColors(of username: String) -> [[Color]] {
-        let contributions = try! getContributions(of: username)
+        guard let contributions = try? getContributions(of: username) else { return []}
         let lastDate = contributions.last?.date
         let tilesCount = 7 * 20 - (7 - Calendar.current.component(.weekday, from: lastDate!))
         let levels = contributions.suffix(tilesCount).map(\.level).chunked(into: 7)
