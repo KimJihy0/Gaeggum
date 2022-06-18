@@ -22,13 +22,24 @@ struct Stat : Codable {
         self.collaboration += answerStat.collaboration
     }
     
-    func calculateMSE(compare: Stat) -> Double {
+    func calculateMSE(userStat: Stat) -> Double {
         var sum : Int = 0
-        sum += square(x: self.data - compare.data)
-        sum += square(x: self.system - compare.system)
-        sum += square(x: self.userFriendly - compare.userFriendly)
-        sum += square(x: self.math - compare.math)
-        sum += square(x: self.collaboration - compare.collaboration)
+        if self.data < userStat.data {
+            sum += square(x: self.data - userStat.data)
+        }
+        if self.system < userStat.system {
+            sum += square(x: self.system - userStat.system)
+        }
+        if self.userFriendly < userStat.userFriendly {
+            sum += square(x: self.userFriendly - userStat.userFriendly)
+        }
+        if self.math < userStat.math {
+            sum += square(x: self.math - userStat.math)
+        }
+        if self.collaboration < userStat.collaboration {
+            sum += square(x: self.collaboration - userStat.collaboration)
+        }
+        
         return Double(sum)/5
     }
     

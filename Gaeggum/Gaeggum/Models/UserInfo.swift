@@ -27,7 +27,7 @@ struct UserInfo : Codable {
         var bestIndex : Int = -1
         var bestMSE : Double = Double.greatestFiniteMagnitude
         dummyCareer.enumerated().forEach { (index, eachCareer) in
-            let tempMSE : Double = eachCareer.stat.calculateMSE(compare: self.stat!)
+            let tempMSE : Double = eachCareer.stat.calculateMSE(userStat: self.stat!)
             
 //            print("여기에요", index, eachCareer.name, eachCareer.stat, tempMSE )
             if bestMSE > tempMSE {
